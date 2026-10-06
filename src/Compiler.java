@@ -1,0 +1,16 @@
+import frontend.FrontEnd;
+import util.IOhandler;
+
+import java.io.IOException;
+
+public class Compiler {
+    public static void main(String[] args) throws IOException {
+        IOhandler.setIO();
+        FrontEnd.SetInput();
+        FrontEnd.GenerateTokenList();
+        FrontEnd.GenerateAstTree();
+        IOhandler.PrintTokenList();
+        IOhandler.PrintAstTree();
+        IOhandler.PrintErrorMessage();
+    }
+}
