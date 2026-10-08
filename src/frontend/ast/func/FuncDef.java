@@ -15,16 +15,20 @@ public class FuncDef extends Node {
     public FuncDef() {
         super(SyntaxType.FUNC_DEF);
     }
-
+    
     @Override
     public void Parse() {
         AddNode(new FuncType());
         AddNode(new Ident());
         AddNode(new TokenNode());//(
-        if(!GetCurrentToken().GetTokenType().equals(TokenType.RPARENT)){
-            AddNode(new FuncFormalParamS());
+        // FuncFParams
+        if (GetCurrentTokenType().equals(TokenType.INTTK) ||
+            GetCurrentTokenType().equals(TokenType.CHARTK) ||
+            GetCurrentTokenType().equals(TokenType.STATICTK)
+        ) {
+            this.AddNode(new FuncFormalParamS());
         }
-        if(GetCurrentTokenType().equals(TokenType.RPARENT)){
+        if (GetCurrentTokenType().equals(TokenType.RPARENT)) {
             AddNode(new TokenNode());//)
         } else {
             ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));

@@ -11,7 +11,7 @@ import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
 
 public class FuncFormalParam extends Node {
-    public FuncFormalParam() {
+    public  FuncFormalParam() {
         super(SyntaxType.FUNC_FORMAL_PARAM);
     }
 
