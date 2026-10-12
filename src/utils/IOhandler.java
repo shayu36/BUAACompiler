@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import error.Error;
 import error.ErrorRecorder;
@@ -31,7 +31,7 @@ public class IOhandler {
         }
     }
     
-    public static PushbackInputStream getInput() {
+    public static PushbackInputStream GetInput() {
         return input;
     }
     

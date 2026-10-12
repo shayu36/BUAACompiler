@@ -26,7 +26,7 @@ public class ConstDecl extends Node {
         if (GetCurrentTokenType().equals(TokenType.SEMICN)) {
             AddNode(new TokenNode());//;
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+            AddMissSemicnError();
         }
     }
 }

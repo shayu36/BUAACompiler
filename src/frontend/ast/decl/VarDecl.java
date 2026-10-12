@@ -30,7 +30,7 @@ public class VarDecl extends Node {
         if(GetCurrentTokenType().equals(TokenType.SEMICN)){
             this.AddNode(new TokenNode());//;
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+            AddMissSemicnError();
         }
     }
 }

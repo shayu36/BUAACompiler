@@ -5,7 +5,7 @@ import frontend.lexer.Lexer;
 import frontend.lexer.Token;
 import frontend.lexer.TokenStream;
 import frontend.parser.Parser;
-import util.IOhandler;
+import utils.IOhandler;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ public class FrontEnd {
     private static Parser parser;
     
     public static void SetInput() throws IOException {
-        lexer = new Lexer(IOhandler.getInput());
+        lexer = new Lexer(IOhandler.GetInput());
         parser = new Parser();
     }
     

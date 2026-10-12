@@ -14,7 +14,7 @@ public class Block extends Node {
     public void Parse() {
         // {
         AddNode(new TokenNode());
-        // { BlockItem }
+        //  BlockItem
         while(!GetCurrentTokenType().equals(TokenType.RBRACE)){
             AddNode(new BlockItem());
         }

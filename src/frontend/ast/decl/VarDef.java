@@ -30,7 +30,7 @@ public class VarDef extends Node {
             if(GetCurrentTokenType().equals(TokenType.RBRACK)){
                 AddNode(new TokenNode());
             } else {
-                ErrorRecorder.AddError(new Error(ErrorType.MISS_RBRACK, Peek(-1).GetLineNumber()));
+                AddMissRBrackError();
             }
         }
         // = InitVal

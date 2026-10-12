@@ -31,7 +31,7 @@ public class FuncDef extends Node {
         if (GetCurrentTokenType().equals(TokenType.RPARENT)) {
             AddNode(new TokenNode());//)
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));
+            AddMissRParentError();
         }
         AddNode(new Block());
     }

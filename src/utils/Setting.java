@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 public class Setting {
     public static final boolean PRINT_LEXER = false;

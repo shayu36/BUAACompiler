@@ -24,15 +24,15 @@ public class UnaryExp extends ComputeExp {
             AddNode(new Ident());
             // (
             AddNode(new TokenNode());
-            if (!GetCurrentTokenType().equals(TokenType.RPARENT)) {
-                // FuncRParams
+            // FuncRParams
+            if (IsExpStmt()) {
                 AddNode(new FuncRealParamS());
             }
             // )
             if (GetCurrentTokenType().equals(TokenType.RPARENT)) {
                 AddNode(new TokenNode());
             } else {
-                ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));
+                AddMissRParentError();
             }
         }
         //'(' BType ')' UnaryExp
@@ -44,7 +44,7 @@ public class UnaryExp extends ComputeExp {
             if (GetCurrentTokenType().equals(TokenType.RPARENT)) {
                 AddNode(new TokenNode());//)
             } else {
-                ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));
+                AddMissRParentError();
             }
             AddNode(new UnaryExp());
         }

@@ -48,7 +48,7 @@ public class Stmt extends Node {
         if(GetCurrentTokenType().equals(TokenType.RPARENT)){
             AddNode(new TokenNode());//)
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));
+            AddMissRParentError();
         }
         AddNode(new Stmt());
         if(GetCurrentTokenType().equals(TokenType.ELSETK)){
@@ -65,7 +65,7 @@ public class Stmt extends Node {
         if(GetCurrentTokenType().equals(TokenType.RPARENT)){
             AddNode(new TokenNode());//)
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));
+            AddMissRParentError();
         }
         AddNode(new Stmt());
     }
@@ -78,7 +78,7 @@ public class Stmt extends Node {
         if(GetCurrentTokenType().equals(TokenType.RPARENT)){
             AddNode(new TokenNode());//)
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));
+            AddMissRParentError();
         }
         AddNode(new TokenNode());//{
         while(!GetCurrentTokenType().equals(TokenType.RBRACE)){
@@ -93,7 +93,7 @@ public class Stmt extends Node {
         if(GetCurrentTokenType().equals(TokenType.SEMICN)){
             AddNode(new TokenNode());//;
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+            AddMissSemicnError();
         }
     }
 
@@ -103,20 +103,20 @@ public class Stmt extends Node {
         if(GetCurrentTokenType().equals(TokenType.SEMICN)){
             AddNode(new TokenNode());//;
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+            AddMissSemicnError();
         }
     }
 
     // 'return' [Exp] ';'
     private void ParseReturnStmt() {
         AddNode(new TokenNode());//return
-        if(!GetCurrentTokenType().equals(TokenType.SEMICN)){
+        if(IsExpStmt()){
             AddNode(new Exp());
         }
         if(GetCurrentTokenType().equals(TokenType.SEMICN)){
             AddNode(new TokenNode());//;
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+            AddMissSemicnError();
         }
     }
 
@@ -132,39 +132,42 @@ public class Stmt extends Node {
         if(GetCurrentTokenType().equals(TokenType.RPARENT)){
             AddNode(new TokenNode());//)
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_RPARENT, Peek(-1).GetLineNumber()));
+            AddMissRParentError();
         }
         if(GetCurrentTokenType().equals(TokenType.SEMICN)){
             AddNode(new TokenNode());//;
         } else {
-            ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+            AddMissSemicnError();
         }
     }
 
     private void ParseAssignOrExpStmt(){
         SetBackPoint();
+        ErrorRecorder.SetStopRecordError();
         Node node=new Exp();//随便建一个 关键在于移动readPoint指针
         node.Parse();//先当作一个表达式来解析 看看是不是移动到=了
         //LVal '=' Exp ';'
         if(GetCurrentTokenType().equals(TokenType.ASSIGN)){
             GoToBackPoint();
+            ErrorRecorder.SetStartRecordError();
             AddNode(new LVal());
             AddNode(new TokenNode());//=
             AddNode(new Exp());
             if(GetCurrentTokenType().equals(TokenType.SEMICN)){
                 AddNode(new TokenNode());//;
             } else {
-                ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+                AddMissSemicnError();
             }
         }
         else{
             //Exp ';'
             GoToBackPoint();
+            ErrorRecorder.SetStartRecordError();
             AddNode(new Exp());
             if(GetCurrentTokenType().equals(TokenType.SEMICN)){
                 AddNode(new TokenNode());//;
             } else {
-                ErrorRecorder.AddError(new Error(ErrorType.MISS_SEMICN, Peek(-1).GetLineNumber()));
+                AddMissSemicnError();
             }
         }
     }
