@@ -9,4 +9,6 @@ public abstract class ComputeExp extends Node {
     }
 
     public abstract void Compute();
+
+    public abstract String GetExpType();
 }

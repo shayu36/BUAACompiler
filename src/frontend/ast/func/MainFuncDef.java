@@ -8,22 +8,43 @@ import frontend.ast.SyntaxType;
 import frontend.ast.block.Block;
 import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
+import midend.symbol.SymbolManger;
 
 public class MainFuncDef extends Node {
+    // MainFuncDef -> 'int' 'main' '(' ')' Block
     public MainFuncDef() {
         super(SyntaxType.MAIN_FUNC_DEF);
     }
-
+    
     @Override
     public void Parse() {
         AddNode(new TokenNode());//int
         AddNode(new TokenNode());//main
         AddNode(new TokenNode());//(
-        if(GetCurrentTokenType().equals(TokenType.RPARENT)){
+        if (GetCurrentTokenType().equals(TokenType.RPARENT)) {
             AddNode(new TokenNode());//)
         } else {
             AddMissRParentError();
         }
         AddNode(new Block());
+    }
+    
+    @Override
+    public void Visit() {
+        SymbolManger.EnterFunc("int");
+        for (Node component : this.components) {
+            if (component instanceof Block block) {
+                SymbolManger.CreateSonSymbolTable();
+                block.Visit();
+                if (block.LastIsNotReturnStmt()) {
+                    ErrorRecorder.AddError(new Error(
+                        ErrorType.MISS_RETURN,
+                        block.GetLastLine()
+                    ));
+                }
+                SymbolManger.GoToFatherTable();
+            }
+        }
+        SymbolManger.LeaveFunc();
     }
 }

@@ -8,6 +8,7 @@ import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
 
 public class ConstInitVal extends Node {
+    // ConstInitVal -> ConstExp | '{' [ ConstExp { ',' ConstExp } ] '}' | StringConst
     public ConstInitVal() {
         super(SyntaxType.CONST_INIT_VAL);
     }

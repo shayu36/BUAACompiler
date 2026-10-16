@@ -4,6 +4,7 @@ import frontend.ast.SyntaxType;
 import frontend.ast.exp.recursion.AddExp;
 
 public class ConstExp extends ComputeExp {
+    // ConstExp -> AddExp
     public ConstExp() {
         super(SyntaxType.CONST_EXP);
     }
@@ -15,5 +16,10 @@ public class ConstExp extends ComputeExp {
 
     @Override
     public void Compute() {
+    }
+    
+    @Override
+    public String GetExpType() {
+        return ((AddExp) components.get(0)).GetExpType();
     }
 }

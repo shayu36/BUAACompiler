@@ -6,6 +6,7 @@ import frontend.ast.func.FuncDef;
 import frontend.ast.func.MainFuncDef;
 
 public class CompUnit extends Node {
+    // CompUnit -> { Decl } { FuncDef } MainFuncDef
     public CompUnit() {
         super(SyntaxType.COMP_UNIT);
     }

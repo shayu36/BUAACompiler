@@ -7,13 +7,13 @@ import frontend.ast.value.Number;
 import frontend.lexer.TokenType;
 
 public class CaseStmt extends Node {
+    // CaseStmt -> 'case' Number ':' { Stmt } | 'default' ':' { Stmt }
     public CaseStmt() {
         super(SyntaxType.CASE_STMT);
     }
     
     @Override
     public void Parse() {
-        //'case' Number ':' { Stmt } | 'default' ':' { Stmt }
         if (GetCurrentTokenType().equals(TokenType.CASETK)) {
             // case
             AddNode(new TokenNode());
@@ -33,5 +33,20 @@ public class CaseStmt extends Node {
             !GetCurrentTokenType().equals(TokenType.RBRACE)){
             AddNode(new Stmt());
         }
+    }
+
+    public String GetTypeString() {
+        return ((TokenNode) this.components.get(0)).GetTokenString();
+    }
+
+    public int GetCaseNumber() {
+        return ((Number) this.components.get(1)).GetCaseNumber();
+    }
+    
+    public boolean NumberisInt(){
+        return "INT".equals(((Number) this.components.get(1)).GetExpType());
+    }
+    public int GetLine() {
+        return ((TokenNode) this.components.get(0)).GetTokenLine();
     }
 }

@@ -3,6 +3,7 @@ package frontend.ast.token;
 import frontend.ast.SyntaxType;
 
 public class FuncType extends BasicTokenNode {
+    // FuncType -> 'void' | 'int' | 'char'
     public FuncType() {
         super(SyntaxType.FUNC_TYPE);
     }

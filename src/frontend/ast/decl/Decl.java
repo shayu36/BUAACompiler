@@ -5,6 +5,7 @@ import frontend.ast.SyntaxType;
 import frontend.lexer.TokenType;
 
 public class Decl extends Node {
+    // Decl -> ConstDecl | VarDecl
     public Decl() {
         super(SyntaxType.DECL);
         this.printSelf=false;

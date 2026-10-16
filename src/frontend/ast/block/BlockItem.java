@@ -7,6 +7,7 @@ import frontend.ast.stmt.Stmt;
 import frontend.lexer.TokenType;
 
 public class BlockItem extends Node {
+    // BlockItem -> Decl | Stmt
     public BlockItem() {
         super(SyntaxType.BLOCK_ITEM);
         this.printSelf = false;
@@ -22,5 +23,12 @@ public class BlockItem extends Node {
         } else{
             AddNode(new Stmt());
         }
+    }
+    
+    public boolean IsReturn(){
+        if(components.get(0) instanceof Stmt stmt){
+            return stmt.GetStmtType().equals(Stmt.StmtType.ReturnStmt);
+        }
+        return false;
     }
 }

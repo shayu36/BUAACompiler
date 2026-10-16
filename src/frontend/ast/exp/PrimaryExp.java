@@ -1,42 +1,49 @@
 package frontend.ast.exp;
 
-import error.Error;
-import error.ErrorRecorder;
-import error.ErrorType;
 import frontend.ast.SyntaxType;
 import frontend.ast.token.TokenNode;
 import frontend.ast.value.Number;
 import frontend.lexer.TokenType;
 
 public class PrimaryExp extends ComputeExp {
+    // PrimaryExp -> '(' Exp ')' | LVal | Number
     public PrimaryExp() {
         super(SyntaxType.PRIMARY_EXP);
     }
-
+    
     @Override
     public void Parse() {
         // '(' Exp ')'
-        if(GetCurrentTokenType().equals(TokenType.LPARENT)){
+        if (GetCurrentTokenType().equals(TokenType.LPARENT)) {
             AddNode(new TokenNode());//(
             AddNode(new Exp());
-            if(GetCurrentTokenType().equals(TokenType.RPARENT)){
+            if (GetCurrentTokenType().equals(TokenType.RPARENT)) {
                 AddNode(new TokenNode());//)
             } else {
                 AddMissRParentError();
             }
-        }
-        // Number → IntConst | CharConst
-        else if(GetCurrentTokenType().equals(TokenType.INTCON) ||
-            GetCurrentTokenType().equals(TokenType.CHARCON)){
+        } else if (GetCurrentTokenType().equals(TokenType.INTCON) ||
+            GetCurrentTokenType().equals(TokenType.CHARCON)) {
             AddNode(new Number());
         }
         // LVal
-        else{
+        else {
             AddNode(new LVal());
         }
     }
-
+    
     @Override
     public void Compute() {
+    }
+    
+    @Override
+    public String GetExpType() {
+        if (components.get(0) instanceof LVal lval) {
+            return lval.GetExpType();
+        } else if (components.get(0) instanceof Number number) {
+            return number.GetExpType();
+        } else {
+            return ((Exp) (components.get(1))).GetExpType();
+        }
     }
 }

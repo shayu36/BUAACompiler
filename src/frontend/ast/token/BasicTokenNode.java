@@ -11,6 +11,19 @@ public class BasicTokenNode extends Node {
         super(syntaxType);
     }
     
+    public String GetTokenString() {
+        return this.token.GetStringValue();
+    }
+    
+    public int GetTokenLine() {
+        return  this.token.GetLineNumber();
+    }
+
+    @Override
+    public String GetSimpleName() {
+        return this.token.GetStringValue();
+    }
+    
     @Override
     public void Parse() {
         this.token = GetCurrentToken();

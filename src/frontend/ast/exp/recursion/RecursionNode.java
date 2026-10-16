@@ -103,6 +103,11 @@ public abstract class RecursionNode extends ComputeExp {
     @Override
     public void Compute() {
     }
+
+    @Override
+    public String GetExpType() {
+        return "ERROR";
+    }
     
     @FunctionalInterface
     interface Generate1Node1One<T, R> {

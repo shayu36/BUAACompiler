@@ -8,6 +8,7 @@ import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
 
 public class InitVal extends Node {
+    // InitVal -> Exp | '{' [ Exp { ',' Exp } ] '}' | StringConst
     public InitVal() {
         super(SyntaxType.INIT_VAL);
     }
