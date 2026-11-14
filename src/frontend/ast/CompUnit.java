@@ -5,6 +5,8 @@ import frontend.lexer.TokenType;
 import frontend.ast.func.FuncDef;
 import frontend.ast.func.MainFuncDef;
 
+import java.util.ArrayList;
+
 public class CompUnit extends Node {
     // CompUnit -> { Decl } { FuncDef } MainFuncDef
     public CompUnit() {
@@ -32,5 +34,34 @@ public class CompUnit extends Node {
                 break;
             }
         }
+    }
+
+    public ArrayList<Decl> GetDecls() {
+        ArrayList<Decl> decls = new ArrayList<>();
+        for (Node component : this.components) {
+            if (component instanceof Decl decl) {
+                decls.add(decl);
+            }
+        }
+        return decls;
+    }
+
+    public ArrayList<FuncDef> GetFuncDefs() {
+        ArrayList<FuncDef> funcDefs = new ArrayList<>();
+        for (Node component : this.components) {
+            if (component instanceof FuncDef funcDef) {
+                funcDefs.add(funcDef);
+            }
+        }
+        return funcDefs;
+    }
+
+    public MainFuncDef GetMainFuncDef() {
+        for (Node component : this.components) {
+            if (component instanceof MainFuncDef mainFuncDef) {
+                return mainFuncDef;
+            }
+        }
+        return null;
     }
 }

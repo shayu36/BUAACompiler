@@ -20,4 +20,12 @@ public class Decl extends Node {
             AddNode(new VarDecl());
         }
     }
+    
+    public Boolean IsConstDecl(){
+        return this.components.get(0) instanceof ConstDecl;
+    }
+
+    public Node GetDecl() {
+        return this.components.get(0);
+    }
 }

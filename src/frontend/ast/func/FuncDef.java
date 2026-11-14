@@ -23,48 +23,6 @@ public class FuncDef extends Node {
     }
     
     @Override
-    public void Visit() {
-        FuncType type = (FuncType) this.components.get(0);
-        String typeString = type.GetTokenString();
-        Ident ident = (Ident) this.components.get(1);
-        FuncSymbol symbol = new FuncSymbol(
-            ident.GetTokenString(),
-            SymbolType.GetFuncType(typeString),
-            new ArrayList<>()
-        );
-        int line=ident.GetTokenLine();
-        SymbolManger.AddSymbol(symbol,line);
-        SymbolManger.EnterFunc(typeString);
-        SymbolManger.CreateSonSymbolTable();
-        for(Node component: components) {
-            component.Visit();
-            if(component instanceof FuncFormalParamS formalParamS) {
-                symbol.SetFormalParamList(formalParamS.GetFormalParamList());
-            }
-        }
-        this.CheckReturnError(typeString, this.GetBlock());
-        SymbolManger.LeaveFunc();
-        SymbolManger.GoToFatherTable();
-    }
-
-    private void CheckReturnError(String type, Block block) {
-        if (!type.equals("void") && block.LastIsNotReturnStmt()) {
-            ErrorRecorder.AddError(
-                new Error(ErrorType.MISS_RETURN, block.GetLastLine())
-            );
-        }
-    }
-
-    public Block GetBlock() {
-        for (Node component : this.components) {
-            if (component instanceof Block block) {
-                return block;
-            }
-        }
-        return null;
-    }
-    
-    @Override
     public void Parse() {
         AddNode(new FuncType());
         AddNode(new Ident());
@@ -83,4 +41,53 @@ public class FuncDef extends Node {
         }
         AddNode(new Block());
     }
+    
+    @Override
+    public void Visit() {
+        String typeString = ((FuncType) this.components.get(0)).GetTokenString();
+        Ident ident = (Ident) this.components.get(1);
+        FuncSymbol symbol = new FuncSymbol(
+            ident.GetTokenString(),
+            SymbolType.GetFuncType(typeString),
+            new ArrayList<>()
+        );
+        int line = ident.GetTokenLine();
+        SymbolManger.AddSymbol(symbol, line);
+        SymbolManger.EnterFunc(typeString);
+        SymbolManger.CreateSonSymbolTable();
+        for (Node component : components) {
+            component.Visit();
+            if (component instanceof FuncFormalParamS formalParamS) {
+                symbol.SetFormalParamList(formalParamS.GetFormalParamList());
+            }
+        }
+        //检查函数是否缺返回值
+        this.CheckReturnError(typeString, this.GetBlock());
+        SymbolManger.LeaveFunc();
+        SymbolManger.GoToFatherTable();
+    }
+    
+    private void CheckReturnError(String type, Block block) {
+        if (!type.equals("void") && block.LastIsNotReturnStmt()) {
+            ErrorRecorder.AddError(
+                new Error(ErrorType.MISS_RETURN, block.GetLastLine())
+            );
+        }
+    }
+    
+    public Block GetBlock() {
+        for (Node component : this.components) {
+            if (component instanceof Block block) {
+                return block;
+            }
+        }
+        return null;
+    }
+
+    public Ident GetIdent() {
+        return (Ident) this.components.get(1);
+    }
+    
+    
+    
 }

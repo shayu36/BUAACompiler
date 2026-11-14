@@ -61,7 +61,50 @@ public class UnaryExp extends ComputeExp {
             return "CHAR";
         }
     }
-    
+
+    public boolean IsPrimaryType() {
+        return this.components.get(0) instanceof PrimaryExp;
+    }
+
+    public boolean IsIdentType() {
+        return this.components.get(0) instanceof Ident;
+    }
+
+    public boolean IsUnaryOpType() {
+        return this.components.get(0) instanceof UnaryOp;
+    }
+
+    public PrimaryExp GetPrimaryExp() {
+        return (PrimaryExp) this.components.get(0);
+    }
+
+    public Ident GetIdent() {
+        return (Ident) this.components.get(0);
+    }
+
+    public UnaryOp GetUnaryOp() {
+        return (UnaryOp) this.components.get(0);
+    }
+
+    public BType GetBType() {
+        return (BType) this.components.get(1);
+    }
+
+    public UnaryExp GetUnaryExp() {
+        return IsUnaryOpType() ?
+            (UnaryExp) this.components.get(1) :      // UnaryOp UnaryExp 形式
+            (UnaryExp) this.components.get(3);        // '(' BType ')' UnaryExp 形式
+    }
+
+    public ArrayList<Exp> GetRealParamList() {
+        for (Node component : this.components) {
+            if (component instanceof FuncRealParamS funcRealParamS) {
+                return funcRealParamS.GetRealParamList();
+            }
+        }
+        return new ArrayList<>();
+    }
+
     @Override
     public void Parse() {
         if (GetCurrentTokenType().equals(TokenType.IDENFR) &&
@@ -205,6 +248,41 @@ public class UnaryExp extends ComputeExp {
     
     @Override
     public void Compute() {
+        // PrimaryExp
+        if (IsPrimaryType()) {
+            ComputeExp primaryExp = (ComputeExp) this.components.get(0);
+            primaryExp.Compute();
+            this.isConst = primaryExp.GetIsConst();
+            this.value = primaryExp.GetValue();
+        }
+        // UnaryOp UnaryExp
+        else if (IsUnaryOpType()) {
+            ComputeExp subExp = (ComputeExp) this.components.get(1);
+            subExp.Compute();
+            this.isConst = subExp.GetIsConst();
+            if (this.isConst) {
+                switch (GetUnaryOp().GetSimpleName()) {
+                    case "+" -> this.value = subExp.GetValue();
+                    case "-" -> this.value = -subExp.GetValue();
+                    case "!" -> this.value = subExp.GetValue() == 0 ? 1 : 0;
+                    default -> throw new RuntimeException("invalid unary op");
+                }
+            }
+        }
+        // 函数调用：ConstExp 中不出现（语义保证），isConst 保持 false
+        // '(' BType ')' UnaryExp 显式转换
+        else if (!IsIdentType()) {
+            ComputeExp subExp = (ComputeExp) this.components.get(3);
+            subExp.Compute();
+            this.isConst = subExp.GetIsConst();
+            if (this.isConst) {
+                if (GetBType().GetTokenString().equals("char")) {
+                    this.value = subExp.GetValue() & 0xFF;   // 截断 = 模 256
+                } else {
+                    this.value = subExp.GetValue();           // int 零扩展，数值不变
+                }
+            }
+        }
     }
     
 }

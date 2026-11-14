@@ -9,6 +9,8 @@ import frontend.ast.exp.ComputeExp;
 import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
 
+import java.util.ArrayList;
+
 public class LOrExp extends RecursionNode {
     // LOrExp -> LAndExp | LOrExp '||' LAndExp
     public LOrExp() {
@@ -83,5 +85,13 @@ public class LOrExp extends RecursionNode {
         }
 
         return "INT";
+    }
+
+    public ArrayList<LAndExp> GetLAndExpList() {
+        ArrayList<LAndExp> landExpList = new ArrayList<>();
+        for (int i = 0; i < this.nodeList.size(); i += 2) {
+            landExpList.add((LAndExp) this.nodeList.get(i));
+        }
+        return landExpList;
     }
 }

@@ -16,6 +16,12 @@ public class ConstExp extends ComputeExp {
 
     @Override
     public void Compute() {
+        // 递归进行计算
+        AddExp addExp = (AddExp) this.components.get(0);
+        addExp.Compute();
+        // 设置相应的属性
+        this.isConst = addExp.GetIsConst();
+        this.value = addExp.GetValue();
     }
     
     @Override

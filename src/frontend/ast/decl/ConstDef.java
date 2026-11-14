@@ -39,23 +39,41 @@ public class ConstDef extends Node {
     
     @Override
     public void Visit() {
-        super.Visit();
-        String name = ((Ident) this.components.get(0)).GetTokenString();
-        //获取维数dimension
-        int dimension = (this.components.size() > 3) ? 1 : 0;
-        ArrayList<Integer> depthList = new ArrayList<Integer>();
-        ArrayList<Integer> initValueList = new ArrayList<Integer>();
-        if (dimension == 1) {
-            //解析表达式求值
-            ;
+        Ident ident = (Ident) this.components.get(0);
+        String symbolName = ident.GetTokenString();
+
+        int dimension = 0;
+        ArrayList<Integer> depthList = new ArrayList<>();
+        ArrayList<Integer> initValueList = null;
+        // 获取维度：判断是否有维度信息
+        for (Node component : this.components) {
+            component.Visit();
+            if (component instanceof ConstExp constExp) {
+                dimension++;
+                // 计算维度信息
+                constExp.Compute();
+                depthList.add(constExp.GetValue());
+            } else if (component instanceof ConstInitVal constInitVal) {
+                initValueList = constInitVal.GetInitValueList();
+            }
         }
-        int line = ((Ident) this.components.get(0)).GetTokenLine();
-        SymbolManger.AddSymbol(new ValueSymbol(name,
+
+        ValueSymbol symbol = new ValueSymbol(symbolName,
             SymbolType.GetConstType(this.typeString, dimension),
-            dimension, depthList, initValueList), line);
+            dimension, depthList, initValueList);
+        // 设置const值
+        symbol.SetValueList(initValueList);
+        symbol.SetIsConst(true);
+
+        int line = ident.GetTokenLine();
+        SymbolManger.AddSymbol(symbol, line);
     }
     
     public void setTypeString(String typeString) {
         this.typeString = typeString;
+    }
+
+    public Ident GetIdent() {
+        return (Ident) this.components.get(0);
     }
 }

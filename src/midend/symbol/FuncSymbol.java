@@ -1,9 +1,12 @@
 package midend.symbol;
 
+import midend.llvm.value.IrValue;
+
 import java.util.ArrayList;
 
 public class FuncSymbol extends Symbol {
     private ArrayList<Symbol> formalParamList;
+    private IrValue irValue;
     
     public FuncSymbol(String symbolName, SymbolType symbolType, ArrayList<Symbol> formalParamList) {
         super(symbolName, symbolType);
@@ -17,7 +20,15 @@ public class FuncSymbol extends Symbol {
     public void SetFormalParamList(ArrayList<Symbol> formalParamList) {
         this.formalParamList = formalParamList;
     }
-
+    
+    public IrValue GetIrValue() {
+        return irValue;
+    }
+    
+    public void setIrValue(IrValue irValue) {
+        this.irValue = irValue;
+    }
+    
     public boolean isIO() {
         return switch (this.GetSymbolName()) {
             case "get_int", "get_char", "get_string",

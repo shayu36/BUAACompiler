@@ -6,6 +6,8 @@ import frontend.ast.token.BType;
 import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
 
+import java.util.ArrayList;
+
 public class VarDecl extends Node {
     // VarDecl -> [ 'static' ] BType VarDef { ',' VarDef } ';'
     public VarDecl() {
@@ -36,17 +38,29 @@ public class VarDecl extends Node {
         // int | char
         int typeIndex = this.components.get(0) instanceof BType ? 0 : 1;
         BType type = (BType) this.components.get(typeIndex);
-        String typeString = type.GetTokenString();
+        String varType = type.GetTokenString();
         boolean isStatic = (typeIndex == 1);
         
         // 可能会有多个 VarDef
         for (Node component : this.components) {
             // 为每个 VarDef 标注基本类型
             if (component instanceof VarDef varDef) {
-                varDef.setTypeString(typeString);
+                varDef.setVarType(varType);//int/char
                 varDef.setIsStatic(isStatic);
             }
             component.Visit();
         }
     }
+
+    public ArrayList<VarDef> GetVarDef() {
+        ArrayList<VarDef> varDefList = new ArrayList<>();
+        for (Node component : this.components) {
+            if (component instanceof VarDef varDef) {
+                varDefList.add(varDef);
+            }
+        }
+        return varDefList;
+    }
+    
+    
 }

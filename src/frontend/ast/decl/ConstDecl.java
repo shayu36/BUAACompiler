@@ -6,6 +6,8 @@ import frontend.ast.token.BType;
 import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
 
+import java.util.ArrayList;
+
 public class ConstDecl extends Node {
     // ConstDecl -> 'const' BType ConstDef { ',' ConstDef } ';'
     public ConstDecl() {
@@ -42,5 +44,15 @@ public class ConstDecl extends Node {
             }
             component.Visit();
         }
+    }
+
+    public ArrayList<ConstDef> GetConstDef() {
+        ArrayList<ConstDef> constDefList = new ArrayList<>();
+        for (Node component : this.components) {
+            if (component instanceof ConstDef constDef) {
+                constDefList.add(constDef);
+            }
+        }
+        return constDefList;
     }
 }

@@ -28,3 +28,15 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+# 编译器运行产物与提交包
+testfile.txt
+error.txt
+llvm_ir.txt
+lexer.txt
+parser.txt
+symbol.txt
+mips.txt
+pcode.txt
+pcoderesult.txt
+submission.zip
+*.zip

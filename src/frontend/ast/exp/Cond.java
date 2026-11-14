@@ -13,9 +13,15 @@ public class Cond extends ComputeExp {
     public void Parse() {
         AddNode(new LOrExp());
     }
-
+    
     @Override
     public void Compute() {
+        // 递归进行计算
+        LOrExp lorExp = (LOrExp) this.components.get(0);
+        lorExp.Compute();
+        // 设置相应的属性
+        this.isConst = lorExp.GetIsConst();
+        this.value = lorExp.GetValue();
     }
 
     @Override
@@ -25,5 +31,9 @@ public class Cond extends ComputeExp {
             return "ERROR";
         }
         return "INT".equals(type) || "CHAR".equals(type) ? "INT" : type;
+    }
+
+    public LOrExp GetLOrExp() {
+        return (LOrExp) this.components.get(0);
     }
 }

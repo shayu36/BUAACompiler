@@ -21,7 +21,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Stmt extends Node {
-    private final Map<Integer, Integer> caseNumberList = new HashMap<>();
     // Stmt -> LVal '=' Exp ';'
     //      | [ Exp ] ';'
     //      | Block
@@ -32,213 +31,12 @@ public class Stmt extends Node {
     //      | 'continue' ';'
     //      | 'return' [ Exp ] ';'
     //      | 'printf' '(' StringConst { ',' Exp } ')' ';'
+    private final Map<Integer, Integer> caseNumberList = new HashMap<>();
     private StmtType stmtType;
     private int defaultCount = 0;
     
     public Stmt() {
         super(SyntaxType.STMT);
-    }
-    
-    @Override
-    public void Visit() {
-        if (stmtType == StmtType.BlockStmt) {
-            SymbolManger.CreateSonSymbolTable();
-            for (Node component : components) {
-                component.Visit();
-            }
-            SymbolManger.GoToFatherTable();
-        } else if (stmtType == StmtType.AssignStmt) {
-            LVal lval = (LVal) components.get(0);
-            Exp exp = (Exp) components.get(2);
-            lval.Visit();
-            exp.Visit();
-            Symbol symbol = SymbolManger.GetSymbol(
-                lval.GetIdent().GetTokenString()
-            );
-            if (symbol == null) {
-                return;
-            }
-            SymbolType lvaltype = symbol.GetSymbolType();
-            String exptype = exp.GetExpType();
-            int line = lval.GetIdent().GetTokenLine();
-            if (lvaltype.IsConst()) {
-                ErrorRecorder.AddError(new Error(
-                    ErrorType.CHANGE_CONST_VALUE,
-                    line
-                ));
-            } else if ("VOID_FUNC".equals(exptype) ||
-                (!lval.GetExpType().equals(exptype) && !"ERROR".equals(exptype))) {
-                ErrorRecorder.AddError(new Error(
-                    ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
-                    line
-                ));
-            }
-        } else if (stmtType == StmtType.PrintStmt) {
-            String formatString = ((StringConst) (components.get(2))).GetTokenString();
-            ArrayList<String> typeList = new ArrayList<>();
-            for (int i = 0; i + 1 < formatString.length(); i++) {
-                if (formatString.charAt(i) == '%' && formatString.charAt(i + 1) == 'd') {
-                    typeList.add("INT");
-                    i++;
-                } else if (formatString.charAt(i) == '%' && formatString.charAt(i + 1) == 'c') {
-                    typeList.add("CHAR");
-                    i++;
-                } else if (formatString.charAt(i) == '%' && formatString.charAt(i + 1) == 's') {
-                    typeList.add("CHAR_ARRAY");
-                    i++;
-                }
-            }
-            
-            int realParameterCount = 0;
-            for (Node component : components) {
-                if (component instanceof Exp exp) {
-                    exp.Visit();
-                    String expType = exp.GetExpType();
-                    if (realParameterCount < typeList.size() &&
-                        !"ERROR".equals(expType) &&
-                        !expType.equals(typeList.get(realParameterCount))) {
-                        TokenNode printToken = (TokenNode) components.get(0);
-                        ErrorRecorder.AddError(new Error(
-                            ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
-                            printToken.GetTokenLine()
-                        ));
-                    }
-                    realParameterCount++;
-                }
-            }
-            if (realParameterCount != typeList.size()) {
-                TokenNode printToken = (TokenNode) components.get(0);
-                ErrorRecorder.AddError(new Error(
-                    ErrorType.PRINTF_NOT_MATCH,
-                    printToken.GetTokenLine()
-                ));
-            }
-            
-        } else if (stmtType == StmtType.IfStmt) {
-            for (Node component : components) {
-                component.Visit();
-            }
-            CheckConditionType(
-                (Cond) components.get(2),
-                ((TokenNode) components.get(0)).GetTokenLine()
-            );
-        } else if (stmtType == StmtType.WhileStmt) {
-            SymbolManger.EnterWhileBlock();
-            for (Node component : components) {
-                component.Visit();
-            }
-            CheckConditionType(
-                (Cond) components.get(2),
-                ((TokenNode) components.get(0)).GetTokenLine()
-            );
-            SymbolManger.LeaveWhileBlock();
-        } else if (stmtType == StmtType.BreakStmt) {
-            if (!SymbolManger.GetIsinWhile() && !SymbolManger.GetIsinSwitch()) {
-                TokenNode tokenNode = (TokenNode) components.get(0);//break
-                ErrorRecorder.AddError(new Error(
-                    ErrorType.BREAK_OR_CONTINUE_IN_NOT_LOOP,
-                    tokenNode.GetTokenLine()
-                ));
-            }
-        } else if (stmtType == StmtType.ContinueStmt) {
-            if (!SymbolManger.GetIsinWhile()) {
-                TokenNode tokenNode = (TokenNode) components.get(0);
-                ErrorRecorder.AddError(new Error(
-                    ErrorType.BREAK_OR_CONTINUE_IN_NOT_LOOP,
-                    tokenNode.GetTokenLine()
-                ));
-            }
-        } else if (stmtType == StmtType.ReturnStmt) {
-            for (Node component : components) {
-                component.Visit();
-            }
-            TokenNode returnToken = (TokenNode) components.get(0);
-            if (components.get(1) instanceof Exp returnExp) {
-                String functionType = SymbolManger.GetFuncType();
-                if (functionType.equals("void")) {
-                    ErrorRecorder.AddError(new Error(
-                        ErrorType.RETURN_NOT_MATCH,
-                        returnToken.GetTokenLine()
-                    ));
-                } else {
-                    String expectedType = functionType.equals("int") ? "INT" : "CHAR";
-                    String actualType = returnExp.GetExpType();
-                    if (!expectedType.equals(actualType) && !"ERROR".equals(actualType)) {
-                        ErrorRecorder.AddError(new Error(
-                            ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
-                            returnToken.GetTokenLine()
-                        ));
-                    }
-                }
-            } else if (!SymbolManger.GetFuncType().equals("void")) {
-                ErrorRecorder.AddError(new Error(
-                    ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
-                    returnToken.GetTokenLine()
-                ));
-            }
-        } else if (stmtType == StmtType.SwitchStmt) {
-            SymbolManger.EnterSwitchBlock();
-            String switchType = ((Exp) components.get(2)).GetExpType();
-            for (Node component : components) {
-                if (component instanceof CaseStmt caseStmt) {
-                    if (caseStmt.GetTypeString().equals("case")) {
-                        //switch 是 INT，case 必须是 INT
-                        //switch 是 CHAR，case 必须是 CHAR
-                        //switch 是 ERROR，不重复报告 e
-                        //switch 是数组或 VOID_FUNC，报告 e
-                        boolean switchIsBasic = "INT".equals(switchType) ||
-                            "CHAR".equals(switchType);
-                        boolean caseTypeMismatch = switchIsBasic &&
-                            (("INT".equals(switchType)) != caseStmt.NumberisInt());
-                        if ((!switchIsBasic && !"ERROR".equals(switchType)) ||
-                            caseTypeMismatch) {
-                            ErrorRecorder.AddError(new Error(
-                                ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
-                                caseStmt.GetLine()
-                            ));
-                        }
-                        int caseNumber = caseStmt.GetCaseNumber();
-                        if (caseNumberList.containsKey(caseNumber)) {
-                            ErrorRecorder.AddError(new Error(
-                                ErrorType.CASE_DEFAULT_REDEFINE, caseStmt.GetLine()
-                            ));
-                        } else {
-                            caseNumberList.put(caseNumber, caseStmt.GetLine());
-                        }
-                    } else {
-                        if (defaultCount == 1) {
-                            ErrorRecorder.AddError(new Error(
-                                ErrorType.CASE_DEFAULT_REDEFINE, caseStmt.GetLine()
-                            ));
-                        } else {
-                            defaultCount++;
-                        }
-                    }
-                    caseStmt.Visit();
-                } else {
-                    component.Visit();
-                }
-            }
-            SymbolManger.LeaveSwitchBlock();
-        } else if(stmtType==StmtType.ExpStmt){
-            Exp exp = (Exp) components.get(0);
-            exp.Visit();
-            exp.GetExpType();
-        }else {
-            for (Node component : components) {
-                component.Visit();
-            }
-        }
-    }
-
-    private void CheckConditionType(Cond cond, int line) {
-        String conditionType = cond.GetExpType();
-        if (!"INT".equals(conditionType) && !"ERROR".equals(conditionType)) {
-            ErrorRecorder.AddError(new Error(
-                ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
-                line
-            ));
-        }
     }
     
     @Override
@@ -252,8 +50,23 @@ public class Stmt extends Node {
             case CONTINUETK -> this.ParseContinueStmt();
             case RETURNTK -> this.ParseReturnStmt();
             case PRINTFTK -> this.ParsePrintStmt();
-            case SEMICN -> this.AddNode(new TokenNode());//空表达式语句
-            default -> this.ParseAssignOrExpStmt();// 赋值语句or表达式语句（需回溯区分）
+            case SEMICN -> this.ParseExpStmt();
+            default -> {
+                SetBackPoint();
+                ErrorRecorder.SetStopRecordError();
+                Node node = new Exp();
+                node.Parse();
+                
+                if (GetCurrentTokenType().equals(TokenType.ASSIGN)) {
+                    GoToBackPoint();
+                    ErrorRecorder.SetStartRecordError();
+                    this.AssignStmt();
+                } else {
+                    GoToBackPoint();
+                    ErrorRecorder.SetStartRecordError();
+                    this.ParseExpStmt();
+                }
+            }
         }
     }
     
@@ -372,42 +185,336 @@ public class Stmt extends Node {
         }
     }
     
-    private void ParseAssignOrExpStmt() {
-        SetBackPoint();
-        ErrorRecorder.SetStopRecordError();
-        Node node = new Exp();//随便建一个 关键在于移动readPoint指针
-        node.Parse();//先当作一个表达式来解析 看看是不是移动到=了
-        if (GetCurrentTokenType().equals(TokenType.ASSIGN)) {
-            this.stmtType = StmtType.AssignStmt;
-            //LVal '=' Exp ';'
-            GoToBackPoint();
-            ErrorRecorder.SetStartRecordError();
-            AddNode(new LVal());
-            AddNode(new TokenNode());//=
+    private void ParseExpStmt() {
+        this.stmtType = StmtType.ExpStmt;
+        if (IsExpStmt()) {
             AddNode(new Exp());
-            if (GetCurrentTokenType().equals(TokenType.SEMICN)) {
-                AddNode(new TokenNode());//;
-            } else {
-                AddMissSemicnError();
+        }
+        if (GetCurrentTokenType().equals(TokenType.SEMICN)) {
+            AddNode(new TokenNode());
+        } else {
+            AddMissSemicnError();
+        }
+    }
+    
+    private void AssignStmt() {
+        this.stmtType = StmtType.AssignStmt;
+        AddNode(new LVal());
+        AddNode(new TokenNode());
+        AddNode(new Exp());
+        if (GetCurrentTokenType().equals(TokenType.SEMICN)) {
+            AddNode(new TokenNode());
+        } else {
+            AddMissSemicnError();
+        }
+    }
+    
+    @Override
+    public void Visit() {
+        if (stmtType == StmtType.AssignStmt) {
+            LVal lval = (LVal) components.get(0);
+            Exp exp = (Exp) components.get(2);
+            lval.Visit();
+            exp.Visit();
+            Symbol symbol = SymbolManger.GetSymbol(
+                lval.GetIdent().GetTokenString()
+            );
+            if (symbol == null) {
+                return;
+            }
+            SymbolType lvaltype = symbol.GetSymbolType();
+            String exptype = exp.GetExpType();
+            int line = lval.GetIdent().GetTokenLine();
+            if (lvaltype.IsConst()) {
+                ErrorRecorder.AddError(new Error(
+                    ErrorType.CHANGE_CONST_VALUE,
+                    line
+                ));
+            } else if ("VOID_FUNC".equals(exptype) ||
+                (!lval.GetExpType().equals(exptype) && !"ERROR".equals(exptype))) {
+                ErrorRecorder.AddError(new Error(
+                    ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
+                    line
+                ));
+            }
+        } else if (stmtType == StmtType.ExpStmt) {
+            if (!components.isEmpty() && components.get(0) instanceof Exp exp) {
+                exp.Visit();
+                exp.GetExpType();//目的是检查是否存在类型不匹配的问题
+            }
+        } else if (stmtType == StmtType.BlockStmt) {
+            SymbolManger.CreateSonSymbolTable();
+            for (Node component : components) {
+                component.Visit();
+            }
+            SymbolManger.GoToFatherTable();
+        } else if (stmtType == StmtType.IfStmt) {
+            for (Node component : components) {
+                component.Visit();
+            }
+            //Cond必须是int类型
+            CheckConditionType(
+                (Cond) components.get(2),
+                ((TokenNode) components.get(0)).GetTokenLine()
+            );
+        } else if (stmtType == StmtType.WhileStmt) {
+            SymbolManger.EnterWhileBlock();
+            for (Node component : components) {
+                component.Visit();
+            }
+            CheckConditionType(
+                (Cond) components.get(2),
+                ((TokenNode) components.get(0)).GetTokenLine()
+            );
+            SymbolManger.LeaveWhileBlock();
+        } else if (stmtType == StmtType.SwitchStmt) {
+            SymbolManger.EnterSwitchBlock();
+            String switchType = ((Exp) components.get(2)).GetExpType();
+            for (Node component : components) {
+                if (component instanceof CaseStmt caseStmt) {
+                    if (caseStmt.GetTypeString().equals("case")) {
+                        //switch 是 INT，case 必须是 INT
+                        //switch 是 CHAR，case 必须是 CHAR
+                        //switch 是 ERROR，不重复报告 e
+                        //switch 是数组或 VOID_FUNC，报告 e
+                        boolean switchIsBasic = "INT".equals(switchType) ||
+                            "CHAR".equals(switchType);
+                        boolean caseTypeMismatch = switchIsBasic &&
+                            (("INT".equals(switchType)) != caseStmt.NumberisInt());
+                        if ((!switchIsBasic && !"ERROR".equals(switchType)) ||
+                            caseTypeMismatch) {
+                            ErrorRecorder.AddError(new Error(
+                                ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
+                                caseStmt.GetLine()
+                            ));
+                        }
+                        int caseNumber = caseStmt.GetCaseNumber();
+                        if (caseNumberList.containsKey(caseNumber)) {
+                            ErrorRecorder.AddError(new Error(
+                                ErrorType.CASE_DEFAULT_REDEFINE, caseStmt.GetLine()
+                            ));
+                        } else {
+                            caseNumberList.put(caseNumber, caseStmt.GetLine());
+                        }
+                    } else {
+                        if (defaultCount == 1) {
+                            ErrorRecorder.AddError(new Error(
+                                ErrorType.CASE_DEFAULT_REDEFINE, caseStmt.GetLine()
+                            ));
+                        } else {
+                            defaultCount++;
+                        }
+                    }
+                    caseStmt.Visit();
+                } else {
+                    component.Visit();
+                }
+            }
+            SymbolManger.LeaveSwitchBlock();
+        } else if (stmtType == StmtType.BreakStmt) {
+            if (!SymbolManger.GetIsinWhile() && !SymbolManger.GetIsinSwitch()) {
+                TokenNode tokenNode = (TokenNode) components.get(0);//break
+                ErrorRecorder.AddError(new Error(
+                    ErrorType.BREAK_OR_CONTINUE_IN_NOT_LOOP,
+                    tokenNode.GetTokenLine()
+                ));
+            }
+        } else if (stmtType == StmtType.ContinueStmt) {
+            if (!SymbolManger.GetIsinWhile()) {
+                TokenNode tokenNode = (TokenNode) components.get(0);
+                ErrorRecorder.AddError(new Error(
+                    ErrorType.BREAK_OR_CONTINUE_IN_NOT_LOOP,
+                    tokenNode.GetTokenLine()
+                ));
+            }
+        } else if (stmtType == StmtType.ReturnStmt) {
+            for (Node component : components) {
+                component.Visit();
+            }
+            TokenNode returnToken = (TokenNode) components.get(0);
+            //return Exp;的情况
+            if (components.get(1) instanceof Exp returnExp) {
+                String functionType = SymbolManger.GetFuncType();//当前函数的返回类型
+                //return void报错
+                if (functionType.equals("void")) {
+                    ErrorRecorder.AddError(new Error(
+                        ErrorType.RETURN_NOT_MATCH,
+                        returnToken.GetTokenLine()
+                    ));
+                }  //return 不匹配报错
+                else {
+                    String expectedType = functionType.equals("int") ? "INT" : "CHAR";
+                    String actualType = returnExp.GetExpType();
+                    if (!expectedType.equals(actualType) && !"ERROR".equals(actualType)) {
+                        ErrorRecorder.AddError(new Error(
+                            ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
+                            returnToken.GetTokenLine()
+                        ));
+                    }
+                }
+            }
+            //return ;的情况
+            else if (!SymbolManger.GetFuncType().equals("void")) {
+                ErrorRecorder.AddError(new Error(
+                    ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
+                    returnToken.GetTokenLine()
+                ));
+            }
+        } else if (stmtType == StmtType.PrintStmt) {
+            String formatString = ((StringConst) (components.get(2))).GetTokenString();
+            ArrayList<String> typeList = new ArrayList<>();
+            for (int i = 0; i + 1 < formatString.length(); i++) {
+                if (formatString.charAt(i) == '%' && formatString.charAt(i + 1) == 'd') {
+                    typeList.add("INT");
+                    i++;
+                } else if (formatString.charAt(i) == '%' && formatString.charAt(i + 1) == 'c') {
+                    typeList.add("CHAR");
+                    i++;
+                } else if (formatString.charAt(i) == '%' && formatString.charAt(i + 1) == 's') {
+                    typeList.add("CHAR_ARRAY");
+                    i++;
+                }
+            }
+            
+            int realParameterCount = 0;
+            for (Node component : components) {
+                if (component instanceof Exp exp) {
+                    exp.Visit();
+                    String expType = exp.GetExpType();
+                    if (realParameterCount < typeList.size() &&
+                        !"ERROR".equals(expType) &&
+                        !expType.equals(typeList.get(realParameterCount))) {
+                        TokenNode printToken = (TokenNode) components.get(0);
+                        ErrorRecorder.AddError(new Error(
+                            ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
+                            printToken.GetTokenLine()
+                        ));
+                    }
+                    realParameterCount++;
+                }
+            }
+            if (realParameterCount != typeList.size()) {
+                TokenNode printToken = (TokenNode) components.get(0);
+                ErrorRecorder.AddError(new Error(
+                    ErrorType.PRINTF_NOT_MATCH,
+                    printToken.GetTokenLine()
+                ));
             }
         } else {
-            this.stmtType = StmtType.ExpStmt;
-            //Exp ';'
-            GoToBackPoint();
-            ErrorRecorder.SetStartRecordError();
-            AddNode(new Exp());
-            if (GetCurrentTokenType().equals(TokenType.SEMICN)) {
-                AddNode(new TokenNode());//;
-            } else {
-                AddMissSemicnError();
+            for (Node component : components) {
+                component.Visit();
             }
+        }
+    }
+    
+    private void CheckConditionType(Cond cond, int line) {
+        String conditionType = cond.GetExpType();
+        if (!"INT".equals(conditionType) && !"ERROR".equals(conditionType)) {
+            ErrorRecorder.AddError(new Error(
+                ErrorType.FUNC_PARAM_TYPE_NOT_MATCH,
+                line
+            ));
         }
     }
     
     public StmtType GetStmtType() {
         return this.stmtType;
     }
-    
+
+    // ===== VisitorStmt 用的 getter =====
+
+    public Block GetBlockStmtBlock() {
+        return (Block) this.components.get(0);
+    }
+
+    public Cond GetIfStmtCond() {
+        return (Cond) this.components.get(2);
+    }
+
+    public Stmt GetIfStmtIfStmt() {
+        return (Stmt) this.components.get(4);
+    }
+
+    public boolean IfStmtHaveElse() {
+        return this.components.size() > 5;
+    }
+
+    public Stmt GetIfStmtElseStmt() {
+        return (Stmt) this.components.get(6);
+    }
+
+    public Cond GetWhileStmtCond() {
+        return (Cond) this.components.get(2);
+    }
+
+    public Stmt GetWhileStmtStmt() {
+        return (Stmt) this.components.get(4);
+    }
+
+    public Exp GetSwitchStmtExp() {
+        return (Exp) this.components.get(2);
+    }
+
+    public ArrayList<CaseStmt> GetCaseList() {
+        ArrayList<CaseStmt> caseList = new ArrayList<>();
+        for (Node component : this.components) {
+            if (component instanceof CaseStmt caseStmt && caseStmt.GetTypeString().equals("case")) {
+                caseList.add(caseStmt);
+            }
+        }
+        return caseList;
+    }
+
+    public CaseStmt GetDefaultStmt() {
+        for (Node component : this.components) {
+            if (component instanceof CaseStmt caseStmt && caseStmt.GetTypeString().equals("default")) {
+                return caseStmt;
+            }
+        }
+        return null;
+    }
+
+    public boolean HaveDefault() {
+        return GetDefaultStmt() != null;
+    }
+
+    public LVal GetAssignStmtLVal() {
+        return (LVal) this.components.get(0);
+    }
+
+    public Exp GetAssignStmtExp() {
+        return (Exp) this.components.get(2);
+    }
+
+    public boolean ReturnStmtHaveExp() {
+        return this.components.get(1) instanceof Exp;
+    }
+
+    public Exp GetReturnStmtExp() {
+        return (Exp) this.components.get(1);
+    }
+
+    public boolean ExpStmtHaveExp() {
+        return this.components.get(0) instanceof Exp;
+    }
+
+    public Exp GetExpStmtExp() {
+        return (Exp) this.components.get(0);
+    }
+
+    public StringConst GetPrintStmtStringConst() {
+        return (StringConst) this.components.get(2);
+    }
+
+    public ArrayList<Exp> GetPrintStmtExpList() {
+        ArrayList<Exp> expList = new ArrayList<>();
+        for (Node component : this.components) {
+            if (component instanceof Exp exp) {
+                expList.add(exp);
+            }
+        }
+        return expList;
+    }
     
     public enum StmtType {
         BlockStmt,

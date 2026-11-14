@@ -1,3 +1,4 @@
+import error.ErrorRecorder;
 import frontend.FrontEnd;
 import midend.MidEnd;
 import utils.IOhandler;
@@ -11,9 +12,15 @@ public class Compiler {
         FrontEnd.GenerateTokenList();
         FrontEnd.GenerateAstTree();
         MidEnd.GenerateSymbolTable();
+        if (ErrorRecorder.HaveNoError()) {
+            MidEnd.GenerateIr();
+        }
         IOhandler.PrintTokenList();
         IOhandler.PrintAstTree();
         IOhandler.PrintSymbolTable();
         IOhandler.PrintErrorMessage();
+        if (ErrorRecorder.HaveNoError()) {
+            IOhandler.PrintLlvm();
+        }
     }
 }

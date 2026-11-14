@@ -5,6 +5,7 @@ import frontend.FrontEnd;
 import frontend.ast.Node;
 import frontend.lexer.Token;
 import midend.MidEnd;
+import midend.llvm.IrModule;
 import midend.symbol.SymbolTable;
 
 import java.io.FileInputStream;
@@ -23,7 +24,7 @@ public class IOhandler {
     private static FileOutputStream llvmOutputFile = null;
     private static FileOutputStream mipsOutputFile = null;
     private static FileOutputStream errorFile = null;
-    
+
     public static void setIO() throws IOException {
         input = new PushbackInputStream((new FileInputStream("testfile.txt")), 16);
         if (Setting.PRINT_LEXER) {
@@ -38,12 +39,15 @@ public class IOhandler {
         if (Setting.PRINT_ERROR) {
             IOhandler.errorFile = new FileOutputStream("error.txt");
         }
+        if (Setting.PRINT_LLVM) {
+            IOhandler.llvmOutputFile = new FileOutputStream("llvm_ir.txt");
+        }
     }
-    
+
     public static PushbackInputStream GetInput() {
         return input;
     }
-    
+
     public static void PrintTokenList() throws IOException {
         if (!Setting.PRINT_LEXER) {
             return;
@@ -54,7 +58,7 @@ public class IOhandler {
             lexerOutputFile.write(string.getBytes());
         }
     }
-    
+
     public static void PrintAstTree() throws IOException {
         if (!Setting.PRINT_PARSER) {
             return;
@@ -62,7 +66,7 @@ public class IOhandler {
         Node astTree = FrontEnd.GetAstTree();
         parserOutputFile.write(astTree.toString().getBytes());
     }
-    
+
     public static void PrintSymbolTable() throws IOException {
         if (!Setting.PRINT_SYMBOL) {
             return;
@@ -70,27 +74,14 @@ public class IOhandler {
         SymbolTable rootSymbolTable = MidEnd.GetrootSymbolTable();
         symbolOutputFile.write(rootSymbolTable.toString().getBytes());
     }
-    
-    /*public static void PrintLlvmInit() throws IOException {
-        IrModule irModule = MidEnd.GetIrModule();
-        llvmInitOutputFile.write(irModule.toString().getBytes());
-    }
-    
-    public static void PrintLlvmPhi() throws IOException {
-        IrModule irModule = MidEnd.GetIrModule();
-        llvmPhiOutputFile.write(irModule.toString().getBytes());
-    }
-    
+
     public static void PrintLlvm() throws IOException {
+        if (!Setting.PRINT_LLVM) {
+            return;
+        }
         IrModule irModule = MidEnd.GetIrModule();
         llvmOutputFile.write(irModule.toString().getBytes());
     }
-    
-    public static void PrintMips() throws IOException {
-        MipsModule mipsModule = BackEnd.GetMipsModule();
-        mipsOutputFile.write(mipsModule.toString().getBytes());
-    }
-    */
     public static void PrintErrorMessage() throws IOException {
         if (!Setting.PRINT_ERROR) {
             return;
@@ -101,4 +92,3 @@ public class IOhandler {
         }
     }
 }
-

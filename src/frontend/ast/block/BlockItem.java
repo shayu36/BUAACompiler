@@ -20,15 +20,28 @@ public class BlockItem extends Node {
             GetCurrentTokenType().equals(TokenType.CHARTK) ||
             GetCurrentTokenType().equals(TokenType.STATICTK)) {
             AddNode(new Decl());
-        } else{
+        } else {
             AddNode(new Stmt());
         }
     }
     
-    public boolean IsReturn(){
-        if(components.get(0) instanceof Stmt stmt){
+    public boolean IsReturnStmt() {
+        if (components.get(0) instanceof Stmt stmt) {
             return stmt.GetStmtType().equals(Stmt.StmtType.ReturnStmt);
         }
         return false;
     }
+    
+    public boolean IsDecl() {
+        return this.components.get(0) instanceof Decl;
+    }
+    
+    public Decl GetDecl() {
+        return (Decl) this.components.get(0);
+    }
+    
+    public Stmt GetStmt() {
+        return (Stmt) this.components.get(0);
+    }
+    
 }

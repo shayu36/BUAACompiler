@@ -3,6 +3,7 @@ package frontend.ast.exp.recursion;
 import frontend.ast.Node;
 import frontend.ast.SyntaxType;
 import frontend.ast.exp.ComputeExp;
+import frontend.ast.token.TokenNode;
 
 import java.util.ArrayList;
 
@@ -100,13 +101,59 @@ public abstract class RecursionNode extends ComputeExp {
         }
     }
     
-    @Override
     public void Compute() {
+        // 只有单节点
+        if (this.components.size() == 1) {
+            ComputeExp computeExp = (ComputeExp) this.components.get(0);
+            computeExp.Compute();
+            
+            this.isConst = computeExp.GetIsConst();
+            this.value = computeExp.GetValue();
+        }
+        // 多个节点进行计算
+        else {
+            ComputeExp nodeL = (ComputeExp) this.components.get(0);
+            ComputeExp nodeR = (ComputeExp) this.components.get(2);
+            TokenNode op = (TokenNode) this.components.get(1);
+            
+            // 进行递归计算
+            nodeL.Compute();
+            nodeR.Compute();
+            
+            this.isConst = nodeL.GetIsConst() & nodeR.GetIsConst();
+            if (this.isConst) {
+                //用的是下面的Compute
+                this.value = this.Compute(nodeL.GetValue(), nodeR.GetValue(), op.GetSimpleName());
+            }
+        }
     }
-
+    
+    protected int Compute(int valueL, int valueR, String op) {
+        return switch (op) {
+            case "+" -> valueL + valueR;
+            case "-" -> valueL - valueR;
+            case "*" -> valueL * valueR;
+            case "/" -> valueL / valueR;
+            case "%" -> valueL % valueR;
+            case ">" -> valueL > valueR ? 1 : 0;
+            case "<" -> valueL < valueR ? 1 : 0;
+            case ">=" -> valueL >= valueR ? 1 : 0;
+            case "<=" -> valueL <= valueR ? 1 : 0;
+            case "==" -> valueL == valueR ? 1 : 0;
+            case "!=" -> valueL != valueR ? 1 : 0;
+            case "&&" -> (valueL != 0 && valueR != 0) ? 1 : 0;
+            case "||" -> (valueL != 0 || valueR != 0) ? 1 : 0;
+            default -> throw new RuntimeException("invalid op");
+        };
+    }
+    
     @Override
     public String GetExpType() {
         return "ERROR";
+    }
+    
+    public ArrayList<Node> GetNodeList() {
+        return this.nodeList;
     }
     
     @FunctionalInterface

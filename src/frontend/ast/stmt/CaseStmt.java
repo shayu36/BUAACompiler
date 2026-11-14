@@ -6,6 +6,8 @@ import frontend.ast.token.TokenNode;
 import frontend.ast.value.Number;
 import frontend.lexer.TokenType;
 
+import java.util.ArrayList;
+
 public class CaseStmt extends Node {
     // CaseStmt -> 'case' Number ':' { Stmt } | 'default' ':' { Stmt }
     public CaseStmt() {
@@ -27,7 +29,6 @@ public class CaseStmt extends Node {
             // :
             AddNode(new TokenNode());
         }
-        // { Stmt } —— 直到下一个 case / default / } 为止
         while(!GetCurrentTokenType().equals(TokenType.CASETK) &&
             !GetCurrentTokenType().equals(TokenType.DEFAULTTK) &&
             !GetCurrentTokenType().equals(TokenType.RBRACE)){
@@ -48,5 +49,15 @@ public class CaseStmt extends Node {
     }
     public int GetLine() {
         return ((TokenNode) this.components.get(0)).GetTokenLine();
+    }
+
+    public ArrayList<Stmt> GetStmtList() {
+        ArrayList<Stmt> stmtList = new ArrayList<>();
+        for (Node component : this.components) {
+            if (component instanceof Stmt stmt) {
+                stmtList.add(stmt);
+            }
+        }
+        return stmtList;
     }
 }

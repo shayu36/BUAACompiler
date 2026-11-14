@@ -34,6 +34,25 @@ public class PrimaryExp extends ComputeExp {
     
     @Override
     public void Compute() {
+        // '(' Exp ')'
+        if (IsExpType()) {
+            ComputeExp exp = (ComputeExp) this.components.get(1);
+            exp.Compute();
+            this.isConst = exp.GetIsConst();
+            this.value = exp.GetValue();
+        }
+        // Number
+        else if (IsNumberType()) {
+            this.isConst = true;
+            this.value = GetNumber().GetCaseNumber();
+        }
+        // LVal
+        else {
+            ComputeExp lVal = (ComputeExp) this.components.get(0);
+            lVal.Compute();
+            this.isConst = lVal.GetIsConst();
+            this.value = lVal.GetValue();
+        }
     }
     
     @Override
@@ -45,5 +64,29 @@ public class PrimaryExp extends ComputeExp {
         } else {
             return ((Exp) (components.get(1))).GetExpType();
         }
+    }
+
+    public boolean IsExpType() {
+        return this.components.get(0) instanceof TokenNode;
+    }
+
+    public boolean IsLValType() {
+        return this.components.get(0) instanceof LVal;
+    }
+
+    public boolean IsNumberType() {
+        return this.components.get(0) instanceof Number;
+    }
+
+    public Exp GetExp() {
+        return (Exp) this.components.get(1);
+    }
+
+    public LVal GetLVal() {
+        return (LVal) this.components.get(0);
+    }
+
+    public Number GetNumber() {
+        return (Number) this.components.get(0);
     }
 }

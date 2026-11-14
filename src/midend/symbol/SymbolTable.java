@@ -13,6 +13,7 @@ public class SymbolTable {
     SymbolTable fatherTable;
     private int scopeId;//作用域序号
     private ArrayList<SymbolTable> sonTables;//子作用域
+    private int sonIndex;//游标：IR 阶段按序重入子作用域用
     
     SymbolTable(int scopeId, SymbolTable fatherTable) {
         this.scopeId = scopeId;
@@ -20,6 +21,7 @@ public class SymbolTable {
         this.sonTables = new ArrayList<>();
         this.symbolTable = new Hashtable<>();
         this.symbolList = new ArrayList<>();
+        this.sonIndex = -1;
     }
     
     public void addSymbol(Symbol symbol, int line) {
@@ -33,6 +35,10 @@ public class SymbolTable {
     
     public void addSonTable(SymbolTable sonSymbolTable) {
         this.sonTables.add(sonSymbolTable);
+    }
+
+    public SymbolTable GetNextSonTable() {
+        return this.sonTables.get(++sonIndex);
     }
     
     public SymbolTable getFatherTable() {

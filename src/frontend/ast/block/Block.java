@@ -5,6 +5,8 @@ import frontend.ast.SyntaxType;
 import frontend.ast.token.TokenNode;
 import frontend.lexer.TokenType;
 
+import java.util.ArrayList;
+
 public class Block extends Node {
     // Block -> '{' { BlockItem } '}'
     public Block() {
@@ -26,11 +28,21 @@ public class Block extends Node {
     public boolean LastIsNotReturnStmt(){
         if(components.size()==2) return true;
         BlockItem blockItem = (BlockItem)components.get(components.size()-2);
-        return !blockItem.IsReturn();
+        return !blockItem.IsReturnStmt();
     }
 
     public int GetLastLine() {
         TokenNode rightBrace = (TokenNode) components.get(components.size() - 1);
         return rightBrace.GetTokenLine();
+    }
+    
+    public ArrayList<BlockItem> GetBlockItemList() {
+        ArrayList<BlockItem> blockItemList = new ArrayList<>();
+        for (Node node : this.components) {
+            if (node instanceof BlockItem blockItem) {
+                blockItemList.add(blockItem);
+            }
+        }
+        return blockItemList;
     }
 }

@@ -47,4 +47,13 @@ public class MainFuncDef extends Node {
         }
         SymbolManger.LeaveFunc();
     }
+
+    public Block GetBlock() {
+        for (Node component : this.components) {
+            if (component instanceof Block block) {
+                return block;
+            }
+        }
+        return null;
+    }
 }
