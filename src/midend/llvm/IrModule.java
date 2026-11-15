@@ -5,6 +5,8 @@ import midend.llvm.value.IrFunction;
 import midend.llvm.value.IrGlobalValue;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -103,5 +105,15 @@ public class IrModule extends IrNode {
         }
 
         return builder.toString();
+    }
+
+    /******************** MIPS 后端 ********************/
+
+    public List<IrGlobalValue> GetGlobalValues() {
+        return Collections.unmodifiableList(this.globalValues);
+    }
+
+    public Collection<IrConstantString> GetStringConstants() {
+        return Collections.unmodifiableCollection(this.stringConstantMap.values());
     }
 }

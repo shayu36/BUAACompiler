@@ -21,6 +21,7 @@ public class Compiler {
         IOhandler.PrintErrorMessage();
         if (ErrorRecorder.HaveNoError()) {
             IOhandler.PrintLlvm();
+            IOhandler.PrintMips();
         }
     }
 }

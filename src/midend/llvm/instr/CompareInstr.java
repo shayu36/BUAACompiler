@@ -16,7 +16,7 @@ public class CompareInstr extends Instr {
         ULT,
         ULE
     }
-    CompareOp opName;
+    private final CompareOp opName;
     public CompareInstr(String op, IrValue value1, IrValue value2) {
         super(IrBaseType.INT1, InstrType.CMP);
         this.opName = GetStringToCompareOp(op);
@@ -39,6 +39,7 @@ public class CompareInstr extends Instr {
             default -> throw new RuntimeException("illegal compare op");
         };
     }
+
     @Override
     public boolean DefValue() {
         return true;
@@ -50,5 +51,11 @@ public class CompareInstr extends Instr {
         IrValue value2 = useValueList.get(1);
         return irName + " = icmp " + opName.toString().toLowerCase() + " " +
             value1.GetIrType() + " " + value1.GetIrName() + ", " + value2.GetIrName();
+    }
+
+    /******************** MIPS 后端 ********************/
+
+    public CompareOp GetCompareOp() {
+        return this.opName;
     }
 }

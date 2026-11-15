@@ -3,7 +3,6 @@ package frontend.ast.decl;
 import frontend.ast.Node;
 import frontend.ast.SyntaxType;
 import frontend.ast.exp.ConstExp;
-import frontend.ast.exp.Exp;
 import frontend.ast.token.Ident;
 import frontend.ast.token.TokenNode;
 import frontend.ast.value.InitVal;
@@ -52,34 +51,31 @@ public class VarDef extends Node {
     
     @Override
     public void Visit() {
-        Ident ident = (Ident) this.components.get(0);
+        Ident ident = this.GetIdent();
         String symbolName = ident.GetTokenString();
 
-        int dimension = 0;
         ArrayList<Integer> depthList = new ArrayList<>();
-        ArrayList<Integer> initValueList = null;
-        // 获取维度：判断是否有维度信息
         for (Node component : this.components) {
-            component.Visit();
             if (component instanceof ConstExp constExp) {
-                dimension++;
-                // 计算维度信息
+                constExp.Visit();
                 constExp.Compute();
                 depthList.add(constExp.GetValue());
-            } else if (component instanceof InitVal initVal) {
-                initValueList = initVal.GetInitValueList();
             }
         }
 
-        SymbolType symbolType = SymbolType.GetVarType(
-            this.varType,
-            dimension,
-            this.isStatic
-        );
-        int line = ident.GetTokenLine();
-        SymbolManger.AddSymbol(SymbolManger.IsGlobal() || this.isStatic ?
-            new ValueSymbol(symbolName, symbolType, dimension, depthList, initValueList) :
-            new ValueSymbol(symbolName, symbolType, dimension, depthList, null), line);
+        int dimension = depthList.size();
+        SymbolType symbolType = SymbolType.GetVarType(this.varType, dimension, this.isStatic);
+        ValueSymbol symbol = new ValueSymbol(symbolName, symbolType, dimension, depthList, null);
+        // 声明在自己的初始化表达式中可见。
+        SymbolManger.AddSymbol(symbol, ident.GetTokenLine());
+
+        InitVal initVal = this.GetInitVal();
+        if (initVal != null) {
+            initVal.Visit();
+            if (SymbolManger.IsGlobal() || this.isStatic) {
+                symbol.GetInitValueList().addAll(initVal.GetInitValueList());
+            }
+        }
     }
     
     public void setVarType(String varType) {

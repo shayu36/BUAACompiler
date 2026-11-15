@@ -136,24 +136,20 @@ public class VisitorStmt {
         IrBuilder.LoopStackPush(new IrLoop(null, null, followBlock));
         
         IrValue expValue = VisitorExp.VisitExp(stmt.GetSwitchStmtExp());
-        
-        CompareInstr compareInstr = new CompareInstr("==", expValue,
-            expValue.GetIrType().IsInt8Type() ?
-                new IrConstantChar(caseList.get(0).GetCaseNumber()) :
-                new IrConstantInt(caseList.get(0).GetCaseNumber()));
-        
-        new BranchInstr(compareInstr, bodys.get(0),
-            caseList.size() > 1 ? cmps.get(0) : (defaultBlock != null ? defaultBlock : followBlock));
-        
-        for (int i = 1; i < caseList.size(); i++) {
-            IrBuilder.SetCurrentBasicBlock(cmps.get(i - 1));
-            compareInstr = new CompareInstr("==", expValue,
+        IrBasicBlock noMatchBlock = defaultBlock != null ? defaultBlock : followBlock;
+        if (caseList.isEmpty()) {
+            new JumpInstr(noMatchBlock);
+        }
+        for (int i = 0; i < caseList.size(); i++) {
+            if (i > 0) {
+                IrBuilder.SetCurrentBasicBlock(cmps.get(i - 1));
+            }
+            CompareInstr compareInstr = new CompareInstr("==", expValue,
                 expValue.GetIrType().IsInt8Type() ?
                     new IrConstantChar(caseList.get(i).GetCaseNumber()) :
                     new IrConstantInt(caseList.get(i).GetCaseNumber()));
             new BranchInstr(compareInstr, bodys.get(i),
-                i < caseList.size() - 1 ? cmps.get(i) :
-                    (defaultBlock != null ? defaultBlock : followBlock));
+                i < caseList.size() - 1 ? cmps.get(i) : noMatchBlock);
         }
         // 填每个 case 体
         for (int i = 0; i < caseList.size(); i++) {
@@ -163,8 +159,7 @@ public class VisitorStmt {
             }
             // 体不以 terminator 收尾 → 显式 fall-through 到下一块
             if (!IrBuilder.GetCurrentBasicBlock().LastInstrIsTerminator()) {
-                new JumpInstr(i < caseList.size() - 1 ? bodys.get(i + 1) :
-                    (defaultBlock != null ? defaultBlock : followBlock));
+                new JumpInstr(i < caseList.size() - 1 ? bodys.get(i + 1) : noMatchBlock);
             }
         }
         // 填 default 体

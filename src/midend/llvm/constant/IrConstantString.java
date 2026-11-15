@@ -13,10 +13,6 @@ public class IrConstantString extends IrConstant {
         this.stringValue = stringValue;
     }
 
-    public String GetStringValue() {
-        return this.stringValue;
-    }
-
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -43,5 +39,11 @@ public class IrConstantString extends IrConstant {
             }
         }
         return length + 1;
+    }
+
+    /******************** MIPS 后端 ********************/
+
+    public String GetStringValue() {
+        return this.stringValue;
     }
 }

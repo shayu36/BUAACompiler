@@ -4,6 +4,8 @@ import midend.llvm.type.IrArrayType;
 import midend.llvm.type.IrType;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class IrConstantArray extends IrConstant {
     private final ArrayList<IrConstant> valueList;
@@ -14,10 +16,6 @@ public class IrConstantArray extends IrConstant {
         super(new IrArrayType(arraySize, elementType), irName);
         this.valueList = initValues == null ? new ArrayList<>() : new ArrayList<>(initValues);
         this.arraySize = arraySize;
-    }
-
-    public int GetArraySize() {
-        return this.arraySize;
     }
 
     @Override
@@ -42,5 +40,15 @@ public class IrConstantArray extends IrConstant {
         }
 
         return builder.toString();
+    }
+
+    /******************** MIPS 后端 ********************/
+
+    public int GetArraySize() {
+        return this.arraySize;
+    }
+
+    public List<IrConstant> GetValues() {
+        return Collections.unmodifiableList(this.valueList);
     }
 }

@@ -11,10 +11,15 @@ public class IrGlobalValue extends IrUser {
         super(valueType, name);
         this.globalValue = globalValue;
     }
-    
+
     @Override
     public String toString() {
         return this.irName + " = dso_local global " + this.globalValue;
     }
-    
+
+    /******************** MIPS 后端 ********************/
+
+    public IrConstant GetInitializer() {
+        return this.globalValue;
+    }
 }

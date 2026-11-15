@@ -3,7 +3,7 @@ package midend.llvm.instr;
 import midend.llvm.value.IrValue;
 
 public class AluInstr extends Instr {
-    String opName;
+    private final String opName;
 
     public AluInstr(String op, IrValue value1, IrValue value2) {
         super(value1.GetIrType(), InstrType.ALU);
@@ -36,5 +36,11 @@ public class AluInstr extends Instr {
         IrValue value2 = useValueList.get(1);
         return irName + " = " + opName + " " + value1.GetIrType() + " " +
             value1.GetIrName() + ", " + value2.GetIrName();
+    }
+
+    /******************** MIPS 后端 ********************/
+
+    public String GetOpName() {
+        return this.opName;
     }
 }

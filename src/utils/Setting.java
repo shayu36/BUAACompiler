@@ -6,4 +6,5 @@ public class Setting {
     public static final boolean PRINT_SYMBOL = true;
     public static final boolean PRINT_ERROR = true;
     public static final boolean PRINT_LLVM = true;
+    public static final boolean PRINT_MIPS = true;
 }

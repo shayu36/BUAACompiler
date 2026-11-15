@@ -1,4 +1,5 @@
 package utils;
+import backend.BackEnd;
 import error.Error;
 import error.ErrorRecorder;
 import frontend.FrontEnd;
@@ -12,6 +13,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PushbackInputStream;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 
 public class IOhandler {
@@ -22,11 +26,14 @@ public class IOhandler {
     private static FileOutputStream llvmInitOutputFile = null;
     private static FileOutputStream llvmPhiOutputFile = null;
     private static FileOutputStream llvmOutputFile = null;
-    private static FileOutputStream mipsOutputFile = null;
     private static FileOutputStream errorFile = null;
+    private static final Path MIPS_OUTPUT = Path.of("mips.txt");
 
     public static void setIO() throws IOException {
         input = new PushbackInputStream((new FileInputStream("testfile.txt")), 16);
+        if (Setting.PRINT_MIPS) {
+            Files.deleteIfExists(MIPS_OUTPUT);
+        }
         if (Setting.PRINT_LEXER) {
             IOhandler.lexerOutputFile = new FileOutputStream("lexer.txt");
         }
@@ -82,6 +89,14 @@ public class IOhandler {
         IrModule irModule = MidEnd.GetIrModule();
         llvmOutputFile.write(irModule.toString().getBytes());
     }
+
+    public static void PrintMips() throws IOException {
+        if (Setting.PRINT_MIPS) {
+            Files.writeString(MIPS_OUTPUT, BackEnd.GenerateMips(MidEnd.GetIrModule()),
+                StandardCharsets.UTF_8);
+        }
+    }
+
     public static void PrintErrorMessage() throws IOException {
         if (!Setting.PRINT_ERROR) {
             return;
