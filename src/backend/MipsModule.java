@@ -3,12 +3,14 @@ package backend;
 final class MipsModule {
     final StringBuilder data = new StringBuilder(".data\n");
     final StringBuilder text = new StringBuilder(".text\n");
+    int callCount;
 
     void label(String name) {
         text.append(name).append(":\n");
     }
 
     void instruction(String operation, String... operands) {
+        if (operation.equals("jal") || operation.equals("jalr")) callCount++;
         text.append("    ").append(operation);
         if (operands.length > 0) {
             text.append(' ').append(String.join(", ", operands));

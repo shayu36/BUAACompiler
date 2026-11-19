@@ -1,0 +1,5971 @@
+{
+  "stage": "multiply_and_leaf_arguments_after_d83bc231",
+  "accepted_baseline": "D:\\mycomplier\\tests\\.accepted-d83bc231\\src",
+  "production_changes": [
+    "backend/BackEnd.java",
+    "backend/ConstantArithmetic.java",
+    "optimize/RegisterAllocator.java"
+  ],
+  "public_totals": {
+    "baseline": 3880170.0,
+    "candidate": 3878427.0
+  },
+  "public_reduction_percent": 0.04492071223684002,
+  "public_improved": 20,
+  "improved_cases": 95,
+  "regressions": 0,
+  "compatibility": {
+    "passed": true,
+    "off_executions": 44,
+    "off_byte_comparisons": 22,
+    "delayed_executions": 91,
+    "nontermination": 4
+  },
+  "large_frame": [
+    {
+      "case": "leaf_large_frame",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 374.0,
+      "memory": 26,
+      "assembly_sha256": "ca8344df602369112aeb02186142886d7ee28a20632caaea9fba926c90931fb5"
+    },
+    {
+      "case": "leaf_large_frame",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 338.0,
+      "memory": 22,
+      "assembly_sha256": "a586a13d599e56c163b4bf1b8086e0a5756660e1cb2735a9b8e0c77566e6d860"
+    },
+    {
+      "case": "leaf_large_frame",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 374.0,
+      "memory": 26,
+      "assembly_sha256": "ca8344df602369112aeb02186142886d7ee28a20632caaea9fba926c90931fb5"
+    }
+  ],
+  "package": {
+    "path": "D:\\mycomplier\\src\\backend.zip",
+    "sha256": "68690bce9106f7f70655435eb855c31b486f6bef404973093543bfcda2a513a2",
+    "source_files": 138,
+    "entries": 139,
+    "ordinary_entry": "Compiler",
+    "records": [
+      {
+        "case": "count_only",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "constant_sum",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "division_loop",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "call_loop",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "recursion",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "public_convolution",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "memory_disjoint_elements",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "memory_dynamic_index",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "memory_call_clobber",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "memory_byte",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "memory_branch",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "memory_alias_distinct",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "memory_alias_same",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "divrem_reuse",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "divrem_negative",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "divrem_changed_dividend",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "divrem_changed_divisor",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "divrem_branch",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "copy_loop_control",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "copy_live_old_value",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "copy_branch_update",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "branch_relational_loop",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "branch_signed_pairs",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "branch_constant_boundaries",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "branch_nested_control",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_return_loop",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_stack_arguments",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_syscall_output",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_nested_calls",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "peephole_byte_checksum",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "peephole_spill_square",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "peephole_shared_constant",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "small_multiply_byte",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "small_multiply_boundaries",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "small_multiply_loop",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "small_multiply_negative",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_argument_zero_trip",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_argument_loop",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_argument_stack",
+        "passed": true,
+        "assembly_identical": true
+      },
+      {
+        "case": "leaf_argument_pointer",
+        "passed": true,
+        "assembly_identical": true
+      }
+    ]
+  },
+  "source": "D:\\mycomplier\\src",
+  "baseline": "D:\\mycomplier\\tests\\.accepted-d83bc231\\src",
+  "source_hashes": {
+    "backend/BackEnd.java": "f1ede18168523702def99060d8103f7ac448ae84869408e16f3c689262c2fa27",
+    "backend/BlockLayout.java": "dd7fc168b5700d92fc9c3265fd8e79a39814daa5a28d9ad0617988af62b986fa",
+    "backend/BranchSimplify.java": "af742b5263015b20f35af65e2b109eec92c2d7d166dfdb6ecbbbb92a34fe28c3",
+    "backend/ConstantArithmetic.java": "28fb61ffeae767feea6f84ed40ffe1a08555ef0c16c61d2507bb939c8a2c91bd",
+    "backend/LocalPeephole.java": "1254e74b9289eb3d335ef28cce672458415c648f758fb1042ae36cc6e743cfad",
+    "backend/MipsFrame.java": "3f5e6e56ea646054ee7ea72a3cc991dd5b089afad57a980be34c100786514e7a",
+    "backend/MipsModule.java": "e3fd0cbe6572e34338825871d5788e94d381ea2aa997eb81818eec4cff68a6e3",
+    "backend/MipsRuntime.java": "d8cf17231f42f7a0550577f0df4ddea97e796e89be19a4e15f25773bdfa8267f",
+    "backend/RecursiveMemoization.java": "9accd339ecb2a9f2283886eb08757a04790daeb989cab3dfd9f2f3d74675c591",
+    "Compiler.java": "630a43a6692ff67bcad8e4351164736562c8c3e83a6f24ab182c1a3258131115",
+    "error/Error.java": "d6682fdb9a86aa8a8b6d359b19ba934daa6a9520bb61e539b353a02fe0aa043d",
+    "error/ErrorRecorder.java": "8562d1350d4f5f07cbfe7504b29c8bab881e9514d9c11012a9c69934ee79159b",
+    "error/ErrorType.java": "009089fd72cee7b8cd594f5ae8683bcc4255e506fcd4e57d643e989f8021fd53",
+    "frontend/ast/block/Block.java": "e2b37ae2d2020798d5567d9436bfc8e957889308799c8ddac8b654986e2701bf",
+    "frontend/ast/block/BlockItem.java": "02b2366bad594fd5fb62a7e8f48bf1ca6a5c50e2821ad497aef73a3f51c777a5",
+    "frontend/ast/CompUnit.java": "e77e47c5e0967540d7bd78bd5dee3ed0f14edd1af768e61e699b65634cbf7681",
+    "frontend/ast/decl/ConstDecl.java": "cb78513742a5e229cb9c8775d8e98ef8db34278b0b84bf5c0519d1c9d4fc5a63",
+    "frontend/ast/decl/ConstDef.java": "c1662d2d5247474d8b54e88081c1611cdaee879df548d09c64815925f6b6f451",
+    "frontend/ast/decl/Decl.java": "ae033e24d3ed22f7c32da0852412e9476bcbac19e3ede8434122eb382ff2331d",
+    "frontend/ast/decl/VarDecl.java": "d193cf9afc1247422edb365e1dffa76ae4f8890a859643cf148656723ef964ef",
+    "frontend/ast/decl/VarDef.java": "7171531ac53b347f80a65e97b692d7d24bcc951c9fbef0f5c6b522aa6b3b1e8f",
+    "frontend/ast/exp/ComputeExp.java": "e1284e253b5cd86d9a48cffe0ffdfa7b3d5df8755f7595d613a5e3dfd577cb5b",
+    "frontend/ast/exp/Cond.java": "f1ad066a56ac7a6da05d89ba4e89562f194c7afd762f9d2cc562a83131e08238",
+    "frontend/ast/exp/ConstExp.java": "3fadea3079e7014aeed4b678beab50870a7fb896a25309785ff4ae6035a873e0",
+    "frontend/ast/exp/Exp.java": "a8af65dcbd31e79e374be351ecc89f56bae689c4ec4654e8af402cf54f258fc1",
+    "frontend/ast/exp/LVal.java": "db4ff92b6d2da6ba471a4700b511143a21c0f020b261616d9ba99ab5396a0ca1",
+    "frontend/ast/exp/PrimaryExp.java": "02911cfe1b3d7a23ba6e9565a3c2d8284e95eeb70189d33b296db64c4f5882f1",
+    "frontend/ast/exp/recursion/AddExp.java": "df174642882c70893b350396bcdcafd2e88cbde995e7fdbfbe6c79a94498a139",
+    "frontend/ast/exp/recursion/EqExp.java": "5cd8c4da87aac9bb57e6a980a4bba3dce6c1197c0a405b74b16b044f448c7051",
+    "frontend/ast/exp/recursion/LAndExp.java": "42dd72f0be4ab5a9fcb1da8e75283615322ca20fabf3f088fe1d8e9335fab241",
+    "frontend/ast/exp/recursion/LOrExp.java": "c42db2f039023d441c1d99b2dc013bcb0f5f17ad3fffec190d68efc733b0baa9",
+    "frontend/ast/exp/recursion/MulExp.java": "0da0b5170bfd84c01e453085db82648713655f15a31896f2eb1e7f1950b4807a",
+    "frontend/ast/exp/recursion/RecursionNode.java": "8b3cc921e04161aa2557ce72f73e21b5dd4b5436fac45ffd7f8f883a24b20b16",
+    "frontend/ast/exp/recursion/RelExp.java": "d74df91dd5c5d60311faf89b77546c8f8695557b6633e7a2180f24ff081f43fc",
+    "frontend/ast/exp/UnaryExp.java": "0d500fa049ffe13bfda9a168770e30c3b09219e143a3d37e56073033d583c667",
+    "frontend/ast/exp/UnaryOp.java": "5b6f78370668e2789e820b42d19dd8a9717007d6816a754b5ef0ca5590a7e539",
+    "frontend/ast/func/FuncDef.java": "1f2cb60a6686be956460c32b0323a9c82e363852b032eef13f094cf04a084cd0",
+    "frontend/ast/func/FuncFormalParam.java": "8f725e66c927cf7ee7512b831050b7c88e188d23b5f23829c88e66a2f249245c",
+    "frontend/ast/func/FuncFormalParamS.java": "d0810160a39c8012e3c9acc71cd9758cc1060b34846666575dfca3299a411bc6",
+    "frontend/ast/func/FuncRealParamS.java": "ce5f77c654d749107d48c1fa9f26b457b48bf1290e309169e93021b32a9d7a90",
+    "frontend/ast/func/MainFuncDef.java": "482a5a9e7c0d3e2cbe36e1646298b7436468a8f6db018ea80168e3a6f40cc242",
+    "frontend/ast/Node.java": "62a7c1eae882a77ed02d329152d62d4ce4f7d0af03e8c42c277138ce3ad409da",
+    "frontend/ast/stmt/CaseStmt.java": "dae3293e487933a5de642a2e9641b6b2a6b4bf26189f1000769441bd51254428",
+    "frontend/ast/stmt/Stmt.java": "f12ad01fb101f1335aa1ed5a35a39f8c959bbf438c2fcba8b324059a9afa4381",
+    "frontend/ast/SyntaxType.java": "cc1a7eb7c0ef2b54e88c6f9124196980ce2e333f9226659b8073efca21e4d214",
+    "frontend/ast/token/BasicTokenNode.java": "dfc313d50d3da26bd7c3b3770223deb4838ec847544473d2e61e48782c7ef906",
+    "frontend/ast/token/BType.java": "ff226fd79b732aeeeb41b3457dbbf0d529aa73dd47a2a1267002f7d7ffb44921",
+    "frontend/ast/token/CharConst.java": "040cf4ebecbe22632f04d9252fa9a43a5cf466be774a21a7fc3db3522ff76e32",
+    "frontend/ast/token/FuncType.java": "41bb815817c912653b7fb6ea20f3c8b73650189d558256906b20311462f66b03",
+    "frontend/ast/token/Ident.java": "6891a94b81ee8b0068928702d6ee625198029602feee08af5f4752605dd72eec",
+    "frontend/ast/token/IntConst.java": "25c9b40356c8eb751a931fea3274afb9064747f6db0e03dcb69c9d8c4fbbad04",
+    "frontend/ast/token/StringConst.java": "9af6493e0a9dee3fb8c6eec6e083289d532240b24e10f2d02b5bcaa0fce14e95",
+    "frontend/ast/token/TokenNode.java": "f5a5f12f337cb6a55ae9f53c447e16248d6cac0ac3b0ffc99ee1ce20af9f3e75",
+    "frontend/ast/value/ConstInitVal.java": "174fb681756026a599df1eab165f001f05fa1d115781412b1bfcbc9c3b7d787c",
+    "frontend/ast/value/InitVal.java": "b8745044f6ef6574c7c9fe857e3a7d0ea4e41e8316580fc460389d7e746f8285",
+    "frontend/ast/value/Number.java": "a77091dc369b72002d043c40e75d60289b0b950d4597db165bda14e60a733658",
+    "frontend/FrontEnd.java": "b725dd99843bc6707724df2c897fee9ba02af86f1fa0dd233165c088b5f1fec2",
+    "frontend/lexer/Lexer.java": "20135dc99d1668a30a2805d3e97b77802e6f5e39aaa461a8dee238cbc2da3df4",
+    "frontend/lexer/Token.java": "f460e21bfd11b08ec01630f071ea5afca8e0ef140b2175bde483ad12a634e3ca",
+    "frontend/lexer/TokenStream.java": "91e6cc96a904e8e3f813d2ccc26e3c53a36b6ce59d949a86390a3ca31d61d7b8",
+    "frontend/lexer/TokenType.java": "a0f42ec24079099788602bcc3e0962c1e524445130100980969094b96e80aac5",
+    "frontend/parser/Parser.java": "a07f11257838a8c4d758a24a1ab536c322bc1a1f727ef834e76ee00beb3047a6",
+    "midend/llvm/constant/IrConstant.java": "2c6a1f6efb05002c58c10a8f354003b29364107fec8177a06265d6c1ee35e821",
+    "midend/llvm/constant/IrConstantArray.java": "ee067925996cbe49dac05135773967fff97486128f1ea4fe25c52c1a08cc6dd8",
+    "midend/llvm/constant/IrConstantChar.java": "ca7b9c0501ad9be1ebbe7f82a879b19f59eefc0e0fde5e77db4b4cd1d2535d31",
+    "midend/llvm/constant/IrConstantInt.java": "1eeaab9248bc2516436bce064b96b7b5a5a16fb9efeb7f2ade71a2549a64ec10",
+    "midend/llvm/constant/IrConstantString.java": "24d061a2048aa54ebdbb4c985cf41f1afd145edbf219bb5d67827e2e3834b476",
+    "midend/llvm/instr/AllocateInstr.java": "8e5e62a7033827128282508fe71999538071d1f4b92feaebce1d519bbc85b52d",
+    "midend/llvm/instr/AluInstr.java": "c95b60e299885a34673c0be838d777a020fbd4803652c931f6e9637e95f9fea4",
+    "midend/llvm/instr/BranchInstr.java": "e2a28c5ef5514be9ef76ecbf281e20fa89fb8e4cf97236477ef548504a3b470c",
+    "midend/llvm/instr/CallInstr.java": "03d27267d73223e2e33101fa7df08d62704e5d78b9c5c44629c66c798eb71fc5",
+    "midend/llvm/instr/CompareInstr.java": "5a9a010a34dae1ce190a9870656fcfc541fe8255b34fa9c9883d4896a6332235",
+    "midend/llvm/instr/ExtendInstr.java": "d5f23f27316fc4800000ead13099935d24a766fe8348f4760658ff312696b150",
+    "midend/llvm/instr/GepInstr.java": "c16015dd5002b76e9c8c5cc39744c53fbdc561f6fe4fe0d35eeea90fed143899",
+    "midend/llvm/instr/Instr.java": "1368afcbe5b0142756b9a4c422ee54cb901cf9e50baa18ed476367694795642f",
+    "midend/llvm/instr/InstrType.java": "998062788a59e609714596f039c56ca6503ab5c109485f182925dc059f399242",
+    "midend/llvm/instr/io/GetCharInstr.java": "82dee5d29be52264c8dbe63137d9abc762104b883a1bcf034dd2f7b4573e1c41",
+    "midend/llvm/instr/io/GetIntInstr.java": "ad54ed7e3cc89535f1859e80fb666d658e99a981d60ac0677345aee72cb89a67",
+    "midend/llvm/instr/io/GetStringInstr.java": "5ae0e3b9deabe3e27cc390d43cd466fe65ffcff209368541191c085f035eddd4",
+    "midend/llvm/instr/io/IoInstr.java": "5eab430dc735cc85e942ae01088a61caec2a6407516377f178e0bf1153aec39f",
+    "midend/llvm/instr/io/PrintCharInstr.java": "eda1d979a8c9252c789001f7b5575ff48845a1ed98f5d242d2604db75e56beb7",
+    "midend/llvm/instr/io/PrintIntInstr.java": "423ceb947a8bf25e21d10a458f17a9c9974ece32808dde044602ff3496e79e0c",
+    "midend/llvm/instr/io/PrintStrInstr.java": "86b92820700c597c2a2f2ed30c1e47b6fcbbfcaa8b5e0f6ee1976a54925e9ee6",
+    "midend/llvm/instr/JumpInstr.java": "4f3b98cbba46fa02a98683ec576d70e40995ea6f427a02899fd90134be25f99e",
+    "midend/llvm/instr/LoadInstr.java": "ac506d5cb600c8b2d4ddfc24e29baed302ebd321d5d551984690993cd3dd1e20",
+    "midend/llvm/instr/ReturnInstr.java": "327252720b67d7e7c64f1d985b32217f40f087c14b076eb32e928dd175072f86",
+    "midend/llvm/instr/StoreInstr.java": "7814554cc7314fc5bd68372258a75d3ddb5368a1cd11de8c7ac1a969ee55d5c3",
+    "midend/llvm/instr/TruncInstr.java": "554e374af04406a49f9cca98fa092972363237ace402bbe843d442b343dcabdb",
+    "midend/llvm/IrBuilder.java": "2de5f67222936e58cf80d0c60350350bae43d1309c6069b883cd94b7f524496f",
+    "midend/llvm/IrModule.java": "fbc4c3a79a7a2c6e6c53fa74ac900438432cfa7b39423bea2037552058351290",
+    "midend/llvm/IrNode.java": "7ce3c2bb9dfded6b641b77d2d31377b161136182e765f5319b9ce3c9cd6d4cf9",
+    "midend/llvm/type/IrArrayType.java": "56ed3f5da3aa768e736027483239d3ddc0aa603da637ed560ce457d6ecd629b9",
+    "midend/llvm/type/IrBaseType.java": "904612692dccdd5e45a269211330a6b478833ec5ace74500fc35b763a3a28fd1",
+    "midend/llvm/type/IrBasicBlockType.java": "3315f25d70ce8ccb407c0a8d7622b29858d7fc17afb9c9c4b0697afc7242731e",
+    "midend/llvm/type/IrFunctionType.java": "59198b993bc23f95f8e8ad82d274652efa762912d94ac9fe90e84ffb9d16b5d3",
+    "midend/llvm/type/IrPointerType.java": "1ed7b37b4305eef3e5a2dd4dd4c3c2ecdd079d9af47839146ead58078e3b725b",
+    "midend/llvm/type/IrType.java": "37f8c89ee771b8810dd07aed7863cf3fe4ab863a625ee04132e00c53a6e8f4ed",
+    "midend/llvm/use/IrUse.java": "5a498e0ad463ef4296bc37b015d099c2c82a5ca653be26780014e80635fcc4b6",
+    "midend/llvm/use/IrUser.java": "b22d1b365a375bb5e3c9cc77a8677e4c392716710b5cdfd33e8ea73793ae7b34",
+    "midend/llvm/value/IrBasicBlock.java": "d156fc803c67733532b62bfe22c6a2244a1f9ff00646fb41dbdf573744824ef0",
+    "midend/llvm/value/IrFunction.java": "5d9cd1e7a5e24b5abc24805508b31fdf189fe4f2d6b94c467daf8fe46905ed12",
+    "midend/llvm/value/IrGlobalValue.java": "97187d55cdbffe8820ed840f120c634289086d48b6eefd26e2b30a6731a2d992",
+    "midend/llvm/value/IrLoop.java": "89ac32557c01df5c17128a094d0e6b9d80021375a02207a68fba0addb761c429",
+    "midend/llvm/value/IrParameter.java": "56b0dc0ddb0d258f44eb32a3a3e50c6cbd75f8f5016aff3a7c0b2d9e804b3ddf",
+    "midend/llvm/value/IrValue.java": "5041ef5edaa516c27618e11bb431588716f426569664d5e8d743ac308a559d99",
+    "midend/MidEnd.java": "35309a02448d645324c4657cf6683058588cd42901e58562fe2a996ac9f6cf32",
+    "midend/symbol/FuncSymbol.java": "b69f6541a894badaed586af4bfefee0792262b936910c7ce592cb642e944696c",
+    "midend/symbol/Symbol.java": "a57d23917ec4488b37fc372b5471025814ab8389f98531d618566f473bc8c5ab",
+    "midend/symbol/SymbolManger.java": "e1c4b233ad5cf5ab1a4dc2597d170bf98726c740ebebe6b66b1691bec8328a30",
+    "midend/symbol/SymbolTable.java": "5e4503651d48e5aaa4bb7662dc17c6cc1ae8556f9c69e05d071f6cf240a4fc04",
+    "midend/symbol/SymbolType.java": "3f4a73877533f1b56bb4cbe510b2416ce71a1f7fae0e94688659119cd1805a30",
+    "midend/symbol/ValueSymbol.java": "44c8057f561864cd7fb1b7feaa3c4aa72cdc2780e571895b0fc3f5803cc6ebf0",
+    "midend/visit/Visitor.java": "d62029744e67cb35d2df9e4bcd0efb75f7a3f2af6cc20f2b21daf4c6bc416c0f",
+    "midend/visit/VisitorBlock.java": "0b3f692dfd7deef35075b9c225c2801abb2a2ad62930daf7a2a00cf77f018bc7",
+    "midend/visit/VisitorDecl.java": "f86fc2679883b72e220f018c5c3116316e92245dc3bf2294baa1707f820d7fc4",
+    "midend/visit/VisitorExp.java": "b5efdd10f8ac43b7dd7aeff18015620bff8801777fe69d6268a830ed331a1f5e",
+    "midend/visit/VisitorFuncDef.java": "890486a8c79fc532200f208154f23b73be6c675038b68870645b019c6aed88d7",
+    "midend/visit/VisitorLVal.java": "7cfd2db8fd7d1456048b51e1430b382dfc923df21b1d192f091c836a82101c30",
+    "midend/visit/VisitorStmt.java": "7786d2af6257fdd90a177b89f5cc69c82c94b6a9adfb6e2e8d0b21c59a6e9fb9",
+    "optimize/AffineLoops.java": "6b634e41d68473bec63bef9d5c412c8e485e17a3b68823ac4082da12d5d4193c",
+    "optimize/ConstantCallEvaluation.java": "d320b34db0c09a83bc860e937ca71cc4439103148ca19288b50cfc1aecddccd5",
+    "optimize/ControlFlow.java": "a83cc5f4a068cd64f545460010f65fd8d454c5020dce38921ed21e6f0feb6095",
+    "optimize/ControlFlowInline.java": "96384c5aa0a23e9b8d20c50822de99dd75771a9f7004eda9b9e837e273e988a7",
+    "optimize/DivisionRemainders.java": "997e5e21109a714646126f32827f64563468eec413d0fdc06d8ca8ff673a493b",
+    "optimize/FunctionEffects.java": "5ad6c01f3008590cc2db4ef70c458d378d7f48b5a333938823b244571b02e7f3",
+    "optimize/GlobalConstants.java": "aef0e2b4d79913c72a7de3730621f9b77c8429514b1fc399f6db7cf0aec42988",
+    "optimize/GlobalLocalization.java": "44f384228d59c187cef72d860f348179e3a876bc51c6feded22910425524a6aa",
+    "optimize/IrSupport.java": "6f78286896b31c40565733f7e6ec68072661a297337483c901b2540b90293932",
+    "optimize/LiveAnalysis.java": "7767c3551fa2e49786b5250d5180914cf59604b1eacdc4990f945a2fbb394cb5",
+    "optimize/LoopInvariantCalls.java": "721342d527d385774cb15f6b6600af54d620411a495cf8ea82ef2156f6bf87f3",
+    "optimize/MemoryForwarding.java": "c5681fa38b7450f86d65e792d247bae415c58e53db106b3f962926d3fb911a43",
+    "optimize/OptimizeManager.java": "115f91629c9edd23ece7f93c2d26822080e3aec4a2b0332b184f0e3aeea23b2b",
+    "optimize/RegisterAllocator.java": "906abf71164263f3cf8953bed6b039bdf0b3d31028d041ff7803c0bdf16f8181",
+    "optimize/ScalarGlobalCache.java": "0388dd6cc0ba07ca787a4f25794ad99ba32b3dc12b38fd4316ef7fcb729aac1a",
+    "optimize/SmallFunctionInline.java": "cfc365fa16414691eae03c29f092ebdb25f2ad2e4caeed828e862f4a90f78bf5",
+    "optimize/TailRecursion.java": "f05c8dce29b9f5da272f75b4c8eeb091d3ea7585c53c5d09ed4b6681c92826f1",
+    "utils/IOhandler.java": "b98383fdbe1dd8333faebbfa4bee83cf8717b4741216b1fa5b79b0543647cbcd",
+    "utils/Setting.java": "23eb221833223880ac1c80b82071c32efdee98ccfd5ebcb84b877cae5e01cdc8"
+  },
+  "records": [
+    {
+      "case": "constant",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "2f252b6a0d5fdae2e9fcaeb1f44f40c51fa2f199a95069a65e78c15e2b0457a9"
+    },
+    {
+      "case": "constant",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "2f252b6a0d5fdae2e9fcaeb1f44f40c51fa2f199a95069a65e78c15e2b0457a9"
+    },
+    {
+      "case": "constant",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "2f252b6a0d5fdae2e9fcaeb1f44f40c51fa2f199a95069a65e78c15e2b0457a9"
+    },
+    {
+      "case": "join_equal",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 120.5,
+      "memory": 8,
+      "assembly_sha256": "eaafda2bbda678a924ec9eebeb42708153c79a74770b006a1ac64396f6f90bf7"
+    },
+    {
+      "case": "join_equal",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 120.5,
+      "memory": 8,
+      "assembly_sha256": "eaafda2bbda678a924ec9eebeb42708153c79a74770b006a1ac64396f6f90bf7"
+    },
+    {
+      "case": "join_equal",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 120.5,
+      "memory": 8,
+      "assembly_sha256": "eaafda2bbda678a924ec9eebeb42708153c79a74770b006a1ac64396f6f90bf7"
+    },
+    {
+      "case": "join_different",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 126.5,
+      "memory": 8,
+      "assembly_sha256": "f8a420560fe098bc17adf31da417ab1ff2d35dbe49c915cc41541e7cf0e682ee"
+    },
+    {
+      "case": "join_different",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 126.5,
+      "memory": 8,
+      "assembly_sha256": "f8a420560fe098bc17adf31da417ab1ff2d35dbe49c915cc41541e7cf0e682ee"
+    },
+    {
+      "case": "join_different",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 126.5,
+      "memory": 8,
+      "assembly_sha256": "f8a420560fe098bc17adf31da417ab1ff2d35dbe49c915cc41541e7cf0e682ee"
+    },
+    {
+      "case": "loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 479.0,
+      "memory": 10,
+      "assembly_sha256": "c395ff566c3f5595b2b47d58a5640ab983e35fd12c017cc82bb64d3d0f2a81ac"
+    },
+    {
+      "case": "loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 479.0,
+      "memory": 10,
+      "assembly_sha256": "c395ff566c3f5595b2b47d58a5640ab983e35fd12c017cc82bb64d3d0f2a81ac"
+    },
+    {
+      "case": "loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 479.0,
+      "memory": 10,
+      "assembly_sha256": "c395ff566c3f5595b2b47d58a5640ab983e35fd12c017cc82bb64d3d0f2a81ac"
+    },
+    {
+      "case": "zero_loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 101.5,
+      "memory": 6,
+      "assembly_sha256": "e3402aa5405c88bc2941449f2c9b63cd39c82279d699b3aabcbe99057012d7a8"
+    },
+    {
+      "case": "zero_loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 101.5,
+      "memory": 6,
+      "assembly_sha256": "e3402aa5405c88bc2941449f2c9b63cd39c82279d699b3aabcbe99057012d7a8"
+    },
+    {
+      "case": "zero_loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 101.5,
+      "memory": 6,
+      "assembly_sha256": "e3402aa5405c88bc2941449f2c9b63cd39c82279d699b3aabcbe99057012d7a8"
+    },
+    {
+      "case": "alias",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 31.0,
+      "memory": 4,
+      "assembly_sha256": "5827b84011799253bebd96b1ef63853130694435f536af74365c0e0a3a979763"
+    },
+    {
+      "case": "alias",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 31.0,
+      "memory": 4,
+      "assembly_sha256": "5827b84011799253bebd96b1ef63853130694435f536af74365c0e0a3a979763"
+    },
+    {
+      "case": "alias",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 31.0,
+      "memory": 4,
+      "assembly_sha256": "5827b84011799253bebd96b1ef63853130694435f536af74365c0e0a3a979763"
+    },
+    {
+      "case": "global_call",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 29.0,
+      "memory": 2,
+      "assembly_sha256": "2a7a131b4569ce36c41e452977a2c7b73766c304944f4e429452f351bf0f4890"
+    },
+    {
+      "case": "global_call",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 29.0,
+      "memory": 2,
+      "assembly_sha256": "2a7a131b4569ce36c41e452977a2c7b73766c304944f4e429452f351bf0f4890"
+    },
+    {
+      "case": "global_call",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 29.0,
+      "memory": 2,
+      "assembly_sha256": "2a7a131b4569ce36c41e452977a2c7b73766c304944f4e429452f351bf0f4890"
+    },
+    {
+      "case": "recursion",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 1452.0,
+      "memory": 284,
+      "assembly_sha256": "fa83f237fc11a0e5527f76d5e83ab9f2ddffbb29829d2cb72b0cee87ab5474a4"
+    },
+    {
+      "case": "recursion",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 1452.0,
+      "memory": 284,
+      "assembly_sha256": "fa83f237fc11a0e5527f76d5e83ab9f2ddffbb29829d2cb72b0cee87ab5474a4"
+    },
+    {
+      "case": "recursion",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 1452.0,
+      "memory": 284,
+      "assembly_sha256": "fa83f237fc11a0e5527f76d5e83ab9f2ddffbb29829d2cb72b0cee87ab5474a4"
+    },
+    {
+      "case": "dead_branch",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "b366dc0bffd319b27f0e790ddf4751530f7599422024b9845d026a01e28108b1"
+    },
+    {
+      "case": "dead_branch",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "b366dc0bffd319b27f0e790ddf4751530f7599422024b9845d026a01e28108b1"
+    },
+    {
+      "case": "dead_branch",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "b366dc0bffd319b27f0e790ddf4751530f7599422024b9845d026a01e28108b1"
+    },
+    {
+      "case": "dead_division",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "f6f5123e3b2ea53c6f343272a2767550a68d58593e3cd8ee5c70bccbb0228302"
+    },
+    {
+      "case": "dead_division",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "f6f5123e3b2ea53c6f343272a2767550a68d58593e3cd8ee5c70bccbb0228302"
+    },
+    {
+      "case": "dead_division",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "f6f5123e3b2ea53c6f343272a2767550a68d58593e3cd8ee5c70bccbb0228302"
+    },
+    {
+      "case": "side_effect",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 27.0,
+      "memory": 2,
+      "assembly_sha256": "baf3eb8c82de79a5bada8c3e4228cdbd15f3f852cbe675a6f74acdace851c7cc"
+    },
+    {
+      "case": "side_effect",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 27.0,
+      "memory": 2,
+      "assembly_sha256": "baf3eb8c82de79a5bada8c3e4228cdbd15f3f852cbe675a6f74acdace851c7cc"
+    },
+    {
+      "case": "side_effect",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 27.0,
+      "memory": 2,
+      "assembly_sha256": "baf3eb8c82de79a5bada8c3e4228cdbd15f3f852cbe675a6f74acdace851c7cc"
+    },
+    {
+      "case": "dead_store",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 97.0,
+      "memory": 6,
+      "assembly_sha256": "770ef596c8f2d3cef39434a7677a105140b4c06f355da109e150b7ec1ad102bb"
+    },
+    {
+      "case": "dead_store",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 97.0,
+      "memory": 6,
+      "assembly_sha256": "770ef596c8f2d3cef39434a7677a105140b4c06f355da109e150b7ec1ad102bb"
+    },
+    {
+      "case": "dead_store",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 97.0,
+      "memory": 6,
+      "assembly_sha256": "770ef596c8f2d3cef39434a7677a105140b4c06f355da109e150b7ec1ad102bb"
+    },
+    {
+      "case": "gvn",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 218.0,
+      "memory": 18,
+      "assembly_sha256": "f2ef0a719bb0527f92612d69d66b3d59ff679b134ba7ebd280855747502bbfbe"
+    },
+    {
+      "case": "gvn",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 218.0,
+      "memory": 18,
+      "assembly_sha256": "f2ef0a719bb0527f92612d69d66b3d59ff679b134ba7ebd280855747502bbfbe"
+    },
+    {
+      "case": "gvn",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 218.0,
+      "memory": 18,
+      "assembly_sha256": "f2ef0a719bb0527f92612d69d66b3d59ff679b134ba7ebd280855747502bbfbe"
+    },
+    {
+      "case": "sibling",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 216.5,
+      "memory": 14,
+      "assembly_sha256": "45652e7ba8cef5255e0ec099c59216bfecf9f4cf8d8b7d2c817a8f6fb63064d2"
+    },
+    {
+      "case": "sibling",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 216.5,
+      "memory": 14,
+      "assembly_sha256": "45652e7ba8cef5255e0ec099c59216bfecf9f4cf8d8b7d2c817a8f6fb63064d2"
+    },
+    {
+      "case": "sibling",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 216.5,
+      "memory": 14,
+      "assembly_sha256": "45652e7ba8cef5255e0ec099c59216bfecf9f4cf8d8b7d2c817a8f6fb63064d2"
+    },
+    {
+      "case": "division",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 461.0,
+      "memory": 34,
+      "assembly_sha256": "26bfb8450a43deff684e48c4b7c23003d5076a6798848dafd62fee2f20e7a935"
+    },
+    {
+      "case": "division",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 459.0,
+      "memory": 34,
+      "assembly_sha256": "dcdc96fe1bf9e326d8caf862972f1221d12c2e0cbc22d9306111d121344c910a"
+    },
+    {
+      "case": "division",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 461.0,
+      "memory": 34,
+      "assembly_sha256": "26bfb8450a43deff684e48c4b7c23003d5076a6798848dafd62fee2f20e7a935"
+    },
+    {
+      "case": "comparisons",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 116.0,
+      "memory": 8,
+      "assembly_sha256": "0a63b17418d0a5249cbb3fac93b35c5ab224803fd92618ada3ac2e6ec8e9c73d"
+    },
+    {
+      "case": "comparisons",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 116.0,
+      "memory": 8,
+      "assembly_sha256": "0a63b17418d0a5249cbb3fac93b35c5ab224803fd92618ada3ac2e6ec8e9c73d"
+    },
+    {
+      "case": "comparisons",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 116.0,
+      "memory": 8,
+      "assembly_sha256": "0a63b17418d0a5249cbb3fac93b35c5ab224803fd92618ada3ac2e6ec8e9c73d"
+    },
+    {
+      "case": "nested",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 164.5,
+      "memory": 6,
+      "assembly_sha256": "4af0c294bf48e1e1d8cd41a82099b212883bd6096585a8e53a2f77ffdf0d51fc"
+    },
+    {
+      "case": "nested",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 164.5,
+      "memory": 6,
+      "assembly_sha256": "4af0c294bf48e1e1d8cd41a82099b212883bd6096585a8e53a2f77ffdf0d51fc"
+    },
+    {
+      "case": "nested",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 164.5,
+      "memory": 6,
+      "assembly_sha256": "4af0c294bf48e1e1d8cd41a82099b212883bd6096585a8e53a2f77ffdf0d51fc"
+    },
+    {
+      "case": "continue_break",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 2,
+      "assembly_sha256": "4cde2b4ee2986de029922a9a04344b1999d4d771447990ce4b8342e3edfab823"
+    },
+    {
+      "case": "continue_break",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 2,
+      "assembly_sha256": "4cde2b4ee2986de029922a9a04344b1999d4d771447990ce4b8342e3edfab823"
+    },
+    {
+      "case": "continue_break",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 2,
+      "assembly_sha256": "4cde2b4ee2986de029922a9a04344b1999d4d771447990ce4b8342e3edfab823"
+    },
+    {
+      "case": "dead_void_function",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a0fbc317366877f509a4307b9d54ee35895a9ea1cb9aa9f172a06cfa3275e89f"
+    },
+    {
+      "case": "dead_void_function",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a0fbc317366877f509a4307b9d54ee35895a9ea1cb9aa9f172a06cfa3275e89f"
+    },
+    {
+      "case": "dead_void_function",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a0fbc317366877f509a4307b9d54ee35895a9ea1cb9aa9f172a06cfa3275e89f"
+    },
+    {
+      "case": "dead_void_return",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 22.0,
+      "memory": 2,
+      "assembly_sha256": "685a69fe8626f83f7b67feac99eed48dd8352117c2a6e8406c9c61caa8f2af9c"
+    },
+    {
+      "case": "dead_void_return",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 22.0,
+      "memory": 2,
+      "assembly_sha256": "685a69fe8626f83f7b67feac99eed48dd8352117c2a6e8406c9c61caa8f2af9c"
+    },
+    {
+      "case": "dead_void_return",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 22.0,
+      "memory": 2,
+      "assembly_sha256": "685a69fe8626f83f7b67feac99eed48dd8352117c2a6e8406c9c61caa8f2af9c"
+    },
+    {
+      "case": "dead_recursive_function",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a0fbc317366877f509a4307b9d54ee35895a9ea1cb9aa9f172a06cfa3275e89f"
+    },
+    {
+      "case": "dead_recursive_function",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a0fbc317366877f509a4307b9d54ee35895a9ea1cb9aa9f172a06cfa3275e89f"
+    },
+    {
+      "case": "dead_recursive_function",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a0fbc317366877f509a4307b9d54ee35895a9ea1cb9aa9f172a06cfa3275e89f"
+    },
+    {
+      "case": "same_operand",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 106.0,
+      "memory": 6,
+      "assembly_sha256": "f7fa892c1a260b273dd1ee459bab08fb71e2cdd91b32083fc18d53b0ee5d0644"
+    },
+    {
+      "case": "same_operand",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 106.0,
+      "memory": 6,
+      "assembly_sha256": "f7fa892c1a260b273dd1ee459bab08fb71e2cdd91b32083fc18d53b0ee5d0644"
+    },
+    {
+      "case": "same_operand",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 106.0,
+      "memory": 6,
+      "assembly_sha256": "f7fa892c1a260b273dd1ee459bab08fb71e2cdd91b32083fc18d53b0ee5d0644"
+    },
+    {
+      "case": "unused_parameters",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "bfd6ed71f1930bc9ebc6c947fe7336e7ad3d06da9824a7448177348da68d78a5"
+    },
+    {
+      "case": "unused_parameters",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "bfd6ed71f1930bc9ebc6c947fe7336e7ad3d06da9824a7448177348da68d78a5"
+    },
+    {
+      "case": "unused_parameters",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "bfd6ed71f1930bc9ebc6c947fe7336e7ad3d06da9824a7448177348da68d78a5"
+    },
+    {
+      "case": "call_loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 206.5,
+      "memory": 12,
+      "assembly_sha256": "2ee97156b50ac124b6817b5428c53244aa7eefbe636ba20c2c92b81432b95ffa"
+    },
+    {
+      "case": "call_loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 204.5,
+      "memory": 12,
+      "assembly_sha256": "db916a7c3ebd4b69572ce169154997dc57c995c106c6f1b06f29a83ae80c0ef0"
+    },
+    {
+      "case": "call_loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 206.5,
+      "memory": 12,
+      "assembly_sha256": "2ee97156b50ac124b6817b5428c53244aa7eefbe636ba20c2c92b81432b95ffa"
+    },
+    {
+      "case": "six_argument_recursion",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "d7991d3b9b5387d39b52c39a53d6925ed86895cc8e45a055f25354c1eb48852f"
+    },
+    {
+      "case": "six_argument_recursion",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "d7991d3b9b5387d39b52c39a53d6925ed86895cc8e45a055f25354c1eb48852f"
+    },
+    {
+      "case": "six_argument_recursion",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "d7991d3b9b5387d39b52c39a53d6925ed86895cc8e45a055f25354c1eb48852f"
+    },
+    {
+      "case": "large_frame",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 164.0,
+      "memory": 12,
+      "assembly_sha256": "1f6188d0ef106accb8316eba21cb352e67c9519081c99d9e77bbb954b81da0ef"
+    },
+    {
+      "case": "large_frame",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 164.0,
+      "memory": 12,
+      "assembly_sha256": "1f6188d0ef106accb8316eba21cb352e67c9519081c99d9e77bbb954b81da0ef"
+    },
+    {
+      "case": "large_frame",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 164.0,
+      "memory": 12,
+      "assembly_sha256": "1f6188d0ef106accb8316eba21cb352e67c9519081c99d9e77bbb954b81da0ef"
+    },
+    {
+      "case": "array_call",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 134.5,
+      "memory": 22,
+      "assembly_sha256": "62d99503b6982a33601c6d0f3ce9ca878de412c58954a719d4955e8a5b04e3fd"
+    },
+    {
+      "case": "array_call",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 127.5,
+      "memory": 20,
+      "assembly_sha256": "bd13701d9f1be7bed69bb9c9e13857ec3e5fdcffeac2f65ec5c2e10ccab64c6f"
+    },
+    {
+      "case": "array_call",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 134.5,
+      "memory": 22,
+      "assembly_sha256": "62d99503b6982a33601c6d0f3ce9ca878de412c58954a719d4955e8a5b04e3fd"
+    },
+    {
+      "case": "nested_calls",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 673.0,
+      "memory": 126,
+      "assembly_sha256": "2abf9e10b2b814c1a96e4ab480bbcb8450de6b44277a5da62d802af9dcc4d3f0"
+    },
+    {
+      "case": "nested_calls",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 673.0,
+      "memory": 126,
+      "assembly_sha256": "2abf9e10b2b814c1a96e4ab480bbcb8450de6b44277a5da62d802af9dcc4d3f0"
+    },
+    {
+      "case": "nested_calls",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 673.0,
+      "memory": 126,
+      "assembly_sha256": "2abf9e10b2b814c1a96e4ab480bbcb8450de6b44277a5da62d802af9dcc4d3f0"
+    },
+    {
+      "case": "count_only",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 256.5,
+      "memory": 16,
+      "assembly_sha256": "f14973475bb05ce6e941e5922c4f6e113c83c75ba36a255ee4fc862b300a640e"
+    },
+    {
+      "case": "count_only",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 256.5,
+      "memory": 16,
+      "assembly_sha256": "f14973475bb05ce6e941e5922c4f6e113c83c75ba36a255ee4fc862b300a640e"
+    },
+    {
+      "case": "count_only",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 256.5,
+      "memory": 16,
+      "assembly_sha256": "f14973475bb05ce6e941e5922c4f6e113c83c75ba36a255ee4fc862b300a640e"
+    },
+    {
+      "case": "constant_sum",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 6,
+      "assembly_sha256": "cd67a58a84e65b702622c8623537dd89edc5487a05929e6415ff300c32ad0ae9"
+    },
+    {
+      "case": "constant_sum",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 6,
+      "assembly_sha256": "cd67a58a84e65b702622c8623537dd89edc5487a05929e6415ff300c32ad0ae9"
+    },
+    {
+      "case": "constant_sum",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 6,
+      "assembly_sha256": "cd67a58a84e65b702622c8623537dd89edc5487a05929e6415ff300c32ad0ae9"
+    },
+    {
+      "case": "division_loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 23696.0,
+      "memory": 12,
+      "assembly_sha256": "5b83e614e70e745a4d27d895b8bd8c1564e77a45efc2021322c2d7a8317bd9e1"
+    },
+    {
+      "case": "division_loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 21696.0,
+      "memory": 12,
+      "assembly_sha256": "06f5c62318b7212330c9118fdc5cc9201c086807097a287aa646bad35b5d25bf"
+    },
+    {
+      "case": "division_loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 23696.0,
+      "memory": 12,
+      "assembly_sha256": "5b83e614e70e745a4d27d895b8bd8c1564e77a45efc2021322c2d7a8317bd9e1"
+    },
+    {
+      "case": "public_convolution",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 312961.5,
+      "memory": 36898,
+      "assembly_sha256": "96ecbbabf774ef783e2ea8af2c94c0fffaf6b5ed8d80eb6d0bad21933a63ecf8"
+    },
+    {
+      "case": "public_convolution",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 312889.5,
+      "memory": 36880,
+      "assembly_sha256": "77a075d2dc5548291d0622be0e6b45f0bc8f0f609964a4e84cb62a4cffcf8f8f"
+    },
+    {
+      "case": "public_convolution",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 312961.5,
+      "memory": 36898,
+      "assembly_sha256": "96ecbbabf774ef783e2ea8af2c94c0fffaf6b5ed8d80eb6d0bad21933a63ecf8"
+    },
+    {
+      "case": "changing-bound",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 215.0,
+      "memory": 14,
+      "assembly_sha256": "a5926ea504c4970a5fadbcc380840e4a1fa30f4138ae91b6299443899180fe90"
+    },
+    {
+      "case": "changing-bound",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 215.0,
+      "memory": 14,
+      "assembly_sha256": "a5926ea504c4970a5fadbcc380840e4a1fa30f4138ae91b6299443899180fe90"
+    },
+    {
+      "case": "changing-bound",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 215.0,
+      "memory": 14,
+      "assembly_sha256": "a5926ea504c4970a5fadbcc380840e4a1fa30f4138ae91b6299443899180fe90"
+    },
+    {
+      "case": "dependent-dynamic",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 258.0,
+      "memory": 10,
+      "assembly_sha256": "e945faad4a1a7902a57963ffdad3107146815f8939071b9ed80bd856fe6c934d"
+    },
+    {
+      "case": "dependent-dynamic",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 258.0,
+      "memory": 10,
+      "assembly_sha256": "e945faad4a1a7902a57963ffdad3107146815f8939071b9ed80bd856fe6c934d"
+    },
+    {
+      "case": "dependent-dynamic",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 258.0,
+      "memory": 10,
+      "assembly_sha256": "e945faad4a1a7902a57963ffdad3107146815f8939071b9ed80bd856fe6c934d"
+    },
+    {
+      "case": "inline-alias",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 132.0,
+      "memory": 13,
+      "assembly_sha256": "e01c420dae72e5b7b259ca43d78a332c8bd217ae2af873a7f46911e3ba5256d6"
+    },
+    {
+      "case": "inline-alias",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 132.0,
+      "memory": 13,
+      "assembly_sha256": "e01c420dae72e5b7b259ca43d78a332c8bd217ae2af873a7f46911e3ba5256d6"
+    },
+    {
+      "case": "inline-alias",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 132.0,
+      "memory": 13,
+      "assembly_sha256": "e01c420dae72e5b7b259ca43d78a332c8bd217ae2af873a7f46911e3ba5256d6"
+    },
+    {
+      "case": "inline-void",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 117.5,
+      "memory": 11,
+      "assembly_sha256": "dafd8b488fda045f53a9239e4ed0c01af9f2a97263ba9e8706c7ff86b60fcff0"
+    },
+    {
+      "case": "inline-void",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 117.5,
+      "memory": 11,
+      "assembly_sha256": "dafd8b488fda045f53a9239e4ed0c01af9f2a97263ba9e8706c7ff86b60fcff0"
+    },
+    {
+      "case": "inline-void",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 117.5,
+      "memory": 11,
+      "assembly_sha256": "dafd8b488fda045f53a9239e4ed0c01af9f2a97263ba9e8706c7ff86b60fcff0"
+    },
+    {
+      "case": "inline-char",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 134.0,
+      "memory": 8,
+      "assembly_sha256": "72ad4f71413937c11c23ada74f946f823fc7c7e6c3ab029c891cf18c46f25819"
+    },
+    {
+      "case": "inline-char",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 134.0,
+      "memory": 8,
+      "assembly_sha256": "72ad4f71413937c11c23ada74f946f823fc7c7e6c3ab029c891cf18c46f25819"
+    },
+    {
+      "case": "inline-char",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 134.0,
+      "memory": 8,
+      "assembly_sha256": "72ad4f71413937c11c23ada74f946f823fc7c7e6c3ab029c891cf18c46f25819"
+    },
+    {
+      "case": "count-max",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 385.5,
+      "memory": 24,
+      "assembly_sha256": "cc94af488ac5ec1493ab64c72196af21f5c6459fcae4676882e77816373fb93c"
+    },
+    {
+      "case": "count-max",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 385.5,
+      "memory": 24,
+      "assembly_sha256": "cc94af488ac5ec1493ab64c72196af21f5c6459fcae4676882e77816373fb93c"
+    },
+    {
+      "case": "count-max",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 385.5,
+      "memory": 24,
+      "assembly_sha256": "cc94af488ac5ec1493ab64c72196af21f5c6459fcae4676882e77816373fb93c"
+    },
+    {
+      "case": "count-min",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 407.5,
+      "memory": 26,
+      "assembly_sha256": "3f64e03a837400173ae03c6c98f05c2117978c58fa3ffd18c4921c8fe25a61df"
+    },
+    {
+      "case": "count-min",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 407.5,
+      "memory": 26,
+      "assembly_sha256": "3f64e03a837400173ae03c6c98f05c2117978c58fa3ffd18c4921c8fe25a61df"
+    },
+    {
+      "case": "count-min",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 407.5,
+      "memory": 26,
+      "assembly_sha256": "3f64e03a837400173ae03c6c98f05c2117978c58fa3ffd18c4921c8fe25a61df"
+    },
+    {
+      "case": "branch-inline",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 9635.5,
+      "memory": 8,
+      "assembly_sha256": "a44ffad523134bed99f78d562ad4901c25b715c86614d65555c20158da485e15"
+    },
+    {
+      "case": "branch-inline",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 9635.5,
+      "memory": 8,
+      "assembly_sha256": "a44ffad523134bed99f78d562ad4901c25b715c86614d65555c20158da485e15"
+    },
+    {
+      "case": "branch-inline",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 9635.5,
+      "memory": 8,
+      "assembly_sha256": "a44ffad523134bed99f78d562ad4901c25b715c86614d65555c20158da485e15"
+    },
+    {
+      "case": "inline-effects",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 225.0,
+      "memory": 8,
+      "assembly_sha256": "bdaf27e3d2d6a0d5fd12e34d660702ae030a493b294fbc85dae171ca01890fcc"
+    },
+    {
+      "case": "inline-effects",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 225.0,
+      "memory": 8,
+      "assembly_sha256": "bdaf27e3d2d6a0d5fd12e34d660702ae030a493b294fbc85dae171ca01890fcc"
+    },
+    {
+      "case": "inline-effects",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 225.0,
+      "memory": 8,
+      "assembly_sha256": "bdaf27e3d2d6a0d5fd12e34d660702ae030a493b294fbc85dae171ca01890fcc"
+    },
+    {
+      "case": "main-only-global",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 112.0,
+      "memory": 6,
+      "assembly_sha256": "ce059b8641aa33c27ffb68a2769e5412952cba8192c3880a1c443229acad77c2"
+    },
+    {
+      "case": "main-only-global",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 112.0,
+      "memory": 6,
+      "assembly_sha256": "ce059b8641aa33c27ffb68a2769e5412952cba8192c3880a1c443229acad77c2"
+    },
+    {
+      "case": "main-only-global",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 112.0,
+      "memory": 6,
+      "assembly_sha256": "ce059b8641aa33c27ffb68a2769e5412952cba8192c3880a1c443229acad77c2"
+    },
+    {
+      "case": "shared-global",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 208.5,
+      "memory": 30,
+      "assembly_sha256": "1732b40b3b2572ee05c4acc904afcad831b125fff9398337021ffdbae94a8dff"
+    },
+    {
+      "case": "shared-global",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 208.5,
+      "memory": 30,
+      "assembly_sha256": "1732b40b3b2572ee05c4acc904afcad831b125fff9398337021ffdbae94a8dff"
+    },
+    {
+      "case": "shared-global",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 208.5,
+      "memory": 30,
+      "assembly_sha256": "1732b40b3b2572ee05c4acc904afcad831b125fff9398337021ffdbae94a8dff"
+    },
+    {
+      "case": "count-only",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 256.5,
+      "memory": 16,
+      "assembly_sha256": "f14973475bb05ce6e941e5922c4f6e113c83c75ba36a255ee4fc862b300a640e"
+    },
+    {
+      "case": "count-only",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 256.5,
+      "memory": 16,
+      "assembly_sha256": "f14973475bb05ce6e941e5922c4f6e113c83c75ba36a255ee4fc862b300a640e"
+    },
+    {
+      "case": "count-only",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 256.5,
+      "memory": 16,
+      "assembly_sha256": "f14973475bb05ce6e941e5922c4f6e113c83c75ba36a255ee4fc862b300a640e"
+    },
+    {
+      "case": "constant-sum",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 6,
+      "assembly_sha256": "cd67a58a84e65b702622c8623537dd89edc5487a05929e6415ff300c32ad0ae9"
+    },
+    {
+      "case": "constant-sum",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 6,
+      "assembly_sha256": "cd67a58a84e65b702622c8623537dd89edc5487a05929e6415ff300c32ad0ae9"
+    },
+    {
+      "case": "constant-sum",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 6,
+      "assembly_sha256": "cd67a58a84e65b702622c8623537dd89edc5487a05929e6415ff300c32ad0ae9"
+    },
+    {
+      "case": "nested-sum",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 179.5,
+      "memory": 10,
+      "assembly_sha256": "9e32ff3059bc313347150d70f537900575308a3411889296cc311691e6809fac"
+    },
+    {
+      "case": "nested-sum",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 179.5,
+      "memory": 10,
+      "assembly_sha256": "9e32ff3059bc313347150d70f537900575308a3411889296cc311691e6809fac"
+    },
+    {
+      "case": "nested-sum",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 179.5,
+      "memory": 10,
+      "assembly_sha256": "9e32ff3059bc313347150d70f537900575308a3411889296cc311691e6809fac"
+    },
+    {
+      "case": "array-loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 20204.0,
+      "memory": 2012,
+      "assembly_sha256": "0b82d3779d0564b2e2ee718de36161a05a63e09ca72a988f388a9eeafc8f58dd"
+    },
+    {
+      "case": "array-loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 18204.0,
+      "memory": 2012,
+      "assembly_sha256": "b1a259303ab3ed57dd5ed400b79de79feb1d1b21ddb4e81bdbbbbbc0bcb594ef"
+    },
+    {
+      "case": "array-loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 20204.0,
+      "memory": 2012,
+      "assembly_sha256": "0b82d3779d0564b2e2ee718de36161a05a63e09ca72a988f388a9eeafc8f58dd"
+    },
+    {
+      "case": "zero-negative",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 415.5,
+      "memory": 28,
+      "assembly_sha256": "b2c3c871599332f82c14267e7521a7b512f41f09e001314be71b03f87d83fdc0"
+    },
+    {
+      "case": "zero-negative",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 415.5,
+      "memory": 28,
+      "assembly_sha256": "b2c3c871599332f82c14267e7521a7b512f41f09e001314be71b03f87d83fdc0"
+    },
+    {
+      "case": "zero-negative",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 415.5,
+      "memory": 28,
+      "assembly_sha256": "b2c3c871599332f82c14267e7521a7b512f41f09e001314be71b03f87d83fdc0"
+    },
+    {
+      "case": "step",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 106.0,
+      "memory": 6,
+      "assembly_sha256": "666d65e13c7bcbdf410a047b1ae3fdf034e4b826a9a3bffc1c58fc7b3dcee924"
+    },
+    {
+      "case": "step",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 106.0,
+      "memory": 6,
+      "assembly_sha256": "666d65e13c7bcbdf410a047b1ae3fdf034e4b826a9a3bffc1c58fc7b3dcee924"
+    },
+    {
+      "case": "step",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 106.0,
+      "memory": 6,
+      "assembly_sha256": "666d65e13c7bcbdf410a047b1ae3fdf034e4b826a9a3bffc1c58fc7b3dcee924"
+    },
+    {
+      "case": "dependent",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 115.0,
+      "memory": 8,
+      "assembly_sha256": "9941c64e82f6f2f6f7a222fcf99b89ec19f6505a2496daeddbb3b81f03b5729d"
+    },
+    {
+      "case": "dependent",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 115.0,
+      "memory": 8,
+      "assembly_sha256": "9941c64e82f6f2f6f7a222fcf99b89ec19f6505a2496daeddbb3b81f03b5729d"
+    },
+    {
+      "case": "dependent",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 115.0,
+      "memory": 8,
+      "assembly_sha256": "9941c64e82f6f2f6f7a222fcf99b89ec19f6505a2496daeddbb3b81f03b5729d"
+    },
+    {
+      "case": "last-load",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 116.0,
+      "memory": 8,
+      "assembly_sha256": "a6ea66289bd32538b2c9e4d0c88830bc065d9a65ab6b4895bf07b0c72f930fdf"
+    },
+    {
+      "case": "last-load",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 116.0,
+      "memory": 8,
+      "assembly_sha256": "a6ea66289bd32538b2c9e4d0c88830bc065d9a65ab6b4895bf07b0c72f930fdf"
+    },
+    {
+      "case": "last-load",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 116.0,
+      "memory": 8,
+      "assembly_sha256": "a6ea66289bd32538b2c9e4d0c88830bc065d9a65ab6b4895bf07b0c72f930fdf"
+    },
+    {
+      "case": "early-exit",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 385.5,
+      "memory": 10,
+      "assembly_sha256": "54145a1a84d15d1055a58dabf836c05afeda819e8d9e63eb2b3ce1d19dc4f273"
+    },
+    {
+      "case": "early-exit",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 367.5,
+      "memory": 10,
+      "assembly_sha256": "6f3ac683cbd98bf293080a748a2e2a9755851e648961cd6ca0e0c156ba39a577"
+    },
+    {
+      "case": "early-exit",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 385.5,
+      "memory": 10,
+      "assembly_sha256": "54145a1a84d15d1055a58dabf836c05afeda819e8d9e63eb2b3ce1d19dc4f273"
+    },
+    {
+      "case": "char-loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 84.0,
+      "memory": 0,
+      "assembly_sha256": "9a9d70cbfe90e29c3c22bf2887f347bc51b8b767fe534aa9061e14ac3d073971"
+    },
+    {
+      "case": "char-loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 84.0,
+      "memory": 0,
+      "assembly_sha256": "9a9d70cbfe90e29c3c22bf2887f347bc51b8b767fe534aa9061e14ac3d073971"
+    },
+    {
+      "case": "char-loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 84.0,
+      "memory": 0,
+      "assembly_sha256": "9a9d70cbfe90e29c3c22bf2887f347bc51b8b767fe534aa9061e14ac3d073971"
+    },
+    {
+      "case": "condition-side-effect",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 87.5,
+      "memory": 2,
+      "assembly_sha256": "35e041f04fcaa63577c0fda9eab40177b4a626396e1b9315619b2e080b143009"
+    },
+    {
+      "case": "condition-side-effect",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 87.5,
+      "memory": 2,
+      "assembly_sha256": "35e041f04fcaa63577c0fda9eab40177b4a626396e1b9315619b2e080b143009"
+    },
+    {
+      "case": "condition-side-effect",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 87.5,
+      "memory": 2,
+      "assembly_sha256": "35e041f04fcaa63577c0fda9eab40177b4a626396e1b9315619b2e080b143009"
+    },
+    {
+      "case": "comparison",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 785.5,
+      "memory": 52,
+      "assembly_sha256": "5c4fb71b523e6bb4b79230abacdf4623692b3e0f408a53021802b571941566e4"
+    },
+    {
+      "case": "comparison",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 785.5,
+      "memory": 52,
+      "assembly_sha256": "5c4fb71b523e6bb4b79230abacdf4623692b3e0f408a53021802b571941566e4"
+    },
+    {
+      "case": "comparison",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 785.5,
+      "memory": 52,
+      "assembly_sha256": "5c4fb71b523e6bb4b79230abacdf4623692b3e0f408a53021802b571941566e4"
+    },
+    {
+      "case": "arithmetic_boundaries",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 45424.5,
+      "memory": 846,
+      "assembly_sha256": "55449046077c977bcf0c823e7fa8695832f39fb86dfd55c950c134d47513a9c7"
+    },
+    {
+      "case": "arithmetic_boundaries",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 43534.5,
+      "memory": 846,
+      "assembly_sha256": "6aa93d0e50c9b5bffa5a627438c7238474fa99a962433f85e9e48501f13198d3"
+    },
+    {
+      "case": "arithmetic_boundaries",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 45424.5,
+      "memory": 846,
+      "assembly_sha256": "55449046077c977bcf0c823e7fa8695832f39fb86dfd55c950c134d47513a9c7"
+    },
+    {
+      "case": "constant_recursive",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 12.0,
+      "memory": 0,
+      "assembly_sha256": "4ba04051d792a17c6f7b7ed1b0a2b3853f1c3290ed55b75635c5ec9f7009d327"
+    },
+    {
+      "case": "constant_recursive",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 12.0,
+      "memory": 0,
+      "assembly_sha256": "4ba04051d792a17c6f7b7ed1b0a2b3853f1c3290ed55b75635c5ec9f7009d327"
+    },
+    {
+      "case": "constant_recursive",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 12.0,
+      "memory": 0,
+      "assembly_sha256": "4ba04051d792a17c6f7b7ed1b0a2b3853f1c3290ed55b75635c5ec9f7009d327"
+    },
+    {
+      "case": "constant_loop_call",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "9b07f2d587c29e909569141cd5ff9d07b660dfe705b42ec240c127f7ed86ccbc"
+    },
+    {
+      "case": "constant_loop_call",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "9b07f2d587c29e909569141cd5ff9d07b660dfe705b42ec240c127f7ed86ccbc"
+    },
+    {
+      "case": "constant_loop_call",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "9b07f2d587c29e909569141cd5ff9d07b660dfe705b42ec240c127f7ed86ccbc"
+    },
+    {
+      "case": "memo_collision",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2662.0,
+      "memory": 581,
+      "assembly_sha256": "6cd4e5fb67fbccc76cd71bf17c9c2f634164cbb946b51728cb3d2d310b0bfa6e"
+    },
+    {
+      "case": "memo_collision",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2662.0,
+      "memory": 581,
+      "assembly_sha256": "6cd4e5fb67fbccc76cd71bf17c9c2f634164cbb946b51728cb3d2d310b0bfa6e"
+    },
+    {
+      "case": "memo_collision",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2662.0,
+      "memory": 581,
+      "assembly_sha256": "6cd4e5fb67fbccc76cd71bf17c9c2f634164cbb946b51728cb3d2d310b0bfa6e"
+    },
+    {
+      "case": "impure_recursion",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 1665.0,
+      "memory": 415,
+      "assembly_sha256": "3932f49d76aebca5a09ba8c503e3212b46fc04d1a05853a67cfbab6fe9cce9b8"
+    },
+    {
+      "case": "impure_recursion",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 1665.0,
+      "memory": 415,
+      "assembly_sha256": "3932f49d76aebca5a09ba8c503e3212b46fc04d1a05853a67cfbab6fe9cce9b8"
+    },
+    {
+      "case": "impure_recursion",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 1665.0,
+      "memory": 415,
+      "assembly_sha256": "3932f49d76aebca5a09ba8c503e3212b46fc04d1a05853a67cfbab6fe9cce9b8"
+    },
+    {
+      "case": "unexecuted_infinite",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 100.5,
+      "memory": 6,
+      "assembly_sha256": "07dd45f354dbd4bef65f5ae671419ec3ea4ef93df3bd906b60df74a17b1ec3be"
+    },
+    {
+      "case": "unexecuted_infinite",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 100.5,
+      "memory": 6,
+      "assembly_sha256": "eda2f4e1ffda5513b0d5006027338019dcc84634937c737f1a6808982771c071"
+    },
+    {
+      "case": "unexecuted_infinite",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 100.5,
+      "memory": 6,
+      "assembly_sha256": "07dd45f354dbd4bef65f5ae671419ec3ea4ef93df3bd906b60df74a17b1ec3be"
+    },
+    {
+      "case": "boundary_up_0",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 254.5,
+      "memory": 18,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_0",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 252.5,
+      "memory": 18,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_0",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 254.5,
+      "memory": 18,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 275.5,
+      "memory": 20,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 275.5,
+      "memory": 20,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 275.5,
+      "memory": 20,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 244.5,
+      "memory": 18,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 244.5,
+      "memory": 18,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 244.5,
+      "memory": 18,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 834.5,
+      "memory": 56,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 832.5,
+      "memory": 56,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 834.5,
+      "memory": 56,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 790.5,
+      "memory": 52,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 788.5,
+      "memory": 52,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 790.5,
+      "memory": 52,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 812.5,
+      "memory": 54,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 810.5,
+      "memory": 54,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 812.5,
+      "memory": 54,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 531.5,
+      "memory": 36,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_up_7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 531.5,
+      "memory": 36,
+      "assembly_sha256": "fa4edd4d7be621969223fbc5280bfddea9bfc2f35156cd5ac5ce255b88837bd2"
+    },
+    {
+      "case": "boundary_up_7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "d8a275c0198394763fa3a5140d3b695b60234da6e715a175f481bc2d2bcd1b8c"
+    },
+    {
+      "case": "boundary_down_0",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 254.5,
+      "memory": 18,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_0",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 252.5,
+      "memory": 18,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_0",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 254.5,
+      "memory": 18,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 275.5,
+      "memory": 20,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 275.5,
+      "memory": 20,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 275.5,
+      "memory": 20,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 244.5,
+      "memory": 18,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 244.5,
+      "memory": 18,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 244.5,
+      "memory": 18,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 834.5,
+      "memory": 56,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 832.5,
+      "memory": 56,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 834.5,
+      "memory": 56,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 790.5,
+      "memory": 52,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 788.5,
+      "memory": 52,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 790.5,
+      "memory": 52,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 812.5,
+      "memory": 54,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 810.5,
+      "memory": 54,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 812.5,
+      "memory": 54,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 531.5,
+      "memory": 36,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_down_7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 531.5,
+      "memory": 36,
+      "assembly_sha256": "0d21e4ac5465180b644089982031649382a76fab40c96f0cedef8072b3793158"
+    },
+    {
+      "case": "boundary_down_7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 533.5,
+      "memory": 36,
+      "assembly_sha256": "ed25094b29fef04ddc709beb253f521aa9203477af808cda82f9c4368e8e67ed"
+    },
+    {
+      "case": "boundary_ne_0",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 253.5,
+      "memory": 18,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_0",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 251.5,
+      "memory": 18,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_0",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 253.5,
+      "memory": 18,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 274.5,
+      "memory": 20,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 274.5,
+      "memory": 20,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 274.5,
+      "memory": 20,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 262.5,
+      "memory": 18,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 260.5,
+      "memory": 18,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 262.5,
+      "memory": 18,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 833.5,
+      "memory": 56,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 831.5,
+      "memory": 56,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 833.5,
+      "memory": 56,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 789.5,
+      "memory": 52,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 787.5,
+      "memory": 52,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 789.5,
+      "memory": 52,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 811.5,
+      "memory": 54,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 809.5,
+      "memory": 54,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 811.5,
+      "memory": 54,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 530.5,
+      "memory": 36,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 530.5,
+      "memory": 36,
+      "assembly_sha256": "662bf8f86e5108116d4cb279cc47c0a4efe7d91dfc0d341c942ca58515b550eb"
+    },
+    {
+      "case": "boundary_ne_7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "0c3f3f78f19ece0a0655b51b4d4ae824df2cc692ba30397820f7405f48ec6476"
+    },
+    {
+      "case": "boundary_ne_down_0",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 253.5,
+      "memory": 18,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_0",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 251.5,
+      "memory": 18,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_0",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 253.5,
+      "memory": 18,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 274.5,
+      "memory": 20,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 274.5,
+      "memory": 20,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 274.5,
+      "memory": 20,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 262.5,
+      "memory": 18,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 260.5,
+      "memory": 18,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 262.5,
+      "memory": 18,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 833.5,
+      "memory": 56,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 831.5,
+      "memory": 56,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 833.5,
+      "memory": 56,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 789.5,
+      "memory": 52,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 787.5,
+      "memory": 52,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 789.5,
+      "memory": 52,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 811.5,
+      "memory": 54,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 809.5,
+      "memory": 54,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 811.5,
+      "memory": 54,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 530.5,
+      "memory": 36,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "boundary_ne_down_7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 530.5,
+      "memory": 36,
+      "assembly_sha256": "b35fae3a217347152cd0027bc39c39404a1bc4e28036c2dd828f0bc1a0346432"
+    },
+    {
+      "case": "boundary_ne_down_7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 532.5,
+      "memory": 36,
+      "assembly_sha256": "38f03465879e9c9861e87c27242e8e0d1a935693b44f813d802f851a89662c36"
+    },
+    {
+      "case": "affine_random_0",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "c8ac773d6c989e2bbabe93d35e5e5957c9818e003a66158bcaa971e840ac787e"
+    },
+    {
+      "case": "affine_random_0",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "c8ac773d6c989e2bbabe93d35e5e5957c9818e003a66158bcaa971e840ac787e"
+    },
+    {
+      "case": "affine_random_0",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "c8ac773d6c989e2bbabe93d35e5e5957c9818e003a66158bcaa971e840ac787e"
+    },
+    {
+      "case": "affine_random_1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "b7dbac70b8914b32085cfc69d4166d59e0ebf50b3696789032c95380fdbbafbf"
+    },
+    {
+      "case": "affine_random_1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "b7dbac70b8914b32085cfc69d4166d59e0ebf50b3696789032c95380fdbbafbf"
+    },
+    {
+      "case": "affine_random_1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "b7dbac70b8914b32085cfc69d4166d59e0ebf50b3696789032c95380fdbbafbf"
+    },
+    {
+      "case": "affine_random_2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 222.0,
+      "memory": 14,
+      "assembly_sha256": "144ead71aa7c3ba5248e040220c5fb39ff02947a6f46c3cfee9d07b26d01f052"
+    },
+    {
+      "case": "affine_random_2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 222.0,
+      "memory": 14,
+      "assembly_sha256": "144ead71aa7c3ba5248e040220c5fb39ff02947a6f46c3cfee9d07b26d01f052"
+    },
+    {
+      "case": "affine_random_2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 222.0,
+      "memory": 14,
+      "assembly_sha256": "144ead71aa7c3ba5248e040220c5fb39ff02947a6f46c3cfee9d07b26d01f052"
+    },
+    {
+      "case": "affine_random_3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "bdf141495c85840c306f19193bd32e24842e015fe89600e9a7de6aa4ce5b1399"
+    },
+    {
+      "case": "affine_random_3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "bdf141495c85840c306f19193bd32e24842e015fe89600e9a7de6aa4ce5b1399"
+    },
+    {
+      "case": "affine_random_3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "bdf141495c85840c306f19193bd32e24842e015fe89600e9a7de6aa4ce5b1399"
+    },
+    {
+      "case": "affine_random_4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "4c52db76e9be17ceed4f7d176647d2df0913cba16dea3f595c35bf0ab4a227dd"
+    },
+    {
+      "case": "affine_random_4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "4c52db76e9be17ceed4f7d176647d2df0913cba16dea3f595c35bf0ab4a227dd"
+    },
+    {
+      "case": "affine_random_4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "4c52db76e9be17ceed4f7d176647d2df0913cba16dea3f595c35bf0ab4a227dd"
+    },
+    {
+      "case": "affine_random_5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "202f19197e1f6e31e903c3a5498938a5e02420ffaf71df584208f86943ff7dc7"
+    },
+    {
+      "case": "affine_random_5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "202f19197e1f6e31e903c3a5498938a5e02420ffaf71df584208f86943ff7dc7"
+    },
+    {
+      "case": "affine_random_5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "202f19197e1f6e31e903c3a5498938a5e02420ffaf71df584208f86943ff7dc7"
+    },
+    {
+      "case": "affine_random_6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 243.0,
+      "memory": 16,
+      "assembly_sha256": "623a680c8c0b35436a01015dadd88b7e506b0dfec31296d41b81744de585415d"
+    },
+    {
+      "case": "affine_random_6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 241.0,
+      "memory": 16,
+      "assembly_sha256": "3c9462554a2eb2aa9557c0f90d048fc3c48dc8acd9827ccdf0402ab5a6b37466"
+    },
+    {
+      "case": "affine_random_6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 243.0,
+      "memory": 16,
+      "assembly_sha256": "623a680c8c0b35436a01015dadd88b7e506b0dfec31296d41b81744de585415d"
+    },
+    {
+      "case": "affine_random_7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "9350d19cc42e383b317437b0f045be2b43d8b5a45d71bbce5f8015112866482f"
+    },
+    {
+      "case": "affine_random_7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "9350d19cc42e383b317437b0f045be2b43d8b5a45d71bbce5f8015112866482f"
+    },
+    {
+      "case": "affine_random_7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "9350d19cc42e383b317437b0f045be2b43d8b5a45d71bbce5f8015112866482f"
+    },
+    {
+      "case": "affine_random_8",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "2066e203172a34b0cd3ad20d9517508a25ad78f2f16251efcfc62253a33d6d31"
+    },
+    {
+      "case": "affine_random_8",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "2066e203172a34b0cd3ad20d9517508a25ad78f2f16251efcfc62253a33d6d31"
+    },
+    {
+      "case": "affine_random_8",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "2066e203172a34b0cd3ad20d9517508a25ad78f2f16251efcfc62253a33d6d31"
+    },
+    {
+      "case": "affine_random_9",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "a832a863c3bcdbc45a63c99d2ddd6c4931b53c3fac99d25500c2b18370320cfc"
+    },
+    {
+      "case": "affine_random_9",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "a832a863c3bcdbc45a63c99d2ddd6c4931b53c3fac99d25500c2b18370320cfc"
+    },
+    {
+      "case": "affine_random_9",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "a832a863c3bcdbc45a63c99d2ddd6c4931b53c3fac99d25500c2b18370320cfc"
+    },
+    {
+      "case": "affine_random_10",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 221.0,
+      "memory": 14,
+      "assembly_sha256": "623a680c8c0b35436a01015dadd88b7e506b0dfec31296d41b81744de585415d"
+    },
+    {
+      "case": "affine_random_10",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 219.0,
+      "memory": 14,
+      "assembly_sha256": "3c9462554a2eb2aa9557c0f90d048fc3c48dc8acd9827ccdf0402ab5a6b37466"
+    },
+    {
+      "case": "affine_random_10",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 221.0,
+      "memory": 14,
+      "assembly_sha256": "623a680c8c0b35436a01015dadd88b7e506b0dfec31296d41b81744de585415d"
+    },
+    {
+      "case": "affine_random_11",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "aa04757b9ac1c6abeca95b135a909047a2bb759404067c9a77022de336101d12"
+    },
+    {
+      "case": "affine_random_11",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "aa04757b9ac1c6abeca95b135a909047a2bb759404067c9a77022de336101d12"
+    },
+    {
+      "case": "affine_random_11",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 229.0,
+      "memory": 14,
+      "assembly_sha256": "aa04757b9ac1c6abeca95b135a909047a2bb759404067c9a77022de336101d12"
+    },
+    {
+      "case": "affine_random_12",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "dd0264d8c3438a9379d304bad4f2c86db35400ddf91cc339bfc6f149d108fa80"
+    },
+    {
+      "case": "affine_random_12",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "dd0264d8c3438a9379d304bad4f2c86db35400ddf91cc339bfc6f149d108fa80"
+    },
+    {
+      "case": "affine_random_12",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "dd0264d8c3438a9379d304bad4f2c86db35400ddf91cc339bfc6f149d108fa80"
+    },
+    {
+      "case": "affine_random_13",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "0efa7abf826eae4f14705b802617f694cf36de559d8f6182de9ab92c00393eb3"
+    },
+    {
+      "case": "affine_random_13",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "0efa7abf826eae4f14705b802617f694cf36de559d8f6182de9ab92c00393eb3"
+    },
+    {
+      "case": "affine_random_13",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "0efa7abf826eae4f14705b802617f694cf36de559d8f6182de9ab92c00393eb3"
+    },
+    {
+      "case": "affine_random_14",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 302.0,
+      "memory": 20,
+      "assembly_sha256": "a342b73c4f62e84f86ed358ac267549ce56585901844c1d1b6be0be402330c15"
+    },
+    {
+      "case": "affine_random_14",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 302.0,
+      "memory": 20,
+      "assembly_sha256": "a342b73c4f62e84f86ed358ac267549ce56585901844c1d1b6be0be402330c15"
+    },
+    {
+      "case": "affine_random_14",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 302.0,
+      "memory": 20,
+      "assembly_sha256": "a342b73c4f62e84f86ed358ac267549ce56585901844c1d1b6be0be402330c15"
+    },
+    {
+      "case": "affine_random_15",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 280.0,
+      "memory": 18,
+      "assembly_sha256": "da8a6f5b95bf0143853bf80b6f91a049ebee81807e72be91a9056e0dad9c9ad3"
+    },
+    {
+      "case": "affine_random_15",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 280.0,
+      "memory": 18,
+      "assembly_sha256": "da8a6f5b95bf0143853bf80b6f91a049ebee81807e72be91a9056e0dad9c9ad3"
+    },
+    {
+      "case": "affine_random_15",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 280.0,
+      "memory": 18,
+      "assembly_sha256": "da8a6f5b95bf0143853bf80b6f91a049ebee81807e72be91a9056e0dad9c9ad3"
+    },
+    {
+      "case": "affine_random_16",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 221.0,
+      "memory": 14,
+      "assembly_sha256": "623a680c8c0b35436a01015dadd88b7e506b0dfec31296d41b81744de585415d"
+    },
+    {
+      "case": "affine_random_16",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 219.0,
+      "memory": 14,
+      "assembly_sha256": "3c9462554a2eb2aa9557c0f90d048fc3c48dc8acd9827ccdf0402ab5a6b37466"
+    },
+    {
+      "case": "affine_random_16",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 221.0,
+      "memory": 14,
+      "assembly_sha256": "623a680c8c0b35436a01015dadd88b7e506b0dfec31296d41b81744de585415d"
+    },
+    {
+      "case": "affine_random_17",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "a2de0ca7f841c21f9a34942c0c20ef271523a8d0c0a53bfde072ad8ae9c07607"
+    },
+    {
+      "case": "affine_random_17",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "a2de0ca7f841c21f9a34942c0c20ef271523a8d0c0a53bfde072ad8ae9c07607"
+    },
+    {
+      "case": "affine_random_17",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 273.0,
+      "memory": 18,
+      "assembly_sha256": "a2de0ca7f841c21f9a34942c0c20ef271523a8d0c0a53bfde072ad8ae9c07607"
+    },
+    {
+      "case": "affine_random_18",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 243.0,
+      "memory": 16,
+      "assembly_sha256": "5b7718cb5b6a8dfc4b2f5fc6eaee29ae2f9b1097246cf0e7dd5a54ba583ce550"
+    },
+    {
+      "case": "affine_random_18",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 243.0,
+      "memory": 16,
+      "assembly_sha256": "5b7718cb5b6a8dfc4b2f5fc6eaee29ae2f9b1097246cf0e7dd5a54ba583ce550"
+    },
+    {
+      "case": "affine_random_18",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 243.0,
+      "memory": 16,
+      "assembly_sha256": "5b7718cb5b6a8dfc4b2f5fc6eaee29ae2f9b1097246cf0e7dd5a54ba583ce550"
+    },
+    {
+      "case": "affine_random_19",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "b213050b2ee78356464d2868c3369c64680c64b2809fc4bc5dac036e3045ccd3"
+    },
+    {
+      "case": "affine_random_19",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "b213050b2ee78356464d2868c3369c64680c64b2809fc4bc5dac036e3045ccd3"
+    },
+    {
+      "case": "affine_random_19",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 251.0,
+      "memory": 16,
+      "assembly_sha256": "b213050b2ee78356464d2868c3369c64680c64b2809fc4bc5dac036e3045ccd3"
+    },
+    {
+      "case": "fuzz_00",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 656.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_00",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 636.0,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_00",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 656.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_01",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 440.5,
+      "memory": 30,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_01",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 438.5,
+      "memory": 30,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_01",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 440.5,
+      "memory": 30,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_02",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 396.5,
+      "memory": 22,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_02",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 390.5,
+      "memory": 22,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_02",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 396.5,
+      "memory": 22,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_03",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 566.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_03",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 552.5,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_03",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 566.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_04",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 471.5,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_04",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 465.5,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_04",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 471.5,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_05",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 597.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_05",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 581.5,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_05",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 597.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_06",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 351.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_06",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 351.0,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_06",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 351.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_07",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 539.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_07",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 529.0,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_07",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 539.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_08",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 566.5,
+      "memory": 24,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_08",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 550.5,
+      "memory": 24,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_08",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 566.5,
+      "memory": 24,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_09",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 418.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_09",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 414.5,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_09",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 418.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_10",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 480.5,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_10",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 474.5,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_10",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 480.5,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_11",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 561.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_11",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 549.0,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_11",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 561.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_12",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 566.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_12",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 552.5,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_12",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 566.5,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_13",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 508.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_13",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 500.0,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_13",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 508.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_14",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 486.0,
+      "memory": 22,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_14",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 474.0,
+      "memory": 22,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_14",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 486.0,
+      "memory": 22,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_15",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 382.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_15",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 382.0,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_15",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 382.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_16",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 517.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_16",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 507.0,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_16",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 517.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_17",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 539.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_17",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 527.0,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_17",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 539.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_18",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 687.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_18",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 665.0,
+      "memory": 26,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_18",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 687.0,
+      "memory": 26,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_19",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 780.0,
+      "memory": 30,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_19",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 756.0,
+      "memory": 30,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_19",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 780.0,
+      "memory": 30,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_20",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 718.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_20",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 696.0,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_20",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 718.0,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_21",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 455.0,
+      "memory": 24,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_21",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 447.0,
+      "memory": 24,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_21",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 455.0,
+      "memory": 24,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_22",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 718.0,
+      "memory": 30,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_22",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 698.0,
+      "memory": 30,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_22",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 718.0,
+      "memory": 30,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_23",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 449.5,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "fuzz_23",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 445.5,
+      "memory": 28,
+      "assembly_sha256": "952d8307f089ec9f3d675889eafafa2d1b429c3e0beb68f63b5d8746e1c7a94a"
+    },
+    {
+      "case": "fuzz_23",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 449.5,
+      "memory": 28,
+      "assembly_sha256": "a9f12734df6b2db1a0e671c698d02c501fc6c462e7c4b980424bd0d46f9b719e"
+    },
+    {
+      "case": "pressure",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2632.0,
+      "memory": 174,
+      "assembly_sha256": "8d4eec145c1d6f037fdbe6204eb98b4975f5778f5e08486cc1822542b878eedf"
+    },
+    {
+      "case": "pressure",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2620.0,
+      "memory": 174,
+      "assembly_sha256": "2cf0a30073674b980c62f8944628378bbd7b2382f84ecd1afcab0e77f700152a"
+    },
+    {
+      "case": "pressure",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2632.0,
+      "memory": 174,
+      "assembly_sha256": "8d4eec145c1d6f037fdbe6204eb98b4975f5778f5e08486cc1822542b878eedf"
+    },
+    {
+      "case": "public_A_testcase1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 983.5,
+      "memory": 66,
+      "assembly_sha256": "bc2a25996ce4f4244ea44e9a4c73f74db16f9c2f76034f5a6d11b63a40febec0"
+    },
+    {
+      "case": "public_A_testcase1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 983.5,
+      "memory": 66,
+      "assembly_sha256": "bc2a25996ce4f4244ea44e9a4c73f74db16f9c2f76034f5a6d11b63a40febec0"
+    },
+    {
+      "case": "public_A_testcase1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 983.5,
+      "memory": 66,
+      "assembly_sha256": "bc2a25996ce4f4244ea44e9a4c73f74db16f9c2f76034f5a6d11b63a40febec0"
+    },
+    {
+      "case": "public_A_testcase10",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2796.5,
+      "memory": 450,
+      "assembly_sha256": "3bb4c4db78590948d7937d85c1ac3d816f0c13441997fbe43827aae83e8344ca"
+    },
+    {
+      "case": "public_A_testcase10",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2796.5,
+      "memory": 450,
+      "assembly_sha256": "3bb4c4db78590948d7937d85c1ac3d816f0c13441997fbe43827aae83e8344ca"
+    },
+    {
+      "case": "public_A_testcase10",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2796.5,
+      "memory": 450,
+      "assembly_sha256": "3bb4c4db78590948d7937d85c1ac3d816f0c13441997fbe43827aae83e8344ca"
+    },
+    {
+      "case": "public_A_testcase11",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2320.0,
+      "memory": 393,
+      "assembly_sha256": "f1ecb24aa5cfa98a58b8aef3948f6421667745034de66cf883822fb5145d411a"
+    },
+    {
+      "case": "public_A_testcase11",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2320.0,
+      "memory": 393,
+      "assembly_sha256": "f1ecb24aa5cfa98a58b8aef3948f6421667745034de66cf883822fb5145d411a"
+    },
+    {
+      "case": "public_A_testcase11",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2320.0,
+      "memory": 393,
+      "assembly_sha256": "f1ecb24aa5cfa98a58b8aef3948f6421667745034de66cf883822fb5145d411a"
+    },
+    {
+      "case": "public_A_testcase12",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 1295.5,
+      "memory": 156,
+      "assembly_sha256": "6d63eb4dd7ed7a9e91e56d854799f38143c4c66f89ca18f7ba1739c318552fc3"
+    },
+    {
+      "case": "public_A_testcase12",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 1295.5,
+      "memory": 156,
+      "assembly_sha256": "6d63eb4dd7ed7a9e91e56d854799f38143c4c66f89ca18f7ba1739c318552fc3"
+    },
+    {
+      "case": "public_A_testcase12",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 1295.5,
+      "memory": 156,
+      "assembly_sha256": "6d63eb4dd7ed7a9e91e56d854799f38143c4c66f89ca18f7ba1739c318552fc3"
+    },
+    {
+      "case": "public_A_testcase13",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 3843.0,
+      "memory": 491,
+      "assembly_sha256": "8ea081fcbe48951d4bc5ad053708488cd5417e73224b1b9328745f0780a9521f"
+    },
+    {
+      "case": "public_A_testcase13",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 3842.0,
+      "memory": 491,
+      "assembly_sha256": "d8e8f47fa607cd431ae89de4f5135b538df4004cac786b3ddf2475165c073b31"
+    },
+    {
+      "case": "public_A_testcase13",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 3843.0,
+      "memory": 491,
+      "assembly_sha256": "8ea081fcbe48951d4bc5ad053708488cd5417e73224b1b9328745f0780a9521f"
+    },
+    {
+      "case": "public_A_testcase14",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 77.0,
+      "memory": 4,
+      "assembly_sha256": "698bd1b20be2c6aad68033e7c9704c6767189e9f8cf2c7ba5d4ba95602ab87c1"
+    },
+    {
+      "case": "public_A_testcase14",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 77.0,
+      "memory": 4,
+      "assembly_sha256": "698bd1b20be2c6aad68033e7c9704c6767189e9f8cf2c7ba5d4ba95602ab87c1"
+    },
+    {
+      "case": "public_A_testcase14",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 77.0,
+      "memory": 4,
+      "assembly_sha256": "698bd1b20be2c6aad68033e7c9704c6767189e9f8cf2c7ba5d4ba95602ab87c1"
+    },
+    {
+      "case": "public_A_testcase15",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 38.0,
+      "memory": 2,
+      "assembly_sha256": "08a886573f5b876727fd5581896ae5e4d94ad0467896d6e70eaa719ed626a0ed"
+    },
+    {
+      "case": "public_A_testcase15",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 38.0,
+      "memory": 2,
+      "assembly_sha256": "08a886573f5b876727fd5581896ae5e4d94ad0467896d6e70eaa719ed626a0ed"
+    },
+    {
+      "case": "public_A_testcase15",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 38.0,
+      "memory": 2,
+      "assembly_sha256": "08a886573f5b876727fd5581896ae5e4d94ad0467896d6e70eaa719ed626a0ed"
+    },
+    {
+      "case": "public_A_testcase16",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 268.5,
+      "memory": 12,
+      "assembly_sha256": "bcf783c32cc205efddc6aeb96d846eaa44bc888c78331e4f0c8fbaadda7b8771"
+    },
+    {
+      "case": "public_A_testcase16",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 268.5,
+      "memory": 12,
+      "assembly_sha256": "bcf783c32cc205efddc6aeb96d846eaa44bc888c78331e4f0c8fbaadda7b8771"
+    },
+    {
+      "case": "public_A_testcase16",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 268.5,
+      "memory": 12,
+      "assembly_sha256": "bcf783c32cc205efddc6aeb96d846eaa44bc888c78331e4f0c8fbaadda7b8771"
+    },
+    {
+      "case": "public_A_testcase17",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 52.0,
+      "memory": 5,
+      "assembly_sha256": "d9e5cf435e2ba09a276f8cf6d8916cfed709e9243fd9e74c4f6ae34c527a3f47"
+    },
+    {
+      "case": "public_A_testcase17",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 52.0,
+      "memory": 5,
+      "assembly_sha256": "d9e5cf435e2ba09a276f8cf6d8916cfed709e9243fd9e74c4f6ae34c527a3f47"
+    },
+    {
+      "case": "public_A_testcase17",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 52.0,
+      "memory": 5,
+      "assembly_sha256": "d9e5cf435e2ba09a276f8cf6d8916cfed709e9243fd9e74c4f6ae34c527a3f47"
+    },
+    {
+      "case": "public_A_testcase18",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 433.0,
+      "memory": 50,
+      "assembly_sha256": "b8df1728e1f910b528152515c3d0b3ad10a974e879e5454de2b91d1d41de62b6"
+    },
+    {
+      "case": "public_A_testcase18",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 432.0,
+      "memory": 50,
+      "assembly_sha256": "99d84a87f3713767e8d7455f06a8deed35159e147a8413419c7d27c523a1e094"
+    },
+    {
+      "case": "public_A_testcase18",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 433.0,
+      "memory": 50,
+      "assembly_sha256": "b8df1728e1f910b528152515c3d0b3ad10a974e879e5454de2b91d1d41de62b6"
+    },
+    {
+      "case": "public_A_testcase19",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 587008.5,
+      "memory": 54491,
+      "assembly_sha256": "7ac1c9c64837facc84796abb15cd8138f4fc18831b2bb081d8f92ac467abf475"
+    },
+    {
+      "case": "public_A_testcase19",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 586523.5,
+      "memory": 54491,
+      "assembly_sha256": "35cd7b0f2b4ca6f357172e0292798255373f6e45b534585a7caa580dca6c6eac"
+    },
+    {
+      "case": "public_A_testcase19",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 587008.5,
+      "memory": 54491,
+      "assembly_sha256": "7ac1c9c64837facc84796abb15cd8138f4fc18831b2bb081d8f92ac467abf475"
+    },
+    {
+      "case": "public_A_testcase2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 158.0,
+      "memory": 17,
+      "assembly_sha256": "91255fb1f3ba0e8765e4603ae4942a1392f7440e5128a87cf99b1b7b9c2aa47d"
+    },
+    {
+      "case": "public_A_testcase2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 152.0,
+      "memory": 17,
+      "assembly_sha256": "7624a1c17fc276a5a9ca767721a89ab82701324c6766eacde0f64ec3d30519e6"
+    },
+    {
+      "case": "public_A_testcase2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 158.0,
+      "memory": 17,
+      "assembly_sha256": "91255fb1f3ba0e8765e4603ae4942a1392f7440e5128a87cf99b1b7b9c2aa47d"
+    },
+    {
+      "case": "public_A_testcase20",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 217.0,
+      "memory": 14,
+      "assembly_sha256": "d0633fe6185e20915aee0d9205c82944f38b9cd183f25757c5f037d5c1c04505"
+    },
+    {
+      "case": "public_A_testcase20",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 217.0,
+      "memory": 14,
+      "assembly_sha256": "d0633fe6185e20915aee0d9205c82944f38b9cd183f25757c5f037d5c1c04505"
+    },
+    {
+      "case": "public_A_testcase20",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 217.0,
+      "memory": 14,
+      "assembly_sha256": "d0633fe6185e20915aee0d9205c82944f38b9cd183f25757c5f037d5c1c04505"
+    },
+    {
+      "case": "public_A_testcase3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 543.0,
+      "memory": 18,
+      "assembly_sha256": "37f75ea9471e3176f503f0f13ec7c0d367a942e1261253b1400db45e972e6420"
+    },
+    {
+      "case": "public_A_testcase3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 541.0,
+      "memory": 18,
+      "assembly_sha256": "8c08df917349883b0686994a50d7fcc7bc7daa2a4df8a108fbeed35fb63ba21f"
+    },
+    {
+      "case": "public_A_testcase3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 543.0,
+      "memory": 18,
+      "assembly_sha256": "37f75ea9471e3176f503f0f13ec7c0d367a942e1261253b1400db45e972e6420"
+    },
+    {
+      "case": "public_A_testcase4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 79.0,
+      "memory": 5,
+      "assembly_sha256": "0a3556e3d8b88eaaec0892410a75d53f49a0432a149f5ecd792c1721a8a1fb7a"
+    },
+    {
+      "case": "public_A_testcase4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 79.0,
+      "memory": 5,
+      "assembly_sha256": "0a3556e3d8b88eaaec0892410a75d53f49a0432a149f5ecd792c1721a8a1fb7a"
+    },
+    {
+      "case": "public_A_testcase4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 79.0,
+      "memory": 5,
+      "assembly_sha256": "0a3556e3d8b88eaaec0892410a75d53f49a0432a149f5ecd792c1721a8a1fb7a"
+    },
+    {
+      "case": "public_A_testcase5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11647.0,
+      "memory": 305,
+      "assembly_sha256": "60b6112a6c44c6e8f05b866e515675030216aa5d8540453c3fe2904b2aa7c317"
+    },
+    {
+      "case": "public_A_testcase5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11210.0,
+      "memory": 301,
+      "assembly_sha256": "6d5e1813d820e705dd1e40e6fae2790b383bdc7521855746af2dac9cc6ddc4ca"
+    },
+    {
+      "case": "public_A_testcase5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11647.0,
+      "memory": 305,
+      "assembly_sha256": "60b6112a6c44c6e8f05b866e515675030216aa5d8540453c3fe2904b2aa7c317"
+    },
+    {
+      "case": "public_A_testcase6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 4340.0,
+      "memory": 442,
+      "assembly_sha256": "68a17a2303f5a270aeb8ab2f04412c46f3d6c31c0d76c08a7e6fec7acb8cd86d"
+    },
+    {
+      "case": "public_A_testcase6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 4329.0,
+      "memory": 438,
+      "assembly_sha256": "64ec780bb1165067e0bc4c695583316473c42bf806dbf00f3a9eb657eb1c657c"
+    },
+    {
+      "case": "public_A_testcase6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 4340.0,
+      "memory": 442,
+      "assembly_sha256": "68a17a2303f5a270aeb8ab2f04412c46f3d6c31c0d76c08a7e6fec7acb8cd86d"
+    },
+    {
+      "case": "public_A_testcase7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 4310.0,
+      "memory": 487,
+      "assembly_sha256": "117829a668925ae212c950435fa2c6038f8b6f8ead8d7c2d195f9491efc1897f"
+    },
+    {
+      "case": "public_A_testcase7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 3950.0,
+      "memory": 447,
+      "assembly_sha256": "53e99683321c1316d2a23aac90ed51418653bccf72cb3de40a189d0213163219"
+    },
+    {
+      "case": "public_A_testcase7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 4310.0,
+      "memory": 487,
+      "assembly_sha256": "117829a668925ae212c950435fa2c6038f8b6f8ead8d7c2d195f9491efc1897f"
+    },
+    {
+      "case": "public_A_testcase8",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 50361.5,
+      "memory": 7505,
+      "assembly_sha256": "056410403b38740e60718dc173d7f64ba3a394e3da7481238d7d791221f86c15"
+    },
+    {
+      "case": "public_A_testcase8",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 50275.5,
+      "memory": 7473,
+      "assembly_sha256": "f4156dddf5daa613b9d5024946abce32544c34a7668b79fef0fe3bbaaba82f24"
+    },
+    {
+      "case": "public_A_testcase8",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 50361.5,
+      "memory": 7505,
+      "assembly_sha256": "056410403b38740e60718dc173d7f64ba3a394e3da7481238d7d791221f86c15"
+    },
+    {
+      "case": "public_A_testcase9",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 739.0,
+      "memory": 40,
+      "assembly_sha256": "5d23b5d59d6ec898df9e3b6660fdac0d2abf244926c4b5befa44aab74ee27103"
+    },
+    {
+      "case": "public_A_testcase9",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 699.0,
+      "memory": 40,
+      "assembly_sha256": "a51912484207982cc3656f3243993fdb44ffa686f43305e4a91d217b9e897593"
+    },
+    {
+      "case": "public_A_testcase9",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 739.0,
+      "memory": 40,
+      "assembly_sha256": "5d23b5d59d6ec898df9e3b6660fdac0d2abf244926c4b5befa44aab74ee27103"
+    },
+    {
+      "case": "public_B_testcase1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 422.5,
+      "memory": 40,
+      "assembly_sha256": "b5b7662f4a94bfaffee0a8b8d90a965d3ad5ec18c31793ac918bb814b2717136"
+    },
+    {
+      "case": "public_B_testcase1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 422.5,
+      "memory": 40,
+      "assembly_sha256": "b5b7662f4a94bfaffee0a8b8d90a965d3ad5ec18c31793ac918bb814b2717136"
+    },
+    {
+      "case": "public_B_testcase1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 422.5,
+      "memory": 40,
+      "assembly_sha256": "b5b7662f4a94bfaffee0a8b8d90a965d3ad5ec18c31793ac918bb814b2717136"
+    },
+    {
+      "case": "public_B_testcase10",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 224.0,
+      "memory": 32,
+      "assembly_sha256": "6aceed8d4706aadaeef7abf554e2e0fc45a12a6a390fea103d37f8d855fceed6"
+    },
+    {
+      "case": "public_B_testcase10",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 222.0,
+      "memory": 32,
+      "assembly_sha256": "c7ebacb98fa5f50cab2ff0ea8faecad92603925af9797961a863eec32c236bdb"
+    },
+    {
+      "case": "public_B_testcase10",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 224.0,
+      "memory": 32,
+      "assembly_sha256": "6aceed8d4706aadaeef7abf554e2e0fc45a12a6a390fea103d37f8d855fceed6"
+    },
+    {
+      "case": "public_B_testcase11",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 184.5,
+      "memory": 24,
+      "assembly_sha256": "8721b268015dd68c7e1e07f6aa41e8c3b79cb874916978e398429cc40893dceb"
+    },
+    {
+      "case": "public_B_testcase11",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 184.5,
+      "memory": 24,
+      "assembly_sha256": "8721b268015dd68c7e1e07f6aa41e8c3b79cb874916978e398429cc40893dceb"
+    },
+    {
+      "case": "public_B_testcase11",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 184.5,
+      "memory": 24,
+      "assembly_sha256": "8721b268015dd68c7e1e07f6aa41e8c3b79cb874916978e398429cc40893dceb"
+    },
+    {
+      "case": "public_B_testcase12",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 171.0,
+      "memory": 37,
+      "assembly_sha256": "3621fc61eddd6b07db52bff38d809fea8d52931e39cd2e3cd3b3a25dd6c920bc"
+    },
+    {
+      "case": "public_B_testcase12",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 171.0,
+      "memory": 37,
+      "assembly_sha256": "3621fc61eddd6b07db52bff38d809fea8d52931e39cd2e3cd3b3a25dd6c920bc"
+    },
+    {
+      "case": "public_B_testcase12",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 171.0,
+      "memory": 37,
+      "assembly_sha256": "3621fc61eddd6b07db52bff38d809fea8d52931e39cd2e3cd3b3a25dd6c920bc"
+    },
+    {
+      "case": "public_B_testcase13",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 99.5,
+      "memory": 9,
+      "assembly_sha256": "9de8fad9cf1c1f2d5c6c2990019320788358e4c6b160e5920d08298a011a8277"
+    },
+    {
+      "case": "public_B_testcase13",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 99.5,
+      "memory": 9,
+      "assembly_sha256": "9de8fad9cf1c1f2d5c6c2990019320788358e4c6b160e5920d08298a011a8277"
+    },
+    {
+      "case": "public_B_testcase13",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 99.5,
+      "memory": 9,
+      "assembly_sha256": "9de8fad9cf1c1f2d5c6c2990019320788358e4c6b160e5920d08298a011a8277"
+    },
+    {
+      "case": "public_B_testcase14",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "8d4ae0d01858524cfbe2ec00f5bcc8d436a54ab285e754708bedf0331918b797"
+    },
+    {
+      "case": "public_B_testcase14",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "8d4ae0d01858524cfbe2ec00f5bcc8d436a54ab285e754708bedf0331918b797"
+    },
+    {
+      "case": "public_B_testcase14",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "8d4ae0d01858524cfbe2ec00f5bcc8d436a54ab285e754708bedf0331918b797"
+    },
+    {
+      "case": "public_B_testcase15",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "ab7cca6dace6f03ea0573ce829735ea5b8d73c2cbb459504830e54950fb1d8b4"
+    },
+    {
+      "case": "public_B_testcase15",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "ab7cca6dace6f03ea0573ce829735ea5b8d73c2cbb459504830e54950fb1d8b4"
+    },
+    {
+      "case": "public_B_testcase15",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "ab7cca6dace6f03ea0573ce829735ea5b8d73c2cbb459504830e54950fb1d8b4"
+    },
+    {
+      "case": "public_B_testcase16",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 22.0,
+      "memory": 0,
+      "assembly_sha256": "7c4f117ff8c1a2f71af184066ca75d455beae7a94db9f6b6e8f15c44902bc057"
+    },
+    {
+      "case": "public_B_testcase16",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 22.0,
+      "memory": 0,
+      "assembly_sha256": "7c4f117ff8c1a2f71af184066ca75d455beae7a94db9f6b6e8f15c44902bc057"
+    },
+    {
+      "case": "public_B_testcase16",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 22.0,
+      "memory": 0,
+      "assembly_sha256": "7c4f117ff8c1a2f71af184066ca75d455beae7a94db9f6b6e8f15c44902bc057"
+    },
+    {
+      "case": "public_B_testcase17",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 1367.0,
+      "memory": 205,
+      "assembly_sha256": "ddc89031c182d1c12b06cbc3c829f17e1bf1889f1c2620ae9044ccccfe903529"
+    },
+    {
+      "case": "public_B_testcase17",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 1350.0,
+      "memory": 197,
+      "assembly_sha256": "e954b2ff70444af07b5e1af14b41a27cc90a77ed87bd600a7baebf1620ab0f36"
+    },
+    {
+      "case": "public_B_testcase17",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 1367.0,
+      "memory": 205,
+      "assembly_sha256": "ddc89031c182d1c12b06cbc3c829f17e1bf1889f1c2620ae9044ccccfe903529"
+    },
+    {
+      "case": "public_B_testcase18",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 776.0,
+      "memory": 202,
+      "assembly_sha256": "728e7623f39d3d11aa659ddf13de5e4d7e24f73c502dcf10d1b6276a9872761f"
+    },
+    {
+      "case": "public_B_testcase18",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 616.0,
+      "memory": 128,
+      "assembly_sha256": "3724d799de82b80d986feadc6bdfe35077f837d4960d6e697e0c318a87079c53"
+    },
+    {
+      "case": "public_B_testcase18",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 776.0,
+      "memory": 202,
+      "assembly_sha256": "728e7623f39d3d11aa659ddf13de5e4d7e24f73c502dcf10d1b6276a9872761f"
+    },
+    {
+      "case": "public_B_testcase19",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 1958.0,
+      "memory": 150,
+      "assembly_sha256": "c09c6be16e011f7bc38dfab2ebaa92a1337cf020b7fd4b8da33a8dabe68711aa"
+    },
+    {
+      "case": "public_B_testcase19",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 1958.0,
+      "memory": 150,
+      "assembly_sha256": "c09c6be16e011f7bc38dfab2ebaa92a1337cf020b7fd4b8da33a8dabe68711aa"
+    },
+    {
+      "case": "public_B_testcase19",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 1958.0,
+      "memory": 150,
+      "assembly_sha256": "c09c6be16e011f7bc38dfab2ebaa92a1337cf020b7fd4b8da33a8dabe68711aa"
+    },
+    {
+      "case": "public_B_testcase2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 1179.5,
+      "memory": 100,
+      "assembly_sha256": "cea64881255530ac9f47046cb423ae527b0642ee16a6f342a395aff0e3dd57d1"
+    },
+    {
+      "case": "public_B_testcase2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 1156.5,
+      "memory": 98,
+      "assembly_sha256": "7fc6bde24b4dec369ab3b62ac9841a134c5c2dfc1b9f595f9f11f439d4495d58"
+    },
+    {
+      "case": "public_B_testcase2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 1179.5,
+      "memory": 100,
+      "assembly_sha256": "cea64881255530ac9f47046cb423ae527b0642ee16a6f342a395aff0e3dd57d1"
+    },
+    {
+      "case": "public_B_testcase20",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2242.5,
+      "memory": 324,
+      "assembly_sha256": "68334f4c5bbec439fbee48fae004021a1f6a7d68182555cae40581e811f68325"
+    },
+    {
+      "case": "public_B_testcase20",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2222.5,
+      "memory": 316,
+      "assembly_sha256": "4e61d6f63d91959ec0f83a5ad23554f105373b97840b8f45399b6490e6dcfa06"
+    },
+    {
+      "case": "public_B_testcase20",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2242.5,
+      "memory": 324,
+      "assembly_sha256": "68334f4c5bbec439fbee48fae004021a1f6a7d68182555cae40581e811f68325"
+    },
+    {
+      "case": "public_B_testcase3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2484.0,
+      "memory": 249,
+      "assembly_sha256": "7af5ff6be250a88ccc60fc586adc775f6671a7963f4e5bc2563230d11fac4d51"
+    },
+    {
+      "case": "public_B_testcase3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2484.0,
+      "memory": 249,
+      "assembly_sha256": "7af5ff6be250a88ccc60fc586adc775f6671a7963f4e5bc2563230d11fac4d51"
+    },
+    {
+      "case": "public_B_testcase3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2484.0,
+      "memory": 249,
+      "assembly_sha256": "7af5ff6be250a88ccc60fc586adc775f6671a7963f4e5bc2563230d11fac4d51"
+    },
+    {
+      "case": "public_B_testcase4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 449.5,
+      "memory": 53,
+      "assembly_sha256": "4f04d980b8b5aaf34fecc0a727d94419ca2ab72fdf7eca6026a60b621910e05b"
+    },
+    {
+      "case": "public_B_testcase4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 444.5,
+      "memory": 53,
+      "assembly_sha256": "7bb5039aa74610b7f18c18d342746d53db14e8cf97aee7b441070ec4c4c63fea"
+    },
+    {
+      "case": "public_B_testcase4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 449.5,
+      "memory": 53,
+      "assembly_sha256": "4f04d980b8b5aaf34fecc0a727d94419ca2ab72fdf7eca6026a60b621910e05b"
+    },
+    {
+      "case": "public_B_testcase5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 315.0,
+      "memory": 37,
+      "assembly_sha256": "b928b5563369546320004c927d5b069340745bd9e493eb0c340d1e8dc2dc118b"
+    },
+    {
+      "case": "public_B_testcase5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 315.0,
+      "memory": 37,
+      "assembly_sha256": "b928b5563369546320004c927d5b069340745bd9e493eb0c340d1e8dc2dc118b"
+    },
+    {
+      "case": "public_B_testcase5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 315.0,
+      "memory": 37,
+      "assembly_sha256": "b928b5563369546320004c927d5b069340745bd9e493eb0c340d1e8dc2dc118b"
+    },
+    {
+      "case": "public_B_testcase6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 334.0,
+      "memory": 33,
+      "assembly_sha256": "ebb6cd6c70a1b2ec7f556b0a22257ddaa8256d371cb3e6d9862f1203bcdaf7b7"
+    },
+    {
+      "case": "public_B_testcase6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 329.0,
+      "memory": 33,
+      "assembly_sha256": "dab6c2db72e53604fd32d7ceafd968f61f58f73dbf0c0d92944a38da15766cec"
+    },
+    {
+      "case": "public_B_testcase6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 334.0,
+      "memory": 33,
+      "assembly_sha256": "ebb6cd6c70a1b2ec7f556b0a22257ddaa8256d371cb3e6d9862f1203bcdaf7b7"
+    },
+    {
+      "case": "public_B_testcase7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 5769.0,
+      "memory": 1281,
+      "assembly_sha256": "93733462b0dd7f89acb0b45a94e8972df0982fd324a1c7aa306fc2f6266a7b74"
+    },
+    {
+      "case": "public_B_testcase7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 5709.0,
+      "memory": 1281,
+      "assembly_sha256": "615867d2e016e745ba004070b3c909a95b998b6cc5313d97fb149072daa01f77"
+    },
+    {
+      "case": "public_B_testcase7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 5769.0,
+      "memory": 1281,
+      "assembly_sha256": "93733462b0dd7f89acb0b45a94e8972df0982fd324a1c7aa306fc2f6266a7b74"
+    },
+    {
+      "case": "public_B_testcase8",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 234.5,
+      "memory": 26,
+      "assembly_sha256": "57f29d7956c01f1257ae572cd4d29c287ac0421a500bfa75cf3f21d25ca5fc79"
+    },
+    {
+      "case": "public_B_testcase8",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 234.5,
+      "memory": 26,
+      "assembly_sha256": "57f29d7956c01f1257ae572cd4d29c287ac0421a500bfa75cf3f21d25ca5fc79"
+    },
+    {
+      "case": "public_B_testcase8",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 234.5,
+      "memory": 26,
+      "assembly_sha256": "57f29d7956c01f1257ae572cd4d29c287ac0421a500bfa75cf3f21d25ca5fc79"
+    },
+    {
+      "case": "public_B_testcase9",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 71.0,
+      "memory": 6,
+      "assembly_sha256": "68050a22ba53e9e61dd7edd4a7f4aa1477a2881b58be7aa2f78f0480077d463e"
+    },
+    {
+      "case": "public_B_testcase9",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 69.0,
+      "memory": 6,
+      "assembly_sha256": "1c4c55b9ed4d959a7c84bc76882e122fc2b2eba8bcc629046ed237d83fd9eb56"
+    },
+    {
+      "case": "public_B_testcase9",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 71.0,
+      "memory": 6,
+      "assembly_sha256": "68050a22ba53e9e61dd7edd4a7f4aa1477a2881b58be7aa2f78f0480077d463e"
+    },
+    {
+      "case": "public_C_testcase1",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "7ac46f4bf633e9ea67a2477caa65b689b4b379f4eb2e996ec471b38be8519364"
+    },
+    {
+      "case": "public_C_testcase1",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "7ac46f4bf633e9ea67a2477caa65b689b4b379f4eb2e996ec471b38be8519364"
+    },
+    {
+      "case": "public_C_testcase1",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 32.0,
+      "memory": 2,
+      "assembly_sha256": "7ac46f4bf633e9ea67a2477caa65b689b4b379f4eb2e996ec471b38be8519364"
+    },
+    {
+      "case": "public_C_testcase10",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "0d6d29e7aa8670c983d6338e8aa0788ca2d17e752b1c3cf18ea058fabef3179d"
+    },
+    {
+      "case": "public_C_testcase10",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "0d6d29e7aa8670c983d6338e8aa0788ca2d17e752b1c3cf18ea058fabef3179d"
+    },
+    {
+      "case": "public_C_testcase10",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "0d6d29e7aa8670c983d6338e8aa0788ca2d17e752b1c3cf18ea058fabef3179d"
+    },
+    {
+      "case": "public_C_testcase11",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 36.0,
+      "memory": 4,
+      "assembly_sha256": "fb3a7195c8e602a1883e1f6bb9afcfafe3f47aac77d3fa25b7ffc3f9e51643cd"
+    },
+    {
+      "case": "public_C_testcase11",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 36.0,
+      "memory": 4,
+      "assembly_sha256": "fb3a7195c8e602a1883e1f6bb9afcfafe3f47aac77d3fa25b7ffc3f9e51643cd"
+    },
+    {
+      "case": "public_C_testcase11",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 36.0,
+      "memory": 4,
+      "assembly_sha256": "fb3a7195c8e602a1883e1f6bb9afcfafe3f47aac77d3fa25b7ffc3f9e51643cd"
+    },
+    {
+      "case": "public_C_testcase12",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 238.0,
+      "memory": 4,
+      "assembly_sha256": "c6b4adb646eb75711ef3466c843d468bf8b79e08d88c2970fa6acaa57359d766"
+    },
+    {
+      "case": "public_C_testcase12",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 238.0,
+      "memory": 4,
+      "assembly_sha256": "c6b4adb646eb75711ef3466c843d468bf8b79e08d88c2970fa6acaa57359d766"
+    },
+    {
+      "case": "public_C_testcase12",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 238.0,
+      "memory": 4,
+      "assembly_sha256": "c6b4adb646eb75711ef3466c843d468bf8b79e08d88c2970fa6acaa57359d766"
+    },
+    {
+      "case": "public_C_testcase13",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 303.5,
+      "memory": 59,
+      "assembly_sha256": "863e6d0f1c834971d799b99be3ef2a89a0abce25b3e0ced6cfd5de6469b0b6a8"
+    },
+    {
+      "case": "public_C_testcase13",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 283.5,
+      "memory": 51,
+      "assembly_sha256": "007c740b439ba3c0a901dc1da476473bcbecd768ac03bb7044da7a82a2ef765a"
+    },
+    {
+      "case": "public_C_testcase13",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 303.5,
+      "memory": 59,
+      "assembly_sha256": "863e6d0f1c834971d799b99be3ef2a89a0abce25b3e0ced6cfd5de6469b0b6a8"
+    },
+    {
+      "case": "public_C_testcase14",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 137.0,
+      "memory": 8,
+      "assembly_sha256": "39249d04b059854f72ca9358dce9205f0d3a6960597ad5c3cf741b22b5434afe"
+    },
+    {
+      "case": "public_C_testcase14",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 137.0,
+      "memory": 8,
+      "assembly_sha256": "39249d04b059854f72ca9358dce9205f0d3a6960597ad5c3cf741b22b5434afe"
+    },
+    {
+      "case": "public_C_testcase14",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 137.0,
+      "memory": 8,
+      "assembly_sha256": "39249d04b059854f72ca9358dce9205f0d3a6960597ad5c3cf741b22b5434afe"
+    },
+    {
+      "case": "public_C_testcase15",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 16.0,
+      "memory": 0,
+      "assembly_sha256": "c3aa8d23f6bbdd14470399f5f976e9539525ffea275797d3dbdee0807a3adb1c"
+    },
+    {
+      "case": "public_C_testcase15",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 16.0,
+      "memory": 0,
+      "assembly_sha256": "c3aa8d23f6bbdd14470399f5f976e9539525ffea275797d3dbdee0807a3adb1c"
+    },
+    {
+      "case": "public_C_testcase15",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 16.0,
+      "memory": 0,
+      "assembly_sha256": "c3aa8d23f6bbdd14470399f5f976e9539525ffea275797d3dbdee0807a3adb1c"
+    },
+    {
+      "case": "public_C_testcase16",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 16.0,
+      "memory": 0,
+      "assembly_sha256": "9124dba02a63a99a55803e1d9ecea8689f2375680cfcf047ff89639f53d79a0a"
+    },
+    {
+      "case": "public_C_testcase16",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 16.0,
+      "memory": 0,
+      "assembly_sha256": "9124dba02a63a99a55803e1d9ecea8689f2375680cfcf047ff89639f53d79a0a"
+    },
+    {
+      "case": "public_C_testcase16",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 16.0,
+      "memory": 0,
+      "assembly_sha256": "9124dba02a63a99a55803e1d9ecea8689f2375680cfcf047ff89639f53d79a0a"
+    },
+    {
+      "case": "public_C_testcase17",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 309.0,
+      "memory": 16,
+      "assembly_sha256": "6d410f3033eb17a7044a60f3016d7c8db9118fd8d8174104b18ef186d5b8ef84"
+    },
+    {
+      "case": "public_C_testcase17",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 309.0,
+      "memory": 16,
+      "assembly_sha256": "6d410f3033eb17a7044a60f3016d7c8db9118fd8d8174104b18ef186d5b8ef84"
+    },
+    {
+      "case": "public_C_testcase17",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 309.0,
+      "memory": 16,
+      "assembly_sha256": "6d410f3033eb17a7044a60f3016d7c8db9118fd8d8174104b18ef186d5b8ef84"
+    },
+    {
+      "case": "public_C_testcase18",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 603.5,
+      "memory": 130,
+      "assembly_sha256": "1c7615c065d43c93f7ff0161a0c920079d14f5f46735760df598be3461e0ea0e"
+    },
+    {
+      "case": "public_C_testcase18",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 603.5,
+      "memory": 130,
+      "assembly_sha256": "1c7615c065d43c93f7ff0161a0c920079d14f5f46735760df598be3461e0ea0e"
+    },
+    {
+      "case": "public_C_testcase18",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 603.5,
+      "memory": 130,
+      "assembly_sha256": "1c7615c065d43c93f7ff0161a0c920079d14f5f46735760df598be3461e0ea0e"
+    },
+    {
+      "case": "public_C_testcase19",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 3187453.5,
+      "memory": 14,
+      "assembly_sha256": "ef06f0b06cde2e116abc591879be2ffbc22952ce203599d89204146d03903bd9"
+    },
+    {
+      "case": "public_C_testcase19",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 3187453.5,
+      "memory": 14,
+      "assembly_sha256": "ef06f0b06cde2e116abc591879be2ffbc22952ce203599d89204146d03903bd9"
+    },
+    {
+      "case": "public_C_testcase19",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 3187453.5,
+      "memory": 14,
+      "assembly_sha256": "ef06f0b06cde2e116abc591879be2ffbc22952ce203599d89204146d03903bd9"
+    },
+    {
+      "case": "public_C_testcase2",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 249.5,
+      "memory": 4,
+      "assembly_sha256": "2325bcf10fa36dfefaf7a1e9c7ae58c254993babd219926114f5e3501fd9ac6b"
+    },
+    {
+      "case": "public_C_testcase2",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 249.5,
+      "memory": 4,
+      "assembly_sha256": "2325bcf10fa36dfefaf7a1e9c7ae58c254993babd219926114f5e3501fd9ac6b"
+    },
+    {
+      "case": "public_C_testcase2",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 249.5,
+      "memory": 4,
+      "assembly_sha256": "2325bcf10fa36dfefaf7a1e9c7ae58c254993babd219926114f5e3501fd9ac6b"
+    },
+    {
+      "case": "public_C_testcase20",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 159.0,
+      "memory": 34,
+      "assembly_sha256": "104c3cd31bf55f1413b9b8ce9b1c2e2c99a5a587c8d6f430589b1a25e05efd9e"
+    },
+    {
+      "case": "public_C_testcase20",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 159.0,
+      "memory": 34,
+      "assembly_sha256": "104c3cd31bf55f1413b9b8ce9b1c2e2c99a5a587c8d6f430589b1a25e05efd9e"
+    },
+    {
+      "case": "public_C_testcase20",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 159.0,
+      "memory": 34,
+      "assembly_sha256": "104c3cd31bf55f1413b9b8ce9b1c2e2c99a5a587c8d6f430589b1a25e05efd9e"
+    },
+    {
+      "case": "public_C_testcase3",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 97.5,
+      "memory": 4,
+      "assembly_sha256": "2ec6e1849597f0b53fa0637f098a57b558da4a46acff4ca29656d77b16db83dd"
+    },
+    {
+      "case": "public_C_testcase3",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 97.5,
+      "memory": 4,
+      "assembly_sha256": "2ec6e1849597f0b53fa0637f098a57b558da4a46acff4ca29656d77b16db83dd"
+    },
+    {
+      "case": "public_C_testcase3",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 97.5,
+      "memory": 4,
+      "assembly_sha256": "2ec6e1849597f0b53fa0637f098a57b558da4a46acff4ca29656d77b16db83dd"
+    },
+    {
+      "case": "public_C_testcase4",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 66.0,
+      "memory": 4,
+      "assembly_sha256": "5dcdba2077aca48b4054457d70c636d2c665a31c1525d6931e53a39522274683"
+    },
+    {
+      "case": "public_C_testcase4",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 66.0,
+      "memory": 4,
+      "assembly_sha256": "5dcdba2077aca48b4054457d70c636d2c665a31c1525d6931e53a39522274683"
+    },
+    {
+      "case": "public_C_testcase4",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 66.0,
+      "memory": 4,
+      "assembly_sha256": "5dcdba2077aca48b4054457d70c636d2c665a31c1525d6931e53a39522274683"
+    },
+    {
+      "case": "public_C_testcase5",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "e04f817b59a6029d7ce8a4dcba8c8b1abf3a4bdd9d1ac9c78dcf142430e3e06c"
+    },
+    {
+      "case": "public_C_testcase5",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "e04f817b59a6029d7ce8a4dcba8c8b1abf3a4bdd9d1ac9c78dcf142430e3e06c"
+    },
+    {
+      "case": "public_C_testcase5",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11.0,
+      "memory": 0,
+      "assembly_sha256": "e04f817b59a6029d7ce8a4dcba8c8b1abf3a4bdd9d1ac9c78dcf142430e3e06c"
+    },
+    {
+      "case": "public_C_testcase6",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 282.0,
+      "memory": 4,
+      "assembly_sha256": "67aaf8eff17e5061aff068962308fcc683eca54e0b4f547e95b7ce54cf733d0b"
+    },
+    {
+      "case": "public_C_testcase6",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 282.0,
+      "memory": 4,
+      "assembly_sha256": "67aaf8eff17e5061aff068962308fcc683eca54e0b4f547e95b7ce54cf733d0b"
+    },
+    {
+      "case": "public_C_testcase6",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 282.0,
+      "memory": 4,
+      "assembly_sha256": "67aaf8eff17e5061aff068962308fcc683eca54e0b4f547e95b7ce54cf733d0b"
+    },
+    {
+      "case": "public_C_testcase7",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a8c3cfd0a1d3a0f513896363047bc510f56f6a80599009ee0b86472d33fbfe74"
+    },
+    {
+      "case": "public_C_testcase7",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a8c3cfd0a1d3a0f513896363047bc510f56f6a80599009ee0b86472d33fbfe74"
+    },
+    {
+      "case": "public_C_testcase7",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "a8c3cfd0a1d3a0f513896363047bc510f56f6a80599009ee0b86472d33fbfe74"
+    },
+    {
+      "case": "public_C_testcase8",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "bcb2594a351d01a426514e91840f65f547fd901ae010b9f2bd6fc104905369ca"
+    },
+    {
+      "case": "public_C_testcase8",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "bcb2594a351d01a426514e91840f65f547fd901ae010b9f2bd6fc104905369ca"
+    },
+    {
+      "case": "public_C_testcase8",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 13.0,
+      "memory": 0,
+      "assembly_sha256": "bcb2594a351d01a426514e91840f65f547fd901ae010b9f2bd6fc104905369ca"
+    },
+    {
+      "case": "public_C_testcase9",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 246.0,
+      "memory": 16,
+      "assembly_sha256": "a1f3d85e53b2b78a28f607fc1542629590771d80b1e5b2dcd4ced333ea093bcd"
+    },
+    {
+      "case": "public_C_testcase9",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 246.0,
+      "memory": 16,
+      "assembly_sha256": "a1f3d85e53b2b78a28f607fc1542629590771d80b1e5b2dcd4ced333ea093bcd"
+    },
+    {
+      "case": "public_C_testcase9",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 246.0,
+      "memory": 16,
+      "assembly_sha256": "a1f3d85e53b2b78a28f607fc1542629590771d80b1e5b2dcd4ced333ea093bcd"
+    },
+    {
+      "case": "memory_disjoint_elements",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 14636.0,
+      "memory": 2013,
+      "assembly_sha256": "0fcd0d2856b54651de7f7a95ef751aabe934193d164afc337596cd3cae3cb8c3"
+    },
+    {
+      "case": "memory_disjoint_elements",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 14634.0,
+      "memory": 2013,
+      "assembly_sha256": "2a6bda5fbf334d611655d4844b6fc7a8e250e53f7a0beb86c99f309b3bb94a6f"
+    },
+    {
+      "case": "memory_disjoint_elements",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 14636.0,
+      "memory": 2013,
+      "assembly_sha256": "0fcd0d2856b54651de7f7a95ef751aabe934193d164afc337596cd3cae3cb8c3"
+    },
+    {
+      "case": "memory_dynamic_index",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 159.5,
+      "memory": 21,
+      "assembly_sha256": "ed16736f7f976d97cb387fe465515d050912037646a7719864ac3dd69c613e63"
+    },
+    {
+      "case": "memory_dynamic_index",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 153.5,
+      "memory": 19,
+      "assembly_sha256": "5c0652674bfbce5530aa24982372ae1f1ddbbfeda52541f9c5aa3b13cb7960ce"
+    },
+    {
+      "case": "memory_dynamic_index",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 159.5,
+      "memory": 21,
+      "assembly_sha256": "ed16736f7f976d97cb387fe465515d050912037646a7719864ac3dd69c613e63"
+    },
+    {
+      "case": "memory_call_clobber",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 20,
+      "assembly_sha256": "f341a48a959f27da32f2773aca2223bccff3fcbf99315e3446be88630296d01c"
+    },
+    {
+      "case": "memory_call_clobber",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 103.0,
+      "memory": 18,
+      "assembly_sha256": "9eb3b4aafdbb1d381c2ccf1045bd8190162f153a8660c3b4c6b7b820c346d031"
+    },
+    {
+      "case": "memory_call_clobber",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 109.0,
+      "memory": 20,
+      "assembly_sha256": "f341a48a959f27da32f2773aca2223bccff3fcbf99315e3446be88630296d01c"
+    },
+    {
+      "case": "memory_byte",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 402.0,
+      "memory": 52,
+      "assembly_sha256": "365ee065d36a67800d835ce5c8fde2bf456ce089729dfca826048fb4be6f816d"
+    },
+    {
+      "case": "memory_byte",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 402.0,
+      "memory": 52,
+      "assembly_sha256": "365ee065d36a67800d835ce5c8fde2bf456ce089729dfca826048fb4be6f816d"
+    },
+    {
+      "case": "memory_byte",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 402.0,
+      "memory": 52,
+      "assembly_sha256": "365ee065d36a67800d835ce5c8fde2bf456ce089729dfca826048fb4be6f816d"
+    },
+    {
+      "case": "memory_branch",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 208.5,
+      "memory": 19,
+      "assembly_sha256": "828b3eaccfa02e8eea15d36d80e49037b9cbf2e2c7b2acaadf451e0e226fdd03"
+    },
+    {
+      "case": "memory_branch",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 208.5,
+      "memory": 19,
+      "assembly_sha256": "828b3eaccfa02e8eea15d36d80e49037b9cbf2e2c7b2acaadf451e0e226fdd03"
+    },
+    {
+      "case": "memory_branch",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 208.5,
+      "memory": 19,
+      "assembly_sha256": "828b3eaccfa02e8eea15d36d80e49037b9cbf2e2c7b2acaadf451e0e226fdd03"
+    },
+    {
+      "case": "memory_alias_distinct",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 144.0,
+      "memory": 30,
+      "assembly_sha256": "4704cc9777d1133f4c9e7b5be555f7ab45b6ade658ec2bf71ff8a195f67e7c97"
+    },
+    {
+      "case": "memory_alias_distinct",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 137.0,
+      "memory": 28,
+      "assembly_sha256": "d0301586991a646525ac8b1ed745204f21b8262fcb95ed5b74013e1fdf1e2e1a"
+    },
+    {
+      "case": "memory_alias_distinct",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 144.0,
+      "memory": 30,
+      "assembly_sha256": "4704cc9777d1133f4c9e7b5be555f7ab45b6ade658ec2bf71ff8a195f67e7c97"
+    },
+    {
+      "case": "memory_alias_same",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 144.0,
+      "memory": 30,
+      "assembly_sha256": "8b29e1e73b8c3ff53a6c693afe2f82ed14b9849332795584231c6c8a334e9968"
+    },
+    {
+      "case": "memory_alias_same",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 137.0,
+      "memory": 28,
+      "assembly_sha256": "0f4c0a7cf265f3df505e3efa82539d6e05df388e2e34dfe089bfbb156ce4f901"
+    },
+    {
+      "case": "memory_alias_same",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 144.0,
+      "memory": 30,
+      "assembly_sha256": "8b29e1e73b8c3ff53a6c693afe2f82ed14b9849332795584231c6c8a334e9968"
+    },
+    {
+      "case": "divrem_reuse",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 29782.0,
+      "memory": 18,
+      "assembly_sha256": "7a2f4e64fcb6d960182bb81a83d968de213111dd5b71a43fe2ae0373c6ae61c1"
+    },
+    {
+      "case": "divrem_reuse",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 29782.0,
+      "memory": 18,
+      "assembly_sha256": "7a2f4e64fcb6d960182bb81a83d968de213111dd5b71a43fe2ae0373c6ae61c1"
+    },
+    {
+      "case": "divrem_reuse",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 29782.0,
+      "memory": 18,
+      "assembly_sha256": "7a2f4e64fcb6d960182bb81a83d968de213111dd5b71a43fe2ae0373c6ae61c1"
+    },
+    {
+      "case": "divrem_negative",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 30804.0,
+      "memory": 20,
+      "assembly_sha256": "738035a5159da664515eb48c34cef734edbda1b3c04a73ab5ccefac59aeb256c"
+    },
+    {
+      "case": "divrem_negative",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 30804.0,
+      "memory": 20,
+      "assembly_sha256": "738035a5159da664515eb48c34cef734edbda1b3c04a73ab5ccefac59aeb256c"
+    },
+    {
+      "case": "divrem_negative",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 30804.0,
+      "memory": 20,
+      "assembly_sha256": "738035a5159da664515eb48c34cef734edbda1b3c04a73ab5ccefac59aeb256c"
+    },
+    {
+      "case": "divrem_changed_dividend",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 261.0,
+      "memory": 14,
+      "assembly_sha256": "b64d57583ec49b7d34e3855657e684aab58af916a61d390cf95361acc77d1da0"
+    },
+    {
+      "case": "divrem_changed_dividend",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 261.0,
+      "memory": 14,
+      "assembly_sha256": "b64d57583ec49b7d34e3855657e684aab58af916a61d390cf95361acc77d1da0"
+    },
+    {
+      "case": "divrem_changed_dividend",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 261.0,
+      "memory": 14,
+      "assembly_sha256": "b64d57583ec49b7d34e3855657e684aab58af916a61d390cf95361acc77d1da0"
+    },
+    {
+      "case": "divrem_changed_divisor",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 261.0,
+      "memory": 14,
+      "assembly_sha256": "ed51cbacb37a1f85c54c2d5deee8bab081fdc1741ac726ef3dee1a10cb386fdf"
+    },
+    {
+      "case": "divrem_changed_divisor",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 261.0,
+      "memory": 14,
+      "assembly_sha256": "ed51cbacb37a1f85c54c2d5deee8bab081fdc1741ac726ef3dee1a10cb386fdf"
+    },
+    {
+      "case": "divrem_changed_divisor",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 261.0,
+      "memory": 14,
+      "assembly_sha256": "ed51cbacb37a1f85c54c2d5deee8bab081fdc1741ac726ef3dee1a10cb386fdf"
+    },
+    {
+      "case": "divrem_branch",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 262.5,
+      "memory": 14,
+      "assembly_sha256": "954a2c27a1ab364cd6986d52ecef4b9482f37febe48cf8d84e436c9c16736a51"
+    },
+    {
+      "case": "divrem_branch",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 262.5,
+      "memory": 14,
+      "assembly_sha256": "954a2c27a1ab364cd6986d52ecef4b9482f37febe48cf8d84e436c9c16736a51"
+    },
+    {
+      "case": "divrem_branch",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 262.5,
+      "memory": 14,
+      "assembly_sha256": "954a2c27a1ab364cd6986d52ecef4b9482f37febe48cf8d84e436c9c16736a51"
+    },
+    {
+      "case": "copy_loop_control",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 12696.0,
+      "memory": 1012,
+      "assembly_sha256": "5d21b9af1fa0a6b56cc0dcdd9b8393e04c4bf97160463821196144963b0f3896"
+    },
+    {
+      "case": "copy_loop_control",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 12696.0,
+      "memory": 1012,
+      "assembly_sha256": "5d21b9af1fa0a6b56cc0dcdd9b8393e04c4bf97160463821196144963b0f3896"
+    },
+    {
+      "case": "copy_loop_control",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 12696.0,
+      "memory": 1012,
+      "assembly_sha256": "5d21b9af1fa0a6b56cc0dcdd9b8393e04c4bf97160463821196144963b0f3896"
+    },
+    {
+      "case": "copy_live_old_value",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 11696.0,
+      "memory": 1012,
+      "assembly_sha256": "a4e3630828043d53d0acd0c73ce0bd754fa0ea42a17058e227ed9cd44f00d066"
+    },
+    {
+      "case": "copy_live_old_value",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 11696.0,
+      "memory": 1012,
+      "assembly_sha256": "a4e3630828043d53d0acd0c73ce0bd754fa0ea42a17058e227ed9cd44f00d066"
+    },
+    {
+      "case": "copy_live_old_value",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 11696.0,
+      "memory": 1012,
+      "assembly_sha256": "a4e3630828043d53d0acd0c73ce0bd754fa0ea42a17058e227ed9cd44f00d066"
+    },
+    {
+      "case": "copy_branch_update",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 641.0,
+      "memory": 30,
+      "assembly_sha256": "08961d00a86891218b1e8813cfb5347de9019accea7907870098f653e9af9cca"
+    },
+    {
+      "case": "copy_branch_update",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 641.0,
+      "memory": 30,
+      "assembly_sha256": "08961d00a86891218b1e8813cfb5347de9019accea7907870098f653e9af9cca"
+    },
+    {
+      "case": "copy_branch_update",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 641.0,
+      "memory": 30,
+      "assembly_sha256": "08961d00a86891218b1e8813cfb5347de9019accea7907870098f653e9af9cca"
+    },
+    {
+      "case": "branch_relational_loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 14496.5,
+      "memory": 22,
+      "assembly_sha256": "e5a6e95a667cd15120d8ab0602bc2221803a050e3a7ddc006f511255d75a8b37"
+    },
+    {
+      "case": "branch_relational_loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 14496.5,
+      "memory": 22,
+      "assembly_sha256": "e5a6e95a667cd15120d8ab0602bc2221803a050e3a7ddc006f511255d75a8b37"
+    },
+    {
+      "case": "branch_relational_loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 14496.5,
+      "memory": 22,
+      "assembly_sha256": "e5a6e95a667cd15120d8ab0602bc2221803a050e3a7ddc006f511255d75a8b37"
+    },
+    {
+      "case": "branch_signed_pairs",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 5792.5,
+      "memory": 326,
+      "assembly_sha256": "12d5c8c53912e0f21dcf4bcf04f00cf5af9055d8ee8ae320847c6dd49429d06a"
+    },
+    {
+      "case": "branch_signed_pairs",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 5792.5,
+      "memory": 326,
+      "assembly_sha256": "12d5c8c53912e0f21dcf4bcf04f00cf5af9055d8ee8ae320847c6dd49429d06a"
+    },
+    {
+      "case": "branch_signed_pairs",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 5792.5,
+      "memory": 326,
+      "assembly_sha256": "12d5c8c53912e0f21dcf4bcf04f00cf5af9055d8ee8ae320847c6dd49429d06a"
+    },
+    {
+      "case": "branch_constant_boundaries",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 5713.0,
+      "memory": 150,
+      "assembly_sha256": "862c7df61bd28ffdb8da9087d9453dc4f6a021c47b0d04a4cd9b244e90a9cbfa"
+    },
+    {
+      "case": "branch_constant_boundaries",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 5713.0,
+      "memory": 150,
+      "assembly_sha256": "862c7df61bd28ffdb8da9087d9453dc4f6a021c47b0d04a4cd9b244e90a9cbfa"
+    },
+    {
+      "case": "branch_constant_boundaries",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 5713.0,
+      "memory": 150,
+      "assembly_sha256": "862c7df61bd28ffdb8da9087d9453dc4f6a021c47b0d04a4cd9b244e90a9cbfa"
+    },
+    {
+      "case": "branch_nested_control",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 878.5,
+      "memory": 12,
+      "assembly_sha256": "33e9ed2741bf3bb6364148238c69e8070d8159b3ba70140471308e3c06555f42"
+    },
+    {
+      "case": "branch_nested_control",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 878.5,
+      "memory": 12,
+      "assembly_sha256": "33e9ed2741bf3bb6364148238c69e8070d8159b3ba70140471308e3c06555f42"
+    },
+    {
+      "case": "branch_nested_control",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 878.5,
+      "memory": 12,
+      "assembly_sha256": "33e9ed2741bf3bb6364148238c69e8070d8159b3ba70140471308e3c06555f42"
+    },
+    {
+      "case": "leaf_return_loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 179138.5,
+      "memory": 2019,
+      "assembly_sha256": "8168c1793034c003b3836841f03406e5b82e41a8708b4091233d93db7838ecde"
+    },
+    {
+      "case": "leaf_return_loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 165144.5,
+      "memory": 2019,
+      "assembly_sha256": "7923f9150f91929d2fa94b473d6422801531708fd8a56cab6e1aaca958844fb1"
+    },
+    {
+      "case": "leaf_return_loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 179138.5,
+      "memory": 2019,
+      "assembly_sha256": "8168c1793034c003b3836841f03406e5b82e41a8708b4091233d93db7838ecde"
+    },
+    {
+      "case": "leaf_stack_arguments",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 349.0,
+      "memory": 25,
+      "assembly_sha256": "e75360db511411ed6a106460bce78073149548f6179eaa9567ded37bac4af1a8"
+    },
+    {
+      "case": "leaf_stack_arguments",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 325.0,
+      "memory": 21,
+      "assembly_sha256": "1f93dd44a51880238f754b598e98c2005d577d48baf094d4c32f4ce0cc750501"
+    },
+    {
+      "case": "leaf_stack_arguments",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 349.0,
+      "memory": 25,
+      "assembly_sha256": "e75360db511411ed6a106460bce78073149548f6179eaa9567ded37bac4af1a8"
+    },
+    {
+      "case": "leaf_syscall_output",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 272.5,
+      "memory": 25,
+      "assembly_sha256": "69324d270bdd27b400652494a2cfa2ebb1211023c0069c1f431713af06b441cd"
+    },
+    {
+      "case": "leaf_syscall_output",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 272.5,
+      "memory": 25,
+      "assembly_sha256": "69324d270bdd27b400652494a2cfa2ebb1211023c0069c1f431713af06b441cd"
+    },
+    {
+      "case": "leaf_syscall_output",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 272.5,
+      "memory": 25,
+      "assembly_sha256": "69324d270bdd27b400652494a2cfa2ebb1211023c0069c1f431713af06b441cd"
+    },
+    {
+      "case": "leaf_nested_calls",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 3673.5,
+      "memory": 59,
+      "assembly_sha256": "ad8d5ffca5271233f9ff742a38b9f9f2bbd1bfa779b1c76274a56c254f180995"
+    },
+    {
+      "case": "leaf_nested_calls",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 3399.5,
+      "memory": 59,
+      "assembly_sha256": "437d18b89f3100cb3ec396331f39548095d97f5be4ad16ac63226bb051cb4cf9"
+    },
+    {
+      "case": "leaf_nested_calls",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 3673.5,
+      "memory": 59,
+      "assembly_sha256": "ad8d5ffca5271233f9ff742a38b9f9f2bbd1bfa779b1c76274a56c254f180995"
+    },
+    {
+      "case": "peephole_byte_checksum",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 25948.0,
+      "memory": 1038,
+      "assembly_sha256": "8d176b5f0fb2c232a839dd67034ede6ee230161098c90f813a4d4515b39cded7"
+    },
+    {
+      "case": "peephole_byte_checksum",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 25948.0,
+      "memory": 1038,
+      "assembly_sha256": "8d176b5f0fb2c232a839dd67034ede6ee230161098c90f813a4d4515b39cded7"
+    },
+    {
+      "case": "peephole_byte_checksum",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 25948.0,
+      "memory": 1038,
+      "assembly_sha256": "8d176b5f0fb2c232a839dd67034ede6ee230161098c90f813a4d4515b39cded7"
+    },
+    {
+      "case": "peephole_spill_square",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2635.0,
+      "memory": 174,
+      "assembly_sha256": "619c25be4ead0dd1df8d3cacf929d5fc3f2a450630cb8d8396ab33c5298437a1"
+    },
+    {
+      "case": "peephole_spill_square",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2635.0,
+      "memory": 174,
+      "assembly_sha256": "619c25be4ead0dd1df8d3cacf929d5fc3f2a450630cb8d8396ab33c5298437a1"
+    },
+    {
+      "case": "peephole_spill_square",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2635.0,
+      "memory": 174,
+      "assembly_sha256": "619c25be4ead0dd1df8d3cacf929d5fc3f2a450630cb8d8396ab33c5298437a1"
+    },
+    {
+      "case": "peephole_shared_constant",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 2471.0,
+      "memory": 210,
+      "assembly_sha256": "092d3c5f4adea154c4641e53ea544b9f33e268566532b49493d743429589a6e2"
+    },
+    {
+      "case": "peephole_shared_constant",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 2471.0,
+      "memory": 210,
+      "assembly_sha256": "092d3c5f4adea154c4641e53ea544b9f33e268566532b49493d743429589a6e2"
+    },
+    {
+      "case": "peephole_shared_constant",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 2471.0,
+      "memory": 210,
+      "assembly_sha256": "092d3c5f4adea154c4641e53ea544b9f33e268566532b49493d743429589a6e2"
+    },
+    {
+      "case": "small_multiply_byte",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 1246.0,
+      "memory": 52,
+      "assembly_sha256": "951a8275e6bc09c23035608533194cb43ccdabcc3b194724661cd93c697a46df"
+    },
+    {
+      "case": "small_multiply_byte",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 1174.0,
+      "memory": 52,
+      "assembly_sha256": "401587cb2f3e9c2e672adc487b567a7f57168d399c0d496479c5b2bfde74f40b"
+    },
+    {
+      "case": "small_multiply_byte",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 1246.0,
+      "memory": 52,
+      "assembly_sha256": "951a8275e6bc09c23035608533194cb43ccdabcc3b194724661cd93c697a46df"
+    },
+    {
+      "case": "small_multiply_boundaries",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 12774.0,
+      "memory": 168,
+      "assembly_sha256": "01e976b42af9ddacf1958b10c0c9b82a1c0dfd0b35a9e271c15251f9c4131427"
+    },
+    {
+      "case": "small_multiply_boundaries",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 10534.0,
+      "memory": 168,
+      "assembly_sha256": "4d9f6d4a0f5510b0a10e43ce39865619bcb220e45f3a342453ae6343ec9548a4"
+    },
+    {
+      "case": "small_multiply_boundaries",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 12774.0,
+      "memory": 168,
+      "assembly_sha256": "01e976b42af9ddacf1958b10c0c9b82a1c0dfd0b35a9e271c15251f9c4131427"
+    },
+    {
+      "case": "small_multiply_loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 44202.0,
+      "memory": 2012,
+      "assembly_sha256": "b06b29ce33905d1903e46764f95ec90bc643577e6eb0f6987e9ed3d3cdea4b60"
+    },
+    {
+      "case": "small_multiply_loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 39202.0,
+      "memory": 2012,
+      "assembly_sha256": "75947ba30c2b811bc6274ac111e04564fd366940801532090b73090b6e7ec11d"
+    },
+    {
+      "case": "small_multiply_loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 44202.0,
+      "memory": 2012,
+      "assembly_sha256": "b06b29ce33905d1903e46764f95ec90bc643577e6eb0f6987e9ed3d3cdea4b60"
+    },
+    {
+      "case": "small_multiply_negative",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 23202.0,
+      "memory": 2012,
+      "assembly_sha256": "9770553629948c4e022f25b830ef004b70ffebd3fc9f14210346e486c8836a7e"
+    },
+    {
+      "case": "small_multiply_negative",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 21202.0,
+      "memory": 2012,
+      "assembly_sha256": "1bd38f7af9e816921e7fa88fb523d1f08b46adf4b0036d02044d44b1c2f38796"
+    },
+    {
+      "case": "small_multiply_negative",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 23202.0,
+      "memory": 2012,
+      "assembly_sha256": "9770553629948c4e022f25b830ef004b70ffebd3fc9f14210346e486c8836a7e"
+    },
+    {
+      "case": "leaf_argument_zero_trip",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 234.0,
+      "memory": 52,
+      "assembly_sha256": "72af8abfa87afda20a629538f89add1ff65911ac0bc9babdcf376b353b88b354"
+    },
+    {
+      "case": "leaf_argument_zero_trip",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 234.0,
+      "memory": 52,
+      "assembly_sha256": "72af8abfa87afda20a629538f89add1ff65911ac0bc9babdcf376b353b88b354"
+    },
+    {
+      "case": "leaf_argument_zero_trip",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 234.0,
+      "memory": 52,
+      "assembly_sha256": "72af8abfa87afda20a629538f89add1ff65911ac0bc9babdcf376b353b88b354"
+    },
+    {
+      "case": "leaf_argument_loop",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 157968.0,
+      "memory": 2019,
+      "assembly_sha256": "a17078ca1805cd6526d7b54145e022f5e98dfd0a6ae8eb8464815a4dbe9d12a0"
+    },
+    {
+      "case": "leaf_argument_loop",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 154968.0,
+      "memory": 2019,
+      "assembly_sha256": "feb21a8f8c3d8e83ddd402a9172af801649f63c290af39b977b27e259e1a20ea"
+    },
+    {
+      "case": "leaf_argument_loop",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 157968.0,
+      "memory": 2019,
+      "assembly_sha256": "a17078ca1805cd6526d7b54145e022f5e98dfd0a6ae8eb8464815a4dbe9d12a0"
+    },
+    {
+      "case": "leaf_argument_stack",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 468.5,
+      "memory": 31,
+      "assembly_sha256": "7b1841121c10fa09301ee9f669edc3f722b575a07e2b69e6d96afdabf0144eb3"
+    },
+    {
+      "case": "leaf_argument_stack",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 458.5,
+      "memory": 27,
+      "assembly_sha256": "80a37cf9cdbeafec49ba4c7bf742bdc7573b7f0da4d06b2cc59f59697ea7e54a"
+    },
+    {
+      "case": "leaf_argument_stack",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 468.5,
+      "memory": 31,
+      "assembly_sha256": "7b1841121c10fa09301ee9f669edc3f722b575a07e2b69e6d96afdabf0144eb3"
+    },
+    {
+      "case": "leaf_argument_pointer",
+      "version": "baseline",
+      "passed": true,
+      "cycles": 509.0,
+      "memory": 54,
+      "assembly_sha256": "8b5fe9950ea914989bee7c5d924e7dd8b674116c86e92119ab7c7eb74d813e59"
+    },
+    {
+      "case": "leaf_argument_pointer",
+      "version": "candidate",
+      "passed": true,
+      "cycles": 477.0,
+      "memory": 42,
+      "assembly_sha256": "fe57791b927ffad9a961425bebf37eb24db81ad404d8d5ed4aec97d6c65e70b2"
+    },
+    {
+      "case": "leaf_argument_pointer",
+      "version": "fallback",
+      "passed": true,
+      "cycles": 509.0,
+      "memory": 54,
+      "assembly_sha256": "8b5fe9950ea914989bee7c5d924e7dd8b674116c86e92119ab7c7eb74d813e59"
+    }
+  ]
+}

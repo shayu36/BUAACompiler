@@ -53,9 +53,10 @@ public class CompareInstr extends Instr {
             value1.GetIrType() + " " + value1.GetIrName() + ", " + value2.GetIrName();
     }
 
-    /******************** MIPS 后端 ********************/
+    /*后端/优化*/
 
     public CompareOp GetCompareOp() {
         return this.opName;
     }
+    /*后端/优化*/
 }

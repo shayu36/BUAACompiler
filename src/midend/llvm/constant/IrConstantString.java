@@ -41,9 +41,10 @@ public class IrConstantString extends IrConstant {
         return length + 1;
     }
 
-    /******************** MIPS 后端 ********************/
+    /*后端/优化*/
 
     public String GetStringValue() {
         return this.stringValue;
     }
+    /*后端/优化*/
 }

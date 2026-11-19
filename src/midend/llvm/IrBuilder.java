@@ -118,6 +118,12 @@ public class IrBuilder {
         return currentFunction;
     }
 
+    /*后端/优化*/
+    public static void SetCurrentFunction(IrFunction function) {
+        currentFunction = function;
+    }
+    /*后端/优化*/
+
     public static IrBasicBlock GetCurrentBasicBlock() {
         return currentBasicBlock;
     }

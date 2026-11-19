@@ -1,0 +1,749 @@
+{
+  "archive": "D:\\mycomplier\\src\\backend.zip",
+  "archive_sha256": "8113564dcee8916730c962a43f91ee667b51010a460a13598de55e469424a62b",
+  "source_counts": {
+    "submitted": 125,
+    "old": 135
+  },
+  "historical_backup": "D:\\RunIdea\\mycomplier-optimized-backup-20261118\\src",
+  "records": [
+    {
+      "case": "count_only",
+      "version": "historical",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 256.5,
+        "totalInstructionCount": 193,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 36,
+            "weight": 1.5,
+            "weightedCycles": 54.0
+          },
+          "Memory": {
+            "instructionCount": 16,
+            "weight": 2,
+            "weightedCycles": 32
+          },
+          "Multiply": {
+            "instructionCount": 7,
+            "weight": 3,
+            "weightedCycles": 21
+          },
+          "Jump": {
+            "instructionCount": 31,
+            "weight": 1.5,
+            "weightedCycles": 46.5
+          },
+          "Other": {
+            "instructionCount": 103,
+            "weight": 1,
+            "weightedCycles": 103
+          }
+        }
+      }
+    },
+    {
+      "case": "count_only",
+      "version": "restart_phase1",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 4550330.0,
+        "totalInstructionCount": 2800248,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 100036,
+            "weight": 1.5,
+            "weightedCycles": 150054.0
+          },
+          "Memory": {
+            "instructionCount": 1600033,
+            "weight": 2,
+            "weightedCycles": 3200066
+          },
+          "Multiply": {
+            "instructionCount": 7,
+            "weight": 3,
+            "weightedCycles": 21
+          },
+          "Jump": {
+            "instructionCount": 200034,
+            "weight": 1.5,
+            "weightedCycles": 300051.0
+          },
+          "Other": {
+            "instructionCount": 900138,
+            "weight": 1,
+            "weightedCycles": 900138
+          }
+        }
+      }
+    },
+    {
+      "case": "count_only",
+      "version": "submitted",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 1550301.0,
+        "totalInstructionCount": 1400236,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 100036,
+            "weight": 1.5,
+            "weightedCycles": 150054.0
+          },
+          "Memory": {
+            "instructionCount": 16,
+            "weight": 2,
+            "weightedCycles": 32
+          },
+          "Multiply": {
+            "instructionCount": 7,
+            "weight": 3,
+            "weightedCycles": 21
+          },
+          "Jump": {
+            "instructionCount": 200034,
+            "weight": 1.5,
+            "weightedCycles": 300051.0
+          },
+          "Other": {
+            "instructionCount": 1100143,
+            "weight": 1,
+            "weightedCycles": 1100143
+          }
+        }
+      }
+    },
+    {
+      "case": "constant_sum",
+      "version": "historical",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 109.0,
+        "totalInstructionCount": 86,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 15,
+            "weight": 1.5,
+            "weightedCycles": 22.5
+          },
+          "Memory": {
+            "instructionCount": 6,
+            "weight": 2,
+            "weightedCycles": 12
+          },
+          "Multiply": {
+            "instructionCount": 2,
+            "weight": 3,
+            "weightedCycles": 6
+          },
+          "Jump": {
+            "instructionCount": 11,
+            "weight": 1.5,
+            "weightedCycles": 16.5
+          },
+          "Other": {
+            "instructionCount": 52,
+            "weight": 1,
+            "weightedCycles": 52
+          }
+        }
+      }
+    },
+    {
+      "case": "constant_sum",
+      "version": "restart_phase1",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 5650181.5,
+        "totalInstructionCount": 3500135,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 100018,
+            "weight": 1.5,
+            "weightedCycles": 150027.0
+          },
+          "Memory": {
+            "instructionCount": 2000025,
+            "weight": 2,
+            "weightedCycles": 4000050
+          },
+          "Multiply": {
+            "instructionCount": 2,
+            "weight": 3,
+            "weightedCycles": 6
+          },
+          "Jump": {
+            "instructionCount": 200017,
+            "weight": 1.5,
+            "weightedCycles": 300025.5
+          },
+          "Other": {
+            "instructionCount": 1200073,
+            "weight": 1,
+            "weightedCycles": 1200073
+          }
+        }
+      }
+    },
+    {
+      "case": "constant_sum",
+      "version": "submitted",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 1950157.5,
+        "totalInstructionCount": 1800126,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 100018,
+            "weight": 1.5,
+            "weightedCycles": 150027.0
+          },
+          "Memory": {
+            "instructionCount": 10,
+            "weight": 2,
+            "weightedCycles": 20
+          },
+          "Multiply": {
+            "instructionCount": 2,
+            "weight": 3,
+            "weightedCycles": 6
+          },
+          "Jump": {
+            "instructionCount": 200017,
+            "weight": 1.5,
+            "weightedCycles": 300025.5
+          },
+          "Other": {
+            "instructionCount": 1500079,
+            "weight": 1,
+            "weightedCycles": 1500079
+          }
+        }
+      }
+    },
+    {
+      "case": "division_loop",
+      "version": "historical",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 38697.0,
+        "totalInstructionCount": 32149,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 1028,
+            "weight": 1.5,
+            "weightedCycles": 1542.0
+          },
+          "Memory": {
+            "instructionCount": 12,
+            "weight": 2,
+            "weightedCycles": 24
+          },
+          "Multiply": {
+            "instructionCount": 3005,
+            "weight": 3,
+            "weightedCycles": 9015
+          },
+          "Jump": {
+            "instructionCount": 24,
+            "weight": 1.5,
+            "weightedCycles": 36.0
+          },
+          "Other": {
+            "instructionCount": 28080,
+            "weight": 1,
+            "weightedCycles": 28080
+          }
+        }
+      }
+    },
+    {
+      "case": "division_loop",
+      "version": "restart_phase1",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 115767.0,
+        "totalInstructionCount": 50198,
+        "items": {
+          "Divide": {
+            "instructionCount": 2000,
+            "weight": 18,
+            "weightedCycles": 36000
+          },
+          "Branch": {
+            "instructionCount": 1028,
+            "weight": 1.5,
+            "weightedCycles": 1542.0
+          },
+          "Memory": {
+            "instructionCount": 30032,
+            "weight": 2,
+            "weightedCycles": 60064
+          },
+          "Multiply": {
+            "instructionCount": 5,
+            "weight": 3,
+            "weightedCycles": 15
+          },
+          "Jump": {
+            "instructionCount": 2026,
+            "weight": 1.5,
+            "weightedCycles": 3039.0
+          },
+          "Other": {
+            "instructionCount": 15107,
+            "weight": 1,
+            "weightedCycles": 15107
+          }
+        }
+      }
+    },
+    {
+      "case": "division_loop",
+      "version": "submitted",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 58733.0,
+        "totalInstructionCount": 23184,
+        "items": {
+          "Divide": {
+            "instructionCount": 2000,
+            "weight": 18,
+            "weightedCycles": 36000
+          },
+          "Branch": {
+            "instructionCount": 1028,
+            "weight": 1.5,
+            "weightedCycles": 1542.0
+          },
+          "Memory": {
+            "instructionCount": 12,
+            "weight": 2,
+            "weightedCycles": 24
+          },
+          "Multiply": {
+            "instructionCount": 5,
+            "weight": 3,
+            "weightedCycles": 15
+          },
+          "Jump": {
+            "instructionCount": 2026,
+            "weight": 1.5,
+            "weightedCycles": 3039.0
+          },
+          "Other": {
+            "instructionCount": 18113,
+            "weight": 1,
+            "weightedCycles": 18113
+          }
+        }
+      }
+    },
+    {
+      "case": "call_loop",
+      "version": "historical",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 206.5,
+        "totalInstructionCount": 155,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 28,
+            "weight": 1.5,
+            "weightedCycles": 42.0
+          },
+          "Memory": {
+            "instructionCount": 12,
+            "weight": 2,
+            "weightedCycles": 24
+          },
+          "Multiply": {
+            "instructionCount": 7,
+            "weight": 3,
+            "weightedCycles": 21
+          },
+          "Jump": {
+            "instructionCount": 23,
+            "weight": 1.5,
+            "weightedCycles": 34.5
+          },
+          "Other": {
+            "instructionCount": 85,
+            "weight": 1,
+            "weightedCycles": 85
+          }
+        }
+      }
+    },
+    {
+      "case": "call_loop",
+      "version": "restart_phase1",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 94267.0,
+        "totalInstructionCount": 56198,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 1028,
+            "weight": 1.5,
+            "weightedCycles": 1542.0
+          },
+          "Memory": {
+            "instructionCount": 33032,
+            "weight": 2,
+            "weightedCycles": 66064
+          },
+          "Multiply": {
+            "instructionCount": 1005,
+            "weight": 3,
+            "weightedCycles": 3015
+          },
+          "Jump": {
+            "instructionCount": 5026,
+            "weight": 1.5,
+            "weightedCycles": 7539.0
+          },
+          "Other": {
+            "instructionCount": 16107,
+            "weight": 1,
+            "weightedCycles": 16107
+          }
+        }
+      }
+    },
+    {
+      "case": "call_loop",
+      "version": "submitted",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 43245.0,
+        "totalInstructionCount": 34190,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 1028,
+            "weight": 1.5,
+            "weightedCycles": 1542.0
+          },
+          "Memory": {
+            "instructionCount": 4018,
+            "weight": 2,
+            "weightedCycles": 8036
+          },
+          "Multiply": {
+            "instructionCount": 1005,
+            "weight": 3,
+            "weightedCycles": 3015
+          },
+          "Jump": {
+            "instructionCount": 5026,
+            "weight": 1.5,
+            "weightedCycles": 7539.0
+          },
+          "Other": {
+            "instructionCount": 23113,
+            "weight": 1,
+            "weightedCycles": 23113
+          }
+        }
+      }
+    },
+    {
+      "case": "recursion",
+      "version": "historical",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 1452.0,
+        "totalInstructionCount": 1074,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 89,
+            "weight": 1.5,
+            "weightedCycles": 133.5
+          },
+          "Memory": {
+            "instructionCount": 284,
+            "weight": 2,
+            "weightedCycles": 568
+          },
+          "Multiply": {
+            "instructionCount": 3,
+            "weight": 3,
+            "weightedCycles": 9
+          },
+          "Jump": {
+            "instructionCount": 87,
+            "weight": 1.5,
+            "weightedCycles": 130.5
+          },
+          "Other": {
+            "instructionCount": 611,
+            "weight": 1,
+            "weightedCycles": 611
+          }
+        }
+      }
+    },
+    {
+      "case": "recursion",
+      "version": "restart_phase1",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 447453.0,
+        "totalInstructionCount": 288564,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 8380,
+            "weight": 1.5,
+            "weightedCycles": 12570.0
+          },
+          "Memory": {
+            "instructionCount": 137963,
+            "weight": 2,
+            "weightedCycles": 275926
+          },
+          "Multiply": {
+            "instructionCount": 3,
+            "weight": 3,
+            "weightedCycles": 9
+          },
+          "Jump": {
+            "instructionCount": 33460,
+            "weight": 1.5,
+            "weightedCycles": 50190.0
+          },
+          "Other": {
+            "instructionCount": 108758,
+            "weight": 1,
+            "weightedCycles": 108758
+          }
+        }
+      }
+    },
+    {
+      "case": "recursion",
+      "version": "submitted",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 309500.0,
+        "totalInstructionCount": 230040,
+        "items": {
+          "Divide": {
+            "instructionCount": 0,
+            "weight": 18,
+            "weightedCycles": 0
+          },
+          "Branch": {
+            "instructionCount": 8380,
+            "weight": 1.5,
+            "weightedCycles": 12570.0
+          },
+          "Memory": {
+            "instructionCount": 58534,
+            "weight": 2,
+            "weightedCycles": 117068
+          },
+          "Multiply": {
+            "instructionCount": 3,
+            "weight": 3,
+            "weightedCycles": 9
+          },
+          "Jump": {
+            "instructionCount": 33460,
+            "weight": 1.5,
+            "weightedCycles": 50190.0
+          },
+          "Other": {
+            "instructionCount": 129663,
+            "weight": 1,
+            "weightedCycles": 129663
+          }
+        }
+      }
+    },
+    {
+      "case": "public_convolution",
+      "version": "historical",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 326062.5,
+        "totalInstructionCount": 260155,
+        "items": {
+          "Divide": {
+            "instructionCount": 3,
+            "weight": 18,
+            "weightedCycles": 54
+          },
+          "Branch": {
+            "instructionCount": 13500,
+            "weight": 1.5,
+            "weightedCycles": 20250.0
+          },
+          "Memory": {
+            "instructionCount": 27988,
+            "weight": 2,
+            "weightedCycles": 55976
+          },
+          "Multiply": {
+            "instructionCount": 12696,
+            "weight": 3,
+            "weightedCycles": 38088
+          },
+          "Jump": {
+            "instructionCount": 11453,
+            "weight": 1.5,
+            "weightedCycles": 17179.5
+          },
+          "Other": {
+            "instructionCount": 194515,
+            "weight": 1,
+            "weightedCycles": 194515
+          }
+        }
+      }
+    },
+    {
+      "case": "public_convolution",
+      "version": "restart_phase1",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 1381443.5,
+        "totalInstructionCount": 659085,
+        "items": {
+          "Divide": {
+            "instructionCount": 23765,
+            "weight": 18,
+            "weightedCycles": 427770
+          },
+          "Branch": {
+            "instructionCount": 21356,
+            "weight": 1.5,
+            "weightedCycles": 32034.0
+          },
+          "Memory": {
+            "instructionCount": 286003,
+            "weight": 2,
+            "weightedCycles": 572006
+          },
+          "Multiply": {
+            "instructionCount": 16,
+            "weight": 3,
+            "weightedCycles": 48
+          },
+          "Jump": {
+            "instructionCount": 43281,
+            "weight": 1.5,
+            "weightedCycles": 64921.5
+          },
+          "Other": {
+            "instructionCount": 284664,
+            "weight": 1,
+            "weightedCycles": 284664
+          }
+        }
+      }
+    },
+    {
+      "case": "public_convolution",
+      "version": "submitted",
+      "passed": true,
+      "statistics": {
+        "finalCycles": 985414.5,
+        "totalInstructionCount": 475888,
+        "items": {
+          "Divide": {
+            "instructionCount": 23765,
+            "weight": 18,
+            "weightedCycles": 427770
+          },
+          "Branch": {
+            "instructionCount": 21356,
+            "weight": 1.5,
+            "weightedCycles": 32034.0
+          },
+          "Memory": {
+            "instructionCount": 73171,
+            "weight": 2,
+            "weightedCycles": 146342
+          },
+          "Multiply": {
+            "instructionCount": 16,
+            "weight": 3,
+            "weightedCycles": 48
+          },
+          "Jump": {
+            "instructionCount": 43281,
+            "weight": 1.5,
+            "weightedCycles": 64921.5
+          },
+          "Other": {
+            "instructionCount": 314299,
+            "weight": 1,
+            "weightedCycles": 314299
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "date": "2026-11-19",
+  "source": "User confirmation: 已经满分",
+  "archive_sha256": "68690bce9106f7f70655435eb855c31b486f6bef404973093543bfcda2a513a2",
+  "overall_result": "full_score",
+  "per_case_counts_provided": false,
+  "frozen_source": "D:\\mycomplier\\tests\\.accepted-68690bce\\src",
+  "frozen_archive": "D:\\mycomplier\\tests\\.accepted-68690bce\\backend.zip"
+}

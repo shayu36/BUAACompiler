@@ -38,9 +38,10 @@ public class AluInstr extends Instr {
             value1.GetIrName() + ", " + value2.GetIrName();
     }
 
-    /******************** MIPS 后端 ********************/
+    /*后端/优化*/
 
     public String GetOpName() {
         return this.opName;
     }
+    /*后端/优化*/
 }

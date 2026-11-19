@@ -42,7 +42,7 @@ public class IrConstantArray extends IrConstant {
         return builder.toString();
     }
 
-    /******************** MIPS 后端 ********************/
+    /*后端/优化*/
 
     public int GetArraySize() {
         return this.arraySize;
@@ -51,4 +51,5 @@ public class IrConstantArray extends IrConstant {
     public List<IrConstant> GetValues() {
         return Collections.unmodifiableList(this.valueList);
     }
+    /*后端/优化*/
 }

@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-18",
+  "source": "User-provided platform feedback",
+  "archive_sha256": "8df36c8d01fa8786d8883f0188ffc61058b1a19b0ad1ccff805053c327d73d91",
+  "baseline_source": "D:\\mycomplier\\tests\\.accepted-8df36c8d\\src",
+  "accepted": 15,
+  "full_score": 14,
+  "remaining": [
+    9
+  ],
+  "cases": [
+    {
+      "case": "testcase1",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 2026,
+      "memory": 2056,
+      "branch": 2097,
+      "jump": 1077,
+      "other": 31267,
+      "cycles": 46218
+    },
+    {
+      "case": "testcase2",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 14,
+      "memory": 38,
+      "branch": 91,
+      "jump": 63,
+      "other": 286,
+      "cycles": 635
+    },
+    {
+      "case": "testcase3",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 36,
+      "memory": 251,
+      "branch": 122,
+      "jump": 154,
+      "other": 791,
+      "cycles": 1815
+    },
+    {
+      "case": "testcase4",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 103,
+      "memory": 404,
+      "branch": 916,
+      "jump": 527,
+      "other": 2251,
+      "cycles": 5532.5
+    },
+    {
+      "case": "testcase5",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 2,
+      "memory": 19982,
+      "branch": 28939,
+      "jump": 12449,
+      "other": 96661,
+      "cycles": 198713
+    },
+    {
+      "case": "testcase6",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 3,
+      "memory": 494449,
+      "branch": 696958,
+      "jump": 134963,
+      "other": 2532593,
+      "cycles": 4769381.5
+    },
+    {
+      "case": "testcase7",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 6048,
+      "multiply": 28512,
+      "memory": 157732,
+      "branch": 31389,
+      "jump": 26722,
+      "other": 1214715,
+      "cycles": 1811745.5
+    },
+    {
+      "case": "testcase8",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 57,
+      "multiply": 125636,
+      "memory": 120772,
+      "branch": 102219,
+      "jump": 17718,
+      "other": 1010978,
+      "cycles": 1810361.5
+    },
+    {
+      "case": "testcase9",
+      "status": "Accepted",
+      "score": ">=80%",
+      "divide": 1696,
+      "multiply": 7460,
+      "memory": 42208,
+      "branch": 27798,
+      "jump": 19070,
+      "other": 394746,
+      "cycles": 602372
+    },
+    {
+      "case": "testcase10",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 1005,
+      "memory": 2018,
+      "branch": 4029,
+      "jump": 2027,
+      "other": 15097,
+      "cycles": 31232
+    },
+    {
+      "case": "testcase11",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 2,
+      "multiply": 282,
+      "memory": 54312,
+      "branch": 39749,
+      "jump": 37484,
+      "other": 212503,
+      "cycles": 437858.5
+    },
+    {
+      "case": "testcase12",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 153,
+      "memory": 211857,
+      "branch": 190163,
+      "jump": 132671,
+      "other": 1051668,
+      "cycles": 1960092
+    },
+    {
+      "case": "testcase13",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 0,
+      "multiply": 10,
+      "memory": 22,
+      "branch": 53,
+      "jump": 44,
+      "other": 150,
+      "cycles": 369.5
+    },
+    {
+      "case": "testcase14",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 3,
+      "multiply": 36254,
+      "memory": 105472,
+      "branch": 38859,
+      "jump": 32397,
+      "other": 471305,
+      "cycles": 897949
+    },
+    {
+      "case": "testcase15",
+      "status": "Accepted",
+      "score": "100%",
+      "divide": 1260,
+      "multiply": 56193,
+      "memory": 367509,
+      "branch": 207195,
+      "jump": 76471,
+      "other": 1523874,
+      "cycles": 2875650
+    }
+  ]
+}

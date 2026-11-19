@@ -17,9 +17,10 @@ public class IrGlobalValue extends IrUser {
         return this.irName + " = dso_local global " + this.globalValue;
     }
 
-    /******************** MIPS 后端 ********************/
+    /*后端/优化*/
 
     public IrConstant GetInitializer() {
         return this.globalValue;
     }
+    /*后端/优化*/
 }

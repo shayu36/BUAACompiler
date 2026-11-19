@@ -20,8 +20,7 @@ public class Compiler {
         IOhandler.PrintSymbolTable();
         IOhandler.PrintErrorMessage();
         if (ErrorRecorder.HaveNoError()) {
-            IOhandler.PrintLlvm();
-            IOhandler.PrintMips();
+            IOhandler.PrintOptimizedOutputs();
         }
     }
 }

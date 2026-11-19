@@ -1,6 +1,7 @@
 package midend.llvm.constant;
 
 import midend.llvm.type.IrBaseType;
+import midend.llvm.type.IrType;
 
 public class IrConstantInt extends IrConstant {
     private final int value;
@@ -14,8 +15,15 @@ public class IrConstantInt extends IrConstant {
         return this.value;
     }
 
+    /*后端/优化*/
+    public IrConstantInt(int value, IrType type) {
+        super(type, String.valueOf(value));
+        this.value = value;
+    }
+    /*后端/优化*/
+
     @Override
     public String toString() {
-        return "i32 " + this.value;
+        return this.GetIrType() + " " + this.value;
     }
 }

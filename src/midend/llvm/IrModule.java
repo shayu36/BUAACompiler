@@ -107,7 +107,7 @@ public class IrModule extends IrNode {
         return builder.toString();
     }
 
-    /******************** MIPS 后端 ********************/
+    /*后端/优化*/
 
     public List<IrGlobalValue> GetGlobalValues() {
         return Collections.unmodifiableList(this.globalValues);
@@ -116,4 +116,5 @@ public class IrModule extends IrNode {
     public Collection<IrConstantString> GetStringConstants() {
         return Collections.unmodifiableCollection(this.stringConstantMap.values());
     }
+    /*后端/优化*/
 }

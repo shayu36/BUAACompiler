@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-18",
+  "source": "User-provided feedback for testcase9 only",
+  "archive_sha256": "d83bc231665b9128727105bc862237c95979b7e1483c5ea97987fe3101e88864",
+  "baseline_source": "D:\\mycomplier\\tests\\.accepted-d83bc231\\src",
+  "cases": [
+    {
+      "case": "testcase9",
+      "status": "Accepted",
+      "score": ">=80%",
+      "divide": 1696,
+      "multiply": 7460,
+      "memory": 42208,
+      "branch": 27798,
+      "jump": 19070,
+      "other": 394746,
+      "cycles": 602372
+    }
+  ],
+  "unchanged_from": "platform-8df36c8d.json",
+  "other_cases_not_reposted": true
+}

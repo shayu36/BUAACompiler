@@ -16,6 +16,7 @@ import midend.llvm.value.IrValue;
 
 import java.util.HashMap;
 import java.util.Map;
+import optimize.RegisterAllocator;
 
 final class MipsFrame {
     static final int WORD_BYTES = 4;
@@ -27,8 +28,9 @@ final class MipsFrame {
     private final Map<IrValue, Integer> offsets = new HashMap<>();
     final int size;
     final int returnAddress;
+    final Map<String, Integer> savedOffsets = new java.util.LinkedHashMap<>();
 
-    MipsFrame(IrFunction function) {
+    MipsFrame(IrFunction function, RegisterAllocator allocator) {
         // The caller's outgoing argument area starts at the callee's incoming $sp.
         int outgoingWords = 0;
         for (IrBasicBlock block : function.GetBasicBlocks()) {
@@ -39,7 +41,7 @@ final class MipsFrame {
                 }
             }
         }
-        int offset = outgoingWords * WORD_BYTES;
+        int offset = (allocator == null ? outgoingWords : Math.max(4, outgoingWords)) * WORD_BYTES;
         for (IrBasicBlock block : function.GetBasicBlocks()) {
             for (Instr instr : block.GetInstrList()) {
                 if (instr instanceof AllocateInstr allocation) {
@@ -51,10 +53,17 @@ final class MipsFrame {
         // Constant addresses can be rematerialized. Other SSA results have word slots.
         for (IrBasicBlock block : function.GetBasicBlocks()) {
             for (Instr instr : block.GetInstrList()) {
-                if (instr.DefValue() && constantAddress(instr) == null) {
+                if (instr.DefValue() && constantAddress(instr) == null &&
+                    (allocator == null || !allocator.registers.containsKey(instr))) {
                     offsets.put(instr, offset);
                     offset += WORD_BYTES;
                 }
+            }
+        }
+        if (allocator != null) {
+            for (String register : allocator.savedRegisters) {
+                savedOffsets.put(register, offset);
+                offset += WORD_BYTES;
             }
         }
         returnAddress = offset;
